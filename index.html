@@ -16,8 +16,8 @@ header{position:sticky;top:0;background:#fff;z-index:20;border-bottom:1px solid 
 }
 
 .logo{
-    width:36px;
-    height:36px;
+    width:44px;
+    height:44px;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -45,8 +45,108 @@ header{position:sticky;top:0;background:#fff;z-index:20;border-bottom:1px solid 
 }
 .search{height:48px;border:1px solid #b9c5cc;border-radius:8px;display:flex;overflow:hidden}.search input{border:0;outline:0;flex:1;padding:0 15px}.search button{border:0;background:var(--teal);color:#fff;padding:0 22px;font-weight:bold}.actions{display:flex;align-items:center;gap:16px;font-size:14px;font-weight:bold}.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:8px;font-weight:bold;border:1px solid var(--navy)}.btn.dark{background:var(--navy);color:white}.btn.light{background:white}.btn.orange{background:var(--orange);border-color:var(--orange);color:var(--navy)}
 .nav{border-top:1px solid var(--line)}.nav .container{display:flex;gap:25px;overflow:auto}.nav button{border:0;background:none;padding:15px 0;white-space:nowrap;color:#4b5863}.nav button.active{color:var(--teal);box-shadow:inset 0 -3px var(--teal)}
-.hero{background:var(--cream);padding:70px 0}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:55px;align-items:center}.eyebrow{font-size:12px;font-weight:bold;letter-spacing:2px;color:var(--teal)}h1{font-size:64px;line-height:1.03;letter-spacing:-2.5px;color:var(--navy);margin:14px 0 22px}.hero p{font-size:19px;color:#4f5d68;max-width:650px}.hero-buttons{display:flex;gap:12px;margin-top:28px}.stats{display:flex;gap:38px;border-top:1px solid #d7d3ca;margin-top:38px;padding-top:22px}.stats strong{font-size:22px;color:var(--navy);display:block}.stats span{font-size:12px;color:var(--muted)}
-.visual{display:grid;grid-template-columns:1fr .55fr;grid-template-rows:1fr 1fr;gap:14px;min-height:470px}.tile{border-radius:22px;padding:22px;position:relative;overflow:hidden}.tile.big{grid-row:1/3;background:#dcebe5}.tile.orange{background:#fbe3d3}.tile.blue{background:#e6f0f8}.dog{position:absolute;inset:35px 25px 90px;background:#d4a57d;border-radius:48% 48% 42% 42%}.dog:before,.dog:after{content:"";position:absolute;top:-35px;width:90px;height:100px;background:#a56c45;clip-path:polygon(50% 0,100% 100%,0 100%)}.dog:before{left:20px;transform:rotate(-18deg)}.dog:after{right:20px;transform:rotate(18deg)}.dog .eyes:before,.dog .eyes:after{content:"";position:absolute;top:42%;width:14px;height:14px;background:var(--navy);border-radius:50%}.dog .eyes:before{left:35%}.dog .eyes:after{right:35%}.label{position:absolute;left:20px;right:20px;bottom:20px;background:rgba(255,255,255,.9);padding:16px;border-radius:12px}.label small{color:var(--muted);display:block}.mini{height:95px;margin:20px 0;border-radius:50%;background:#bd8059;box-shadow:inset 0 10px rgba(255,255,255,.3),0 10px #9e6647}.boxes{height:95px;display:flex;align-items:flex-end;gap:8px}.boxes i{display:block;flex:1;background:#6a9cbc;border-radius:7px 7px 2px 2px;height:100%}.boxes i:nth-child(2){height:70%}.boxes i:nth-child(3){height:52%}
+.hero{
+    position:relative;
+    min-height:680px;
+    padding:0;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    background:#1d3827;
+}
+
+/* Видео на весь фон */
+.hero-bg-video{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    z-index:0;
+}
+
+/* Затемнение поверх видео */
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    z-index:1;
+    background:linear-gradient(
+        90deg,
+        rgba(20,52,31,.92) 0%,
+        rgba(20,52,31,.78) 35%,
+        rgba(20,52,31,.45) 60%,
+        rgba(20,52,31,.10) 100%
+    );
+}
+
+/* Контент поверх видео */
+.hero-content{
+    position:relative;
+    z-index:2;
+    width:100%;
+    padding:80px 0;
+}
+
+.hero-text{
+    max-width:680px;
+}
+
+.hero .eyebrow{
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:2px;
+    color:#B7D7A8;
+}
+
+.hero h1{
+    font-size:64px;
+    line-height:1.03;
+    letter-spacing:-2.5px;
+    color:#ffffff;
+    margin:14px 0 22px;
+}
+
+.hero p{
+    font-size:19px;
+    line-height:1.55;
+    color:rgba(255,255,255,.88);
+    max-width:650px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:12px;
+    margin-top:28px;
+}
+
+/* Статистика */
+.hero .stats{
+    display:flex;
+    gap:38px;
+    border-top:1px solid rgba(255,255,255,.30);
+    margin-top:38px;
+    padding-top:22px;
+}
+
+.hero .stats strong{
+    font-size:22px;
+    color:#ffffff;
+    display:block;
+}
+
+.hero .stats span{
+    font-size:12px;
+    color:rgba(255,255,255,.75);
+}
+
+/* Белая кнопка */
+.hero .btn.light{
+    background:#ffffff;
+    color:#2E5B3B;
+    border-color:#ffffff;
+}
 section{padding:84px 0}.heading{display:flex;justify-content:space-between;align-items:end;margin-bottom:30px}.heading h2{font-size:44px;color:var(--navy);margin:8px 0 0;letter-spacing:-1.3px}.heading a{color:var(--teal);font-weight:bold}
 .cats{display:grid;grid-template-columns:repeat(6,1fr);gap:13px}.cat{border:1px solid var(--line);border-radius:15px;padding:22px 14px;background:#fff;text-align:left;transition:.2s}.cat:hover{transform:translateY(-4px);box-shadow:0 14px 35px rgba(16,42,67,.1)}.cat b{display:block;color:var(--navy);margin-top:12px}.cat small{color:var(--muted)}
 .toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;color:var(--muted);font-size:13px}.toolbar select{padding:9px;border:1px solid var(--line);border-radius:7px;background:white}.products{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.card{border:1px solid var(--line);border-radius:17px;overflow:hidden;display:flex;flex-direction:column;transition:.2s}.card:hover{transform:translateY(-5px);box-shadow:0 16px 36px rgba(16,42,67,.11)}.pic{aspect-ratio:1.15;background:#f3f0e9;display:grid;place-items:center;position:relative}.pic .shape{width:58%;height:44%;background:var(--accent);border-radius:40% 40% 18% 18%;box-shadow:0 13px 0 color-mix(in srgb,var(--accent) 75%,#000)}.badge{position:absolute;left:12px;top:12px;background:var(--orange);color:white;font-size:12px;font-weight:bold;padding:7px 9px;border-radius:7px}.fav{position:absolute;right:12px;top:10px;border:0;background:white;border-radius:50%;width:36px;height:36px;font-size:20px}.body{padding:17px;display:flex;flex-direction:column;gap:8px;flex:1}.supplier{color:var(--teal);font-size:11px;font-weight:bold;text-transform:uppercase}.body h3{font-size:16px;color:var(--navy);margin:0}.meta{display:flex;gap:5px;flex-wrap:wrap}.meta span{background:#f0f3f4;border-radius:5px;padding:5px 6px;font-size:10px;color:#53616c}.price{display:flex;justify-content:space-between;align-items:end;margin-top:auto}.price strong{font-size:21px;color:var(--navy)}.price del{color:var(--muted);font-size:12px;display:block}.price small{color:var(--muted);text-align:right}
@@ -73,12 +173,52 @@ footer{background:#0b1f32;color:white;padding:60px 0 25px;margin-top:80px}.foote
 </header>
 
 <main>
-<section class="hero"><div class="container hero-grid">
-  <div><span class="eyebrow">ЕВРОПЕЙСКИЙ B2B OUTLET</span><h1>Находите выгодные партии товаров для животных</h1><p>Покупайте складские остатки, сезонные коллекции и discontinued SKU напрямую у проверенных европейских поставщиков.</p>
-  <div class="hero-buttons"><a class="btn dark" href="#offers">Смотреть предложения</a><a class="btn light" href="#supplier">Стать поставщиком</a></div>
-  <div class="stats"><div><strong>0 €</strong><span>регистрация</span></div><div><strong>27</strong><span>стран Европы</span></div><div><strong>до 80%</strong><span>экономия</span></div></div></div>
-  <div class="visual"><div class="tile big"><div class="dog"><span class="eyes"></span></div><div class="label"><small>Новые лоты каждую неделю</small><b>Pet inventory across Europe</b></div></div><div class="tile orange"><b>−65%</b><div class="mini"></div><small>Сезонные коллекции</small></div><div class="tile blue"><div class="boxes"><i></i><i></i><i></i></div><small>Discontinued SKU</small></div></div>
-</div></section>
+<section class="hero hero-video-bg">
+
+    <video class="hero-bg-video" autoplay muted loop playsinline preload="auto">
+        <source src="video/warehouse.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+        <div class="hero-text">
+
+            <span class="eyebrow">ЕВРОПЕЙСКИЙ B2B OUTLET</span>
+
+            <h1>Находите выгодные партии товаров для животных</h1>
+
+            <p>
+                Покупайте складские остатки, сезонные коллекции и discontinued SKU
+                напрямую у проверенных европейских поставщиков.
+            </p>
+
+            <div class="hero-buttons">
+                <a class="btn dark" href="#offers">Смотреть предложения</a>
+                <a class="btn light" href="#supplier">Стать поставщиком</a>
+            </div>
+
+            <div class="stats">
+                <div>
+                    <strong>0 €</strong>
+                    <span>регистрация</span>
+                </div>
+
+                <div>
+                    <strong>27</strong>
+                    <span>стран Европы</span>
+                </div>
+
+                <div>
+                    <strong>до 80%</strong>
+                    <span>экономия</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
 
 <section><div class="container"><div class="heading"><div><span class="eyebrow">КАТЕГОРИИ</span><h2>Что вы ищете?</h2></div><a href="#offers">Смотреть все →</a></div>
 <div class="cats"><button class="cat jump" data-cat="beds">🛏️<b>Лежанки</b><small>128 лотов</small></button><button class="cat jump" data-cat="toys">🎾<b>Игрушки</b><small>214 лотов</small></button><button class="cat jump" data-cat="walk">🦮<b>Для прогулок</b><small>96 лотов</small></button><button class="cat jump" data-cat="carriers">🧳<b>Переноски</b><small>62 лота</small></button><button class="cat jump" data-cat="care">🧴<b>Уход</b><small>81 лот</small></button><button class="cat jump" data-cat="cats">🐈<b>Для кошек</b><small>170 лотов</small></button></div></div></section>
