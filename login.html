@@ -257,7 +257,44 @@ header{
     font-size:13px;
     margin:0 0 30px;
 }
+/* ACCOUNT TYPE */
 
+.account-switch{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-bottom:24px;
+}
+
+.account-option{
+    position:relative;
+}
+
+.account-option input{
+    position:absolute;
+    opacity:0;
+    pointer-events:none;
+}
+
+.account-option span{
+    height:46px;
+    border:1px solid #cbd6cf;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#53616c;
+    font-size:12px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.account-option input:checked + span{
+    border:2px solid var(--teal);
+    background:#f1f7ef;
+    color:var(--navy);
+}
 
 /* =========================
    FORM
@@ -758,8 +795,39 @@ footer{
     <form id="loginForm">
 
 
-        <div class="field">
+        
+<div class="account-switch">
 
+    <label class="account-option">
+
+        <input
+            type="radio"
+            name="accountType"
+            value="buyer"
+            checked>
+
+        <span>
+            Buyer
+        </span>
+
+    </label>
+
+
+    <label class="account-option">
+
+        <input
+            type="radio"
+            name="accountType"
+            value="supplier">
+
+        <span>
+            Supplier
+        </span>
+
+    </label>
+
+</div>
+<div class="field">
             <label for="email">
                 Business email
             </label>
@@ -971,16 +1039,26 @@ showPassword.addEventListener("click",()=>{
 const loginForm =
 document.getElementById("loginForm");
 
-const demoMessage =
-document.getElementById("demoMessage");
-
-
 loginForm.addEventListener("submit",event=>{
 
     event.preventDefault();
 
-    window.location.href =
-    "supplier-dashboard.html";
+    const accountType =
+    document.querySelector(
+        'input[name="accountType"]:checked'
+    ).value;
+
+    if(accountType==="supplier"){
+
+        window.location.href =
+        "supplier-dashboard.html";
+
+    }else{
+
+        window.location.href =
+        "buyer-dashboard.html";
+
+    }
 
 });
 
