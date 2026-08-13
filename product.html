@@ -1,0 +1,2192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Product Offer — Sweety Pets</title>
+
+<style>
+
+:root{
+    --navy:#2E5B3B;
+    --teal:#4CAF50;
+    --orange:#7FBC78;
+    --cream:#B7D7A8;
+    --line:#E8EEE7;
+    --muted:#687582;
+    --soft:#F6F8F5;
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    color:#17212b;
+    background:#fff;
+}
+
+.container{
+    width:min(1240px,calc(100% - 36px));
+    margin:auto;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,input,select,textarea{
+    font:inherit;
+}
+
+button{cursor:pointer}
+
+
+/* TOP BAR */
+
+.top{
+    background:var(--navy);
+    color:white;
+    font-size:13px;
+}
+
+.top .container{
+    height:36px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+
+/* HEADER */
+
+header{
+    position:sticky;
+    top:0;
+    background:#fff;
+    z-index:20;
+    border-bottom:1px solid var(--line);
+}
+
+.head{
+    height:82px;
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    gap:26px;
+    align-items:center;
+}
+
+.brand{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+.logo{
+    width:44px;
+    height:44px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
+.logo img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+.brand strong{
+    display:block;
+    color:var(--navy);
+}
+
+.brand small{
+    color:var(--teal);
+    font-weight:bold;
+    letter-spacing:1.4px;
+    font-size:9px;
+}
+
+
+/* SEARCH */
+
+.search{
+    height:48px;
+    border:1px solid #b9c5cc;
+    border-radius:8px;
+    display:flex;
+    overflow:hidden;
+}
+
+.search input{
+    border:0;
+    outline:0;
+    flex:1;
+    padding:0 15px;
+}
+
+.search button{
+    border:0;
+    background:var(--teal);
+    color:#fff;
+    padding:0 22px;
+    font-weight:bold;
+}
+
+
+/* ACTIONS */
+
+.actions{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:14px 22px;
+    border-radius:8px;
+    font-weight:bold;
+    border:1px solid var(--navy);
+}
+
+.btn.dark{
+    background:var(--navy);
+    color:white;
+}
+
+.btn.light{
+    background:white;
+    color:var(--navy);
+}
+
+
+/* NAVIGATION */
+
+.nav{
+    border-top:1px solid var(--line);
+}
+
+.nav .container{
+    display:flex;
+    gap:25px;
+    overflow:auto;
+}
+
+.nav a{
+    padding:15px 0;
+    white-space:nowrap;
+    color:#4b5863;
+    font-size:14px;
+}
+
+
+/* BREADCRUMBS */
+
+.breadcrumbs{
+    padding:25px 0;
+    color:var(--muted);
+    font-size:13px;
+}
+
+.breadcrumbs a:hover{
+    color:var(--teal);
+}
+
+.breadcrumbs span{
+    margin:0 8px;
+    color:#b0b9b3;
+}
+
+
+/* PRODUCT */
+
+.product-layout{
+    display:grid;
+    grid-template-columns:minmax(0,1.1fr) minmax(380px,.9fr);
+    gap:55px;
+    padding-bottom:65px;
+}
+
+
+/* PRODUCT GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:90px 1fr;
+    gap:15px;
+}
+
+.thumbnails{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.thumb{
+    height:82px;
+    border:1px solid var(--line);
+    border-radius:10px;
+    background:#f3f6f1;
+    display:grid;
+    place-items:center;
+    font-size:28px;
+    cursor:pointer;
+}
+
+.thumb.active{
+    border:2px solid var(--teal);
+}
+
+.main-image{
+    min-height:560px;
+    background:#e9efe1;
+    border-radius:18px;
+    display:grid;
+    place-items:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.main-product{
+    width:65%;
+    height:58%;
+    border-radius:28px;
+    background:rgba(255,255,255,.72);
+    display:grid;
+    place-items:center;
+    font-size:130px;
+    box-shadow:0 20px 50px rgba(0,0,0,.08);
+}
+
+.discount{
+    position:absolute;
+    top:20px;
+    left:20px;
+    background:var(--orange);
+    color:white;
+    padding:9px 13px;
+    border-radius:7px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.favourite{
+    position:absolute;
+    right:20px;
+    top:20px;
+    width:44px;
+    height:44px;
+    border:0;
+    border-radius:50%;
+    background:white;
+    font-size:24px;
+    box-shadow:0 4px 14px rgba(0,0,0,.08);
+}
+
+
+/* PRODUCT INFO */
+
+.product-info{
+    padding-top:4px;
+}
+
+.supplier{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:var(--teal);
+    font-size:12px;
+    font-weight:bold;
+    text-transform:uppercase;
+    margin-bottom:14px;
+}
+
+.verified{
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:var(--teal);
+    color:white;
+    display:inline-grid;
+    place-items:center;
+    font-size:11px;
+}
+
+.product-info h1{
+    color:var(--navy);
+    font-size:36px;
+    line-height:1.12;
+    letter-spacing:-1px;
+    margin:0 0 15px;
+}
+
+.subtitle{
+    color:var(--muted);
+    line-height:1.55;
+    margin-bottom:25px;
+}
+
+.price-box{
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:22px 0;
+    margin-bottom:22px;
+}
+
+.old-price{
+    color:var(--muted);
+    font-size:14px;
+}
+
+.old-price del{
+    margin-left:5px;
+}
+
+.current-price{
+    display:flex;
+    align-items:flex-end;
+    gap:8px;
+    margin-top:5px;
+}
+
+.current-price strong{
+    font-size:36px;
+    color:var(--navy);
+}
+
+.current-price span{
+    color:var(--muted);
+    padding-bottom:5px;
+    font-size:13px;
+}
+
+.vat{
+    font-size:11px;
+    color:var(--muted);
+    margin-top:3px;
+}
+
+
+/* LOT DATA */
+
+.lot-data{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin:22px 0;
+}
+
+.data-box{
+    background:var(--soft);
+    border-radius:10px;
+    padding:14px;
+}
+
+.data-box small{
+    display:block;
+    color:var(--muted);
+    font-size:11px;
+    margin-bottom:5px;
+}
+
+.data-box strong{
+    color:var(--navy);
+    font-size:14px;
+}
+
+
+/* CLEARANCE */
+
+.clearance{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border:1px solid #dce7de;
+    background:#f5f8f4;
+    padding:13px 15px;
+    border-radius:9px;
+    margin-bottom:22px;
+}
+
+.clearance span{
+    color:var(--muted);
+    font-size:12px;
+}
+
+.clearance strong{
+    color:var(--navy);
+    font-size:13px;
+}
+
+
+/* REQUEST */
+
+.request{
+    width:100%;
+    border:0;
+    background:var(--navy);
+    color:white;
+    padding:17px;
+    border-radius:9px;
+    font-size:15px;
+    font-weight:bold;
+}
+
+.request:hover{
+    opacity:.92;
+}
+
+.request-note{
+    text-align:center;
+    color:var(--muted);
+    font-size:11px;
+    margin-top:10px;
+}
+
+
+/* TRUST */
+
+.trust{
+    margin-top:25px;
+    display:grid;
+    gap:12px;
+}
+
+.trust-row{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    color:#53616c;
+    font-size:13px;
+}
+
+.trust-icon{
+    width:28px;
+    height:28px;
+    flex:0 0 28px;
+    border-radius:50%;
+    background:#edf5ed;
+    color:var(--teal);
+    display:grid;
+    place-items:center;
+    font-weight:bold;
+}
+
+
+/* CONTENT SECTION */
+
+.details-area{
+    background:var(--soft);
+    padding:65px 0;
+}
+
+.details-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:30px;
+}
+
+.panel{
+    background:white;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:28px;
+}
+
+.panel h2{
+    color:var(--navy);
+    margin:0 0 22px;
+    font-size:22px;
+}
+
+.description{
+    color:#53616c;
+    line-height:1.65;
+    font-size:14px;
+}
+
+.specs{
+    margin-top:28px;
+}
+
+.spec-row{
+    display:grid;
+    grid-template-columns:190px 1fr;
+    padding:13px 0;
+    border-bottom:1px solid var(--line);
+    font-size:13px;
+}
+
+.spec-row:last-child{
+    border-bottom:0;
+}
+
+.spec-row span:first-child{
+    color:var(--muted);
+}
+
+.spec-row strong{
+    color:#34424d;
+}
+
+
+/* SUPPLIER CARD */
+
+.supplier-card h3{
+    color:var(--navy);
+    margin:0 0 4px;
+}
+
+.supplier-country{
+    color:var(--muted);
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+.supplier-stat{
+    display:flex;
+    justify-content:space-between;
+    padding:11px 0;
+    border-bottom:1px solid var(--line);
+    font-size:13px;
+}
+
+.supplier-stat span{
+    color:var(--muted);
+}
+
+.supplier-stat strong{
+    color:var(--navy);
+}
+
+.supplier-link{
+    display:block;
+    margin-top:20px;
+    text-align:center;
+    border:1px solid var(--navy);
+    color:var(--navy);
+    padding:12px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:13px;
+}
+
+
+/* DELIVERY */
+
+.delivery{
+    margin-top:30px;
+}
+
+.delivery h2{
+    color:var(--navy);
+    margin-top:0;
+}
+
+.delivery-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.delivery-box{
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:18px;
+}
+
+.delivery-box small{
+    display:block;
+    color:var(--muted);
+    margin-bottom:7px;
+}
+
+.delivery-box strong{
+    color:var(--navy);
+    font-size:14px;
+}
+
+
+/* SIMILAR OFFERS */
+
+.similar{
+    padding:70px 0;
+}
+
+.section-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    margin-bottom:25px;
+}
+
+.section-title h2{
+    margin:0;
+    color:var(--navy);
+    font-size:28px;
+}
+
+.section-title a{
+    color:var(--teal);
+    font-size:13px;
+    font-weight:bold;
+}
+
+.similar-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.similar-card{
+    border:1px solid var(--line);
+    border-radius:13px;
+    overflow:hidden;
+}
+
+.similar-image{
+    height:180px;
+    background:#e9efe1;
+    display:grid;
+    place-items:center;
+    font-size:60px;
+}
+
+.similar-body{
+    padding:15px;
+}
+
+.similar-body small{
+    color:var(--teal);
+    font-weight:bold;
+}
+
+.similar-body h3{
+    font-size:14px;
+    line-height:1.35;
+    color:var(--navy);
+    min-height:38px;
+}
+
+.similar-price{
+    font-size:18px;
+    color:var(--navy);
+    font-weight:bold;
+}
+
+
+/* MODAL */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(11,31,50,.55);
+    z-index:100;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal.open{
+    display:flex;
+}
+
+.modal-box{
+    background:white;
+    width:min(520px,100%);
+    border-radius:16px;
+    padding:30px;
+    position:relative;
+}
+
+.modal-box h2{
+    color:var(--navy);
+    margin-top:0;
+}
+
+.modal-box p{
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.5;
+}
+
+.close{
+    position:absolute;
+    right:18px;
+    top:15px;
+    border:0;
+    background:none;
+    font-size:25px;
+    color:var(--muted);
+}
+
+.form-group{
+    margin:14px 0;
+}
+
+.form-group label{
+    display:block;
+    font-size:12px;
+    color:var(--navy);
+    font-weight:bold;
+    margin-bottom:6px;
+}
+
+.form-group input,
+.form-group textarea{
+    width:100%;
+    border:1px solid #ccd6d0;
+    border-radius:8px;
+    padding:12px;
+    outline:0;
+}
+
+.form-group textarea{
+    min-height:100px;
+    resize:vertical;
+}
+
+.submit{
+    width:100%;
+    border:0;
+    border-radius:8px;
+    padding:14px;
+    background:var(--navy);
+    color:white;
+    font-weight:bold;
+}
+
+
+/* FOOTER */
+
+footer{
+    background:#0b1f32;
+    color:white;
+    padding:60px 0 25px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr repeat(3,1fr);
+    gap:38px;
+}
+
+.footer-grid h4{
+    margin-top:0;
+}
+
+.footer-grid a{
+    display:block;
+    color:#b9c6d1;
+    font-size:14px;
+    margin:9px 0;
+}
+
+.bottom{
+    border-top:1px solid rgba(255,255,255,.13);
+    margin-top:40px;
+    padding-top:20px;
+    color:#8394a3;
+    font-size:12px;
+    display:flex;
+    justify-content:space-between;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:950px){
+
+    .head{
+        grid-template-columns:1fr;
+        height:auto;
+        padding:14px 0;
+    }
+
+    .actions{
+        display:none;
+    }
+
+    .product-layout{
+        grid-template-columns:1fr;
+    }
+
+    .details-grid{
+        grid-template-columns:1fr;
+    }
+
+    .similar-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:650px){
+
+    .top .container{
+        justify-content:center;
+    }
+
+    .top a{
+        display:none;
+    }
+
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
+    .thumbnails{
+        flex-direction:row;
+        order:2;
+    }
+
+    .thumb{
+        width:70px;
+        height:65px;
+    }
+
+    .main-image{
+        min-height:390px;
+    }
+
+    .main-product{
+        font-size:90px;
+    }
+
+    .product-info h1{
+        font-size:30px;
+    }
+
+    .lot-data{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .delivery-grid{
+        grid-template-columns:1fr;
+    }
+
+    .similar-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-grid>div:first-child{
+        grid-column:1/-1;
+    }
+
+    .bottom{
+        flex-direction:column;
+        gap:7px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- TOP BAR -->
+
+<div class="top">
+
+    <div class="container">
+
+        <span>
+            European B2B pet inventory
+        </span>
+
+        <a href="index.html#supplier">
+            List your stock for free
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="container head">
+
+        <a class="brand" href="index.html">
+
+            <span class="logo">
+
+                <img
+                    src="SweetyPets_logo symbol.png"
+                    alt="Sweety Pets logo">
+
+            </span>
+
+            <span>
+
+                <strong>
+                    sweety pets
+                </strong>
+
+            </span>
+
+        </a>
+
+
+        <form class="search" action="catalogue.html">
+
+            <input
+                name="search"
+                placeholder="Search products, brands or suppliers">
+
+            <button>
+                Search
+            </button>
+
+        </form>
+
+
+        <div class="actions">
+
+            <a href="#">
+                Sign in
+            </a>
+
+            <a class="btn dark" href="#">
+                Register
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <nav class="nav">
+
+        <div class="container">
+
+            <a href="catalogue.html">
+                All offers
+            </a>
+
+            <a href="catalogue.html">
+                Food
+            </a>
+
+            <a href="catalogue.html">
+                Treats
+            </a>
+
+            <a href="catalogue.html">
+                Beds & Furniture
+            </a>
+
+            <a href="catalogue.html">
+                Toys
+            </a>
+
+            <a href="catalogue.html">
+                Walking & Travel
+            </a>
+
+            <a href="catalogue.html">
+                Feeding
+            </a>
+
+            <a href="catalogue.html">
+                Grooming & Care
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+
+<!-- MAIN -->
+
+<main>
+
+
+<div class="container breadcrumbs">
+
+    <a href="index.html">
+        Home
+    </a>
+
+    <span>›</span>
+
+    <a href="catalogue.html">
+        Catalogue
+    </a>
+
+    <span>›</span>
+
+    <a href="catalogue.html">
+        Food
+    </a>
+
+    <span>›</span>
+
+    Premium Dry Dog Food
+
+</div>
+
+
+
+<section>
+
+<div class="container product-layout">
+
+
+<!-- PRODUCT GALLERY -->
+
+<div class="gallery">
+
+
+    <div class="thumbnails">
+
+        <div
+            class="thumb active"
+            data-icon="🥣"
+            data-bg="#e9efe1">
+            🥣
+        </div>
+
+        <div
+            class="thumb"
+            data-icon="📦"
+            data-bg="#f1eadf">
+            📦
+        </div>
+
+        <div
+            class="thumb"
+            data-icon="🐕"
+            data-bg="#e5eee8">
+            🐕
+        </div>
+
+        <div
+            class="thumb"
+            data-icon="🏷️"
+            data-bg="#edf0e5">
+            🏷️
+        </div>
+
+    </div>
+
+
+    <div
+        class="main-image"
+        id="mainImage">
+
+        <span class="discount">
+            −55%
+        </span>
+
+        <button
+            class="favourite"
+            id="favourite">
+            ♡
+        </button>
+
+        <div
+            class="main-product"
+            id="mainProduct">
+            🥣
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- PRODUCT INFORMATION -->
+
+<div class="product-info">
+
+
+    <div class="supplier">
+
+        NordPet Foods · Germany
+
+        <span class="verified">
+            ✓
+        </span>
+
+    </div>
+
+
+    <h1>
+        Premium Dry Dog Food — Chicken 12 kg
+    </h1>
+
+
+    <div class="subtitle">
+
+        Complete premium dry food for adult dogs.
+        Available as a clearance B2B lot from a
+        verified European supplier.
+
+    </div>
+
+
+
+    <div class="price-box">
+
+        <div class="old-price">
+
+            Regular price:
+
+            <del>
+                €42.00
+            </del>
+
+        </div>
+
+
+        <div class="current-price">
+
+            <strong>
+                €18.90
+            </strong>
+
+            <span>
+                / unit
+            </span>
+
+        </div>
+
+
+        <div class="vat">
+            Price excluding VAT
+        </div>
+
+    </div>
+
+
+
+    <div class="lot-data">
+
+
+        <div class="data-box">
+
+            <small>
+                Available stock
+            </small>
+
+            <strong>
+                620 units
+            </strong>
+
+        </div>
+
+
+        <div class="data-box">
+
+            <small>
+                Minimum order
+            </small>
+
+            <strong>
+                40 units
+            </strong>
+
+        </div>
+
+
+        <div class="data-box">
+
+            <small>
+                Location
+            </small>
+
+            <strong>
+                Germany
+            </strong>
+
+        </div>
+
+
+        <div class="data-box">
+
+            <small>
+                Price per MOQ
+            </small>
+
+            <strong>
+                €756.00
+            </strong>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="clearance">
+
+        <span>
+            Clearance reason
+        </span>
+
+        <strong>
+            Old packaging
+        </strong>
+
+    </div>
+
+
+
+    <button
+        class="request"
+        id="requestButton">
+
+        Request offer
+
+    </button>
+
+
+    <div class="request-note">
+
+        No payment is required to send a request.
+
+    </div>
+
+
+
+    <div class="trust">
+
+
+        <div class="trust-row">
+
+            <div class="trust-icon">
+                ✓
+            </div>
+
+            <div>
+
+                <strong>
+                    Verified B2B supplier
+                </strong>
+
+                <br>
+
+                Supplier details have been
+                checked by Sweety Pets.
+
+            </div>
+
+        </div>
+
+
+        <div class="trust-row">
+
+            <div class="trust-icon">
+                €
+            </div>
+
+            <div>
+
+                <strong>
+                    B2B pricing
+                </strong>
+
+                <br>
+
+                Prices are shown excluding VAT.
+
+            </div>
+
+        </div>
+
+
+        <div class="trust-row">
+
+            <div class="trust-icon">
+                ↗
+            </div>
+
+            <div>
+
+                <strong>
+                    Delivery across the EU
+                </strong>
+
+                <br>
+
+                Shipping terms are confirmed
+                before the order is finalised.
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+</div>
+</section>
+
+
+
+<!-- DETAILS -->
+
+<section class="details-area">
+
+<div class="container">
+
+
+<div class="details-grid">
+
+
+<!-- PRODUCT DETAILS -->
+
+<div class="panel">
+
+    <h2>
+        Product details
+    </h2>
+
+
+    <div class="description">
+
+        This offer contains new and unused
+        products in their original packaging.
+
+        <br><br>
+
+        The product is being offered as clearance
+        stock because the manufacturer has introduced
+        updated packaging. The product itself has not
+        been changed.
+
+    </div>
+
+
+
+    <div class="specs">
+
+
+        <div class="spec-row">
+
+            <span>
+                Brand
+            </span>
+
+            <strong>
+                NordPet
+            </strong>
+
+        </div>
+
+
+        <div class="spec-row">
+
+            <span>
+                Category
+            </span>
+
+            <strong>
+                Food
+            </strong>
+
+        </div>
+
+
+        <div class="spec-row">
+
+            <span>
+                Pet type
+            </span>
+
+            <strong>
+                Dogs
+            </strong>
+
+        </div>
+
+
+        <div class="spec-row">
+
+            <span>
+                SKU
+            </span>
+
+            <strong>
+                NPF-DOG-CH12
+            </strong>
+
+        </div>
+
+
+        <div class="spec-row">
+
+            <span>
+                EAN
+            </span>
+
+            <strong>
+                4012345678901
+            </strong>
+
+        </div>
+
+
+        <div class="spec-row">
+
+            <span>
+                Unit size
+            </span>
+
+            <strong>
+                12 kg
+            </strong>
+
+        </div>
+
+
+        <div class="spec-row">
+
+            <span>
+                Condition
+            </span>
+
+            <strong>
+                New
+            </strong>
+
+        </div>
+
+
+        <div class="spec-row">
+
+            <span>
+                Packaging
+            </span>
+
+            <strong>
+                Original retail packaging
+            </strong>
+
+        </div>
+
+
+        <div class="spec-row">
+
+            <span>
+                Best before
+            </span>
+
+            <strong>
+                12+ months
+            </strong>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- SUPPLIER -->
+
+<div class="panel supplier-card">
+
+    <h2>
+        Supplier
+    </h2>
+
+    <h3>
+        NordPet Foods
+    </h3>
+
+    <div class="supplier-country">
+        Germany
+    </div>
+
+
+    <div class="supplier-stat">
+
+        <span>
+            Status
+        </span>
+
+        <strong>
+            ✓ Verified
+        </strong>
+
+    </div>
+
+
+    <div class="supplier-stat">
+
+        <span>
+            Supplier type
+        </span>
+
+        <strong>
+            Manufacturer
+        </strong>
+
+    </div>
+
+
+    <div class="supplier-stat">
+
+        <span>
+            Active offers
+        </span>
+
+        <strong>
+            18
+        </strong>
+
+    </div>
+
+
+    <div class="supplier-stat">
+
+        <span>
+            Ships from
+        </span>
+
+        <strong>
+            Germany
+        </strong>
+
+    </div>
+
+
+    <a
+        href="#"
+        class="supplier-link">
+
+        View supplier offers
+
+    </a>
+
+</div>
+
+
+</div>
+
+
+
+<!-- DELIVERY -->
+
+<div class="panel delivery">
+
+    <h2>
+        Delivery information
+    </h2>
+
+
+    <div class="delivery-grid">
+
+
+        <div class="delivery-box">
+
+            <small>
+                Dispatch location
+            </small>
+
+            <strong>
+                Hamburg, Germany
+            </strong>
+
+        </div>
+
+
+        <div class="delivery-box">
+
+            <small>
+                Delivery area
+            </small>
+
+            <strong>
+                European Union
+            </strong>
+
+        </div>
+
+
+        <div class="delivery-box">
+
+            <small>
+                Incoterms
+            </small>
+
+            <strong>
+                EXW / FCA
+            </strong>
+
+        </div>
+
+
+        <div class="delivery-box">
+
+            <small>
+                Preparation time
+            </small>
+
+            <strong>
+                2–4 business days
+            </strong>
+
+        </div>
+
+
+        <div class="delivery-box">
+
+            <small>
+                Packaging
+            </small>
+
+            <strong>
+                Palletised
+            </strong>
+
+        </div>
+
+
+        <div class="delivery-box">
+
+            <small>
+                Transport cost
+            </small>
+
+            <strong>
+                Calculated separately
+            </strong>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- SIMILAR OFFERS -->
+
+<section class="similar">
+
+<div class="container">
+
+
+<div class="section-title">
+
+    <h2>
+        Similar offers
+    </h2>
+
+    <a href="catalogue.html">
+        View all offers →
+    </a>
+
+</div>
+
+
+
+<div class="similar-grid">
+
+
+<a class="similar-card" href="product.html">
+
+    <div
+        class="similar-image"
+        style="background:#f3e8dc">
+        🥫
+    </div>
+
+    <div class="similar-body">
+
+        <small>
+            Lithuania
+        </small>
+
+        <h3>
+            Wet Cat Food Selection — 400 g
+        </h3>
+
+        <div class="similar-price">
+            €0.89 / unit
+        </div>
+
+    </div>
+
+</a>
+
+
+
+<a class="similar-card" href="product.html">
+
+    <div
+        class="similar-image"
+        style="background:#eee7d8">
+        🦴
+    </div>
+
+    <div class="similar-body">
+
+        <small>
+            Germany
+        </small>
+
+        <h3>
+            Natural Dental Chews
+        </h3>
+
+        <div class="similar-price">
+            €1.35 / unit
+        </div>
+
+    </div>
+
+</a>
+
+
+
+<a class="similar-card" href="product.html">
+
+    <div
+        class="similar-image"
+        style="background:#e5eee0">
+        🐇
+    </div>
+
+    <div class="similar-body">
+
+        <small>
+            Netherlands
+        </small>
+
+        <h3>
+            Complete Rabbit Food 3 kg
+        </h3>
+
+        <div class="similar-price">
+            €4.80 / unit
+        </div>
+
+    </div>
+
+</a>
+
+
+
+<a class="similar-card" href="product.html">
+
+    <div
+        class="similar-image"
+        style="background:#dfeff2">
+        🐟
+    </div>
+
+    <div class="similar-body">
+
+        <small>
+            Germany
+        </small>
+
+        <h3>
+            Aquarium Fish Flakes 500 ml
+        </h3>
+
+        <div class="similar-price">
+            €2.70 / unit
+        </div>
+
+    </div>
+
+</a>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container footer-grid">
+
+
+<div>
+
+    <div class="brand">
+
+        <span class="logo">
+
+            <img
+                src="SweetyPets_logo symbol.png"
+                alt="Sweety Pets logo">
+
+        </span>
+
+        <span>
+
+            <strong style="color:white">
+                sweety pets
+            </strong>
+
+            <small>
+                B2B PET INVENTORY
+            </small>
+
+        </span>
+
+    </div>
+
+
+    <p style="color:#9aabb8">
+
+        A European B2B platform for buying
+        and selling surplus pet product stock.
+
+    </p>
+
+</div>
+
+
+
+<div>
+
+    <h4>
+        For buyers
+    </h4>
+
+    <a href="catalogue.html">
+        Catalogue
+    </a>
+
+    <a href="#">
+        How to buy
+    </a>
+
+    <a href="#">
+        Delivery
+    </a>
+
+</div>
+
+
+
+<div>
+
+    <h4>
+        For suppliers
+    </h4>
+
+    <a href="index.html#supplier">
+        List products
+    </a>
+
+    <a href="#">
+        Pricing
+    </a>
+
+    <a href="#">
+        Logistics
+    </a>
+
+</div>
+
+
+
+<div>
+
+    <h4>
+        Company
+    </h4>
+
+    <a href="#">
+        About us
+    </a>
+
+    <a href="#">
+        Contacts
+    </a>
+
+    <a href="#">
+        Help
+    </a>
+
+</div>
+
+
+</div>
+
+
+<div class="container bottom">
+
+    <span>
+        © 2026 Sweety Pets
+    </span>
+
+    <span>
+        Privacy · Terms · Cookies
+    </span>
+
+</div>
+
+</footer>
+
+
+
+<!-- REQUEST MODAL -->
+
+<div
+    class="modal"
+    id="requestModal">
+
+
+<div class="modal-box">
+
+
+<button
+    class="close"
+    id="closeModal">
+    ×
+</button>
+
+
+<h2>
+    Request offer
+</h2>
+
+
+<p>
+
+    Send your request to NordPet Foods.
+    The supplier can then confirm availability,
+    delivery terms and final order conditions.
+
+</p>
+
+
+<form id="requestForm">
+
+
+<div class="form-group">
+
+    <label>
+        Quantity
+    </label>
+
+    <input
+        type="number"
+        min="40"
+        value="40"
+        required>
+
+</div>
+
+
+<div class="form-group">
+
+    <label>
+        Delivery country
+    </label>
+
+    <input
+        type="text"
+        placeholder="e.g. Estonia"
+        required>
+
+</div>
+
+
+<div class="form-group">
+
+    <label>
+        Message
+    </label>
+
+    <textarea
+        placeholder="Add a message to the supplier"></textarea>
+
+</div>
+
+
+<button
+    class="submit"
+    type="submit">
+
+    Send request
+
+</button>
+
+
+</form>
+
+</div>
+
+</div>
+
+
+
+<script>
+
+
+/* PRODUCT GALLERY */
+
+const thumbs =
+document.querySelectorAll(".thumb");
+
+const mainProduct =
+document.getElementById("mainProduct");
+
+const mainImage =
+document.getElementById("mainImage");
+
+
+thumbs.forEach(thumb=>{
+
+    thumb.addEventListener("click",()=>{
+
+        thumbs.forEach(item=>
+            item.classList.remove("active")
+        );
+
+        thumb.classList.add("active");
+
+        mainProduct.textContent =
+        thumb.dataset.icon;
+
+        mainImage.style.background =
+        thumb.dataset.bg;
+
+    });
+
+});
+
+
+/* FAVOURITE */
+
+const favourite =
+document.getElementById("favourite");
+
+favourite.addEventListener("click",()=>{
+
+    if(favourite.textContent.trim()==="♡"){
+
+        favourite.textContent="♥";
+        favourite.style.color="#e2565b";
+
+    }else{
+
+        favourite.textContent="♡";
+        favourite.style.color="";
+
+    }
+
+});
+
+
+/* REQUEST MODAL */
+
+const requestButton =
+document.getElementById("requestButton");
+
+const requestModal =
+document.getElementById("requestModal");
+
+const closeModal =
+document.getElementById("closeModal");
+
+
+requestButton.addEventListener("click",()=>{
+
+    requestModal.classList.add("open");
+
+});
+
+
+closeModal.addEventListener("click",()=>{
+
+    requestModal.classList.remove("open");
+
+});
+
+
+requestModal.addEventListener("click",event=>{
+
+    if(event.target===requestModal){
+
+        requestModal.classList.remove("open");
+
+    }
+
+});
+
+
+/* REQUEST FORM */
+
+document
+.getElementById("requestForm")
+.addEventListener("submit",event=>{
+
+    event.preventDefault();
+
+    alert(
+        "Your request has been prepared. " +
+        "Account registration will be required " +
+        "to send requests when the platform is launched."
+    );
+
+    requestModal.classList.remove("open");
+
+});
+
+
+</script>
+
+
+</body>
+</html>
