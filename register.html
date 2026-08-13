@@ -1,0 +1,1505 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Create B2B Account — Sweety Pets</title>
+
+<style>
+
+:root{
+    --navy:#2E5B3B;
+    --teal:#4CAF50;
+    --orange:#7FBC78;
+    --cream:#B7D7A8;
+    --line:#E8EEE7;
+    --muted:#687582;
+    --soft:#F6F8F5;
+    --dark:#0b1f32;
+    --error:#c94a4a;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    color:#17212b;
+    background:#fff;
+}
+
+.container{
+    width:min(1240px,calc(100% - 36px));
+    margin:auto;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button,
+input,
+select{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+
+/* =========================
+   TOP BAR
+   ========================= */
+
+.top{
+    background:var(--navy);
+    color:#fff;
+    font-size:13px;
+}
+
+.top .container{
+    height:36px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.top a{
+    font-weight:bold;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+header{
+    background:#fff;
+    border-bottom:1px solid var(--line);
+}
+
+.head{
+    min-height:82px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+}
+
+.brand{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+.logo{
+    width:44px;
+    height:44px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
+.logo img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    display:block;
+}
+
+.brand strong{
+    display:block;
+    color:var(--navy);
+}
+
+.login{
+    color:#53616c;
+    font-size:14px;
+}
+
+.login a{
+    color:var(--navy);
+    font-weight:bold;
+    margin-left:5px;
+}
+
+
+/* =========================
+   PAGE
+   ========================= */
+
+.register-page{
+    background:
+        linear-gradient(
+            120deg,
+            #f6f9f4 0%,
+            #ffffff 50%,
+            #edf5ea 100%
+        );
+    min-height:calc(100vh - 118px);
+    padding:60px 0 80px;
+}
+
+.register-grid{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:70px;
+    align-items:start;
+}
+
+
+/* =========================
+   INTRO
+   ========================= */
+
+.intro{
+    padding-top:30px;
+    position:sticky;
+    top:30px;
+}
+
+.eyebrow{
+    color:var(--teal);
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.intro h1{
+    color:var(--navy);
+    font-size:46px;
+    line-height:1.08;
+    letter-spacing:-1.5px;
+    margin:13px 0 18px;
+}
+
+.intro>p{
+    color:var(--muted);
+    font-size:16px;
+    line-height:1.65;
+    max-width:480px;
+}
+
+.benefits{
+    display:grid;
+    gap:17px;
+    margin-top:35px;
+}
+
+.benefit{
+    display:flex;
+    gap:13px;
+    align-items:flex-start;
+}
+
+.benefit-icon{
+    width:29px;
+    height:29px;
+    flex:0 0 29px;
+    border-radius:50%;
+    background:#e6f2e5;
+    color:var(--teal);
+    display:grid;
+    place-items:center;
+    font-weight:bold;
+    font-size:12px;
+}
+
+.benefit strong{
+    display:block;
+    color:var(--navy);
+    font-size:14px;
+    margin-bottom:3px;
+}
+
+.benefit span{
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.45;
+}
+
+
+/* =========================
+   FORM CARD
+   ========================= */
+
+.form-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:18px;
+    box-shadow:0 18px 55px rgba(35,75,48,.08);
+    padding:35px;
+}
+
+.form-card h2{
+    color:var(--navy);
+    font-size:26px;
+    margin:0 0 7px;
+}
+
+.form-intro{
+    color:var(--muted);
+    font-size:13px;
+    margin:0 0 28px;
+}
+
+
+/* =========================
+   ACCOUNT TYPE
+   ========================= */
+
+.section-label{
+    display:block;
+    color:var(--navy);
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+.account-types{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-bottom:30px;
+}
+
+.account-type{
+    position:relative;
+}
+
+.account-type input{
+    position:absolute;
+    opacity:0;
+    pointer-events:none;
+}
+
+.account-type label{
+    border:1px solid #ccd7cf;
+    border-radius:12px;
+    min-height:105px;
+    padding:17px;
+    display:block;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.account-type label:hover{
+    border-color:var(--teal);
+}
+
+.account-type input:checked + label{
+    border:2px solid var(--teal);
+    background:#f3f8f1;
+}
+
+.account-title{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    color:var(--navy);
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+.account-icon{
+    width:31px;
+    height:31px;
+    border-radius:8px;
+    background:#e9f3e7;
+    display:grid;
+    place-items:center;
+    color:var(--teal);
+    font-size:13px;
+}
+
+.account-type p{
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.45;
+    margin:0;
+}
+
+
+/* =========================
+   FORM
+   ========================= */
+
+.form-section{
+    border-top:1px solid var(--line);
+    padding-top:27px;
+    margin-top:5px;
+}
+
+.form-section h3{
+    color:var(--navy);
+    font-size:16px;
+    margin:0 0 20px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+.field{
+    margin-bottom:18px;
+}
+
+.field.full{
+    grid-column:1/-1;
+}
+
+.field label{
+    display:block;
+    color:#40505a;
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:7px;
+}
+
+.required{
+    color:var(--teal);
+}
+
+.field input,
+.field select{
+    width:100%;
+    height:46px;
+    border:1px solid #cbd6cf;
+    border-radius:8px;
+    background:#fff;
+    padding:0 12px;
+    color:#27343d;
+    outline:none;
+    transition:.2s;
+}
+
+.field input:focus,
+.field select:focus{
+    border-color:var(--teal);
+    box-shadow:0 0 0 3px rgba(76,175,80,.09);
+}
+
+.field input::placeholder{
+    color:#a3adb3;
+}
+
+.field-note{
+    color:#89949b;
+    font-size:10px;
+    margin-top:5px;
+}
+
+
+/* =========================
+   PASSWORD
+   ========================= */
+
+.password-wrap{
+    position:relative;
+}
+
+.password-wrap input{
+    padding-right:65px;
+}
+
+.show-password{
+    position:absolute;
+    right:10px;
+    top:50%;
+    transform:translateY(-50%);
+    border:0;
+    background:none;
+    color:var(--teal);
+    font-size:11px;
+    font-weight:bold;
+}
+
+
+/* =========================
+   CHECKBOX
+   ========================= */
+
+.check-row{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    margin:18px 0;
+}
+
+.check-row input{
+    margin-top:3px;
+    accent-color:var(--teal);
+}
+
+.check-row label{
+    color:#65727b;
+    font-size:11px;
+    line-height:1.55;
+}
+
+.check-row a{
+    color:var(--teal);
+    font-weight:bold;
+}
+
+
+/* =========================
+   SUBMIT
+   ========================= */
+
+.submit{
+    width:100%;
+    height:52px;
+    border:0;
+    border-radius:9px;
+    background:var(--navy);
+    color:#fff;
+    font-weight:bold;
+    font-size:14px;
+}
+
+.submit:hover{
+    opacity:.93;
+}
+
+.security-note{
+    margin-top:13px;
+    text-align:center;
+    color:#89949b;
+    font-size:10px;
+}
+
+
+/* =========================
+   SUCCESS
+   ========================= */
+
+.success{
+    display:none;
+    text-align:center;
+    padding:45px 20px;
+}
+
+.success-icon{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    background:#e9f5e7;
+    color:var(--teal);
+    display:grid;
+    place-items:center;
+    font-size:30px;
+    font-weight:bold;
+    margin:0 auto 20px;
+}
+
+.success h2{
+    color:var(--navy);
+    margin-bottom:10px;
+}
+
+.success p{
+    color:var(--muted);
+    line-height:1.6;
+    max-width:460px;
+    margin:0 auto 25px;
+}
+
+.back-home{
+    display:inline-flex;
+    padding:13px 20px;
+    border-radius:8px;
+    background:var(--navy);
+    color:#fff;
+    font-weight:bold;
+    font-size:13px;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer{
+    background:var(--dark);
+    color:#fff;
+    padding:30px 0;
+}
+
+.footer-bottom{
+    display:flex;
+    justify-content:space-between;
+    gap:25px;
+    align-items:center;
+    color:#8fa0ae;
+    font-size:11px;
+}
+
+.footer-links{
+    display:flex;
+    gap:20px;
+}
+
+.footer-links a:hover{
+    color:#fff;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media(max-width:900px){
+
+    .register-grid{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+    .intro{
+        position:static;
+        padding-top:0;
+    }
+
+    .intro h1{
+        font-size:38px;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .top .container{
+        justify-content:center;
+    }
+
+    .top a{
+        display:none;
+    }
+
+    .head{
+        min-height:70px;
+    }
+
+    .login{
+        font-size:12px;
+    }
+
+    .register-page{
+        padding:35px 0 55px;
+    }
+
+    .intro h1{
+        font-size:34px;
+    }
+
+    .form-card{
+        padding:23px 18px;
+    }
+
+    .account-types,
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .field.full{
+        grid-column:auto;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     TOP BAR
+     ========================= -->
+
+<div class="top">
+
+    <div class="container">
+
+        <span>
+            European B2B pet inventory
+        </span>
+
+        <a href="suppliers.html">
+            List your stock for free
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     HEADER
+     ========================= -->
+
+<header>
+
+<div class="container head">
+
+    <a
+        class="brand"
+        href="index.html">
+
+        <span class="logo">
+
+            <img
+                src="SweetyPets_logo symbol.png"
+                alt="Sweety Pets logo">
+
+        </span>
+
+        <span>
+
+            <strong>
+                sweety pets
+            </strong>
+
+        </span>
+
+    </a>
+
+
+    <div class="login">
+
+        Already have an account?
+
+        <a href="login.html">
+            Sign in
+        </a>
+
+    </div>
+
+</div>
+
+</header>
+
+
+
+<!-- =========================
+     REGISTRATION
+     ========================= -->
+
+<main class="register-page">
+
+<div class="container register-grid">
+
+
+<!-- LEFT SIDE -->
+
+<section class="intro">
+
+    <span class="eyebrow">
+        SWEETY PETS B2B
+    </span>
+
+    <h1>
+        Join the European pet inventory marketplace
+    </h1>
+
+    <p>
+
+        Create your business account to buy
+        or sell surplus pet product stock
+        across the European Union.
+
+    </p>
+
+
+    <div class="benefits">
+
+
+        <div class="benefit">
+
+            <div class="benefit-icon">
+                ✓
+            </div>
+
+            <div>
+
+                <strong>
+                    Free registration
+                </strong>
+
+                <span>
+                    Create your B2B account at no cost.
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="benefit">
+
+            <div class="benefit-icon">
+                ✓
+            </div>
+
+            <div>
+
+                <strong>
+                    Verified businesses
+                </strong>
+
+                <span>
+                    Basic company verification for professional trade.
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="benefit">
+
+            <div class="benefit-icon">
+                ✓
+            </div>
+
+            <div>
+
+                <strong>
+                    Access B2B stock lots
+                </strong>
+
+                <span>
+                    Discover surplus inventory from European suppliers.
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="benefit">
+
+            <div class="benefit-icon">
+                ✓
+            </div>
+
+            <div>
+
+                <strong>
+                    Sell surplus stock
+                </strong>
+
+                <span>
+                    Suppliers can list available stock lots for free.
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- FORM -->
+
+<section class="form-card">
+
+
+<div id="registrationContent">
+
+    <h2>
+        Create your account
+    </h2>
+
+    <p class="form-intro">
+        Registration is available for businesses only.
+    </p>
+
+
+    <form id="registerForm">
+
+
+        <!-- ACCOUNT TYPE -->
+
+        <span class="section-label">
+            I want to
+        </span>
+
+
+        <div class="account-types">
+
+
+            <div class="account-type">
+
+                <input
+                    type="radio"
+                    id="buyer"
+                    name="accountType"
+                    value="buyer"
+                    checked>
+
+                <label for="buyer">
+
+                    <div class="account-title">
+
+                        <span>
+                            Buy stock
+                        </span>
+
+                        <span class="account-icon">
+                            B
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Find discounted pet product
+                        stock from European suppliers.
+                    </p>
+
+                </label>
+
+            </div>
+
+
+
+            <div class="account-type">
+
+                <input
+                    type="radio"
+                    id="supplier"
+                    name="accountType"
+                    value="supplier">
+
+                <label for="supplier">
+
+                    <div class="account-title">
+
+                        <span>
+                            Sell stock
+                        </span>
+
+                        <span class="account-icon">
+                            S
+                        </span>
+
+                    </div>
+
+                    <p>
+                        List surplus inventory and
+                        reach professional B2B buyers.
+                    </p>
+
+                </label>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- COMPANY DETAILS -->
+
+        <div class="form-section">
+
+            <h3>
+                Company details
+            </h3>
+
+
+            <div class="form-grid">
+
+
+                <div class="field full">
+
+                    <label for="company">
+                        Company name
+                        <span class="required">*</span>
+                    </label>
+
+                    <input
+                        id="company"
+                        name="company"
+                        type="text"
+                        placeholder="Legal company name"
+                        required>
+
+                </div>
+
+
+
+                <div class="field">
+
+                    <label for="country">
+                        Country
+                        <span class="required">*</span>
+                    </label>
+
+
+                    <select
+                        id="country"
+                        name="country"
+                        required>
+
+                        <option value="">
+                            Select country
+                        </option>
+
+                        <option>Austria</option>
+                        <option>Belgium</option>
+                        <option>Bulgaria</option>
+                        <option>Croatia</option>
+                        <option>Cyprus</option>
+                        <option>Czechia</option>
+                        <option>Denmark</option>
+                        <option>Estonia</option>
+                        <option>Finland</option>
+                        <option>France</option>
+                        <option>Germany</option>
+                        <option>Greece</option>
+                        <option>Hungary</option>
+                        <option>Ireland</option>
+                        <option>Italy</option>
+                        <option>Latvia</option>
+                        <option>Lithuania</option>
+                        <option>Luxembourg</option>
+                        <option>Malta</option>
+                        <option>Netherlands</option>
+                        <option>Poland</option>
+                        <option>Portugal</option>
+                        <option>Romania</option>
+                        <option>Slovakia</option>
+                        <option>Slovenia</option>
+                        <option>Spain</option>
+                        <option>Sweden</option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="field">
+
+                    <label for="vat">
+                        VAT number
+                    </label>
+
+                    <input
+                        id="vat"
+                        name="vat"
+                        type="text"
+                        placeholder="e.g. EE123456789">
+
+                    <div class="field-note">
+                        Enter your EU VAT number if applicable.
+                    </div>
+
+                </div>
+
+
+
+                <div class="field">
+
+                    <label for="regNumber">
+                        Registration number
+                        <span class="required">*</span>
+                    </label>
+
+                    <input
+                        id="regNumber"
+                        name="regNumber"
+                        type="text"
+                        placeholder="Company registration number"
+                        required>
+
+                </div>
+
+
+
+                <div class="field">
+
+                    <label for="website">
+                        Company website
+                    </label>
+
+                    <input
+                        id="website"
+                        name="website"
+                        type="url"
+                        placeholder="https://">
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CONTACT PERSON -->
+
+        <div class="form-section">
+
+            <h3>
+                Contact person
+            </h3>
+
+
+            <div class="form-grid">
+
+
+                <div class="field">
+
+                    <label for="firstName">
+                        First name
+                        <span class="required">*</span>
+                    </label>
+
+                    <input
+                        id="firstName"
+                        name="firstName"
+                        type="text"
+                        required>
+
+                </div>
+
+
+
+                <div class="field">
+
+                    <label for="lastName">
+                        Last name
+                        <span class="required">*</span>
+                    </label>
+
+                    <input
+                        id="lastName"
+                        name="lastName"
+                        type="text"
+                        required>
+
+                </div>
+
+
+
+                <div class="field">
+
+                    <label for="email">
+                        Business email
+                        <span class="required">*</span>
+                    </label>
+
+                    <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        placeholder="name@company.com"
+                        required>
+
+                </div>
+
+
+
+                <div class="field">
+
+                    <label for="phone">
+                        Phone
+                    </label>
+
+                    <input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        placeholder="+372">
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- LOGIN DETAILS -->
+
+        <div class="form-section">
+
+            <h3>
+                Login details
+            </h3>
+
+
+            <div class="form-grid">
+
+
+                <div class="field">
+
+                    <label for="password">
+                        Password
+                        <span class="required">*</span>
+                    </label>
+
+
+                    <div class="password-wrap">
+
+                        <input
+                            id="password"
+                            name="password"
+                            type="password"
+                            minlength="8"
+                            placeholder="Minimum 8 characters"
+                            required>
+
+                        <button
+                            type="button"
+                            class="show-password"
+                            data-target="password">
+
+                            Show
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="field">
+
+                    <label for="confirmPassword">
+                        Confirm password
+                        <span class="required">*</span>
+                    </label>
+
+
+                    <div class="password-wrap">
+
+                        <input
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            type="password"
+                            minlength="8"
+                            required>
+
+                        <button
+                            type="button"
+                            class="show-password"
+                            data-target="confirmPassword">
+
+                            Show
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- TERMS -->
+
+        <div class="check-row">
+
+            <input
+                id="terms"
+                type="checkbox"
+                required>
+
+            <label for="terms">
+
+                I agree to the
+
+                <a href="#">
+                    Terms of Use
+                </a>
+
+                and
+
+                <a href="#">
+                    Privacy Policy
+                </a>.
+
+            </label>
+
+        </div>
+
+
+
+        <div class="check-row">
+
+            <input
+                id="newsletter"
+                type="checkbox">
+
+            <label for="newsletter">
+
+                I would like to receive information
+                about new B2B offers and platform updates.
+
+            </label>
+
+        </div>
+
+
+
+        <button
+            class="submit"
+            type="submit">
+
+            Create B2B account
+
+        </button>
+
+
+        <div class="security-note">
+
+            Your company information will be used
+            for account creation and B2B verification.
+
+        </div>
+
+
+    </form>
+
+</div>
+
+
+
+<!-- SUCCESS -->
+
+<div
+    class="success"
+    id="success">
+
+
+    <div class="success-icon">
+        ✓
+    </div>
+
+
+    <h2>
+        Registration received
+    </h2>
+
+
+    <p id="successMessage">
+
+        Thank you. Your company registration
+        has been received.
+
+    </p>
+
+
+    <a
+        href="index.html"
+        class="back-home">
+
+        Back to homepage
+
+    </a>
+
+
+</div>
+
+
+</section>
+
+
+</div>
+
+</main>
+
+
+
+<!-- =========================
+     FOOTER
+     ========================= -->
+
+<footer>
+
+<div class="container footer-bottom">
+
+    <span>
+        © 2026 Sweety Pets
+    </span>
+
+
+    <div class="footer-links">
+
+        <a href="#">
+            Privacy
+        </a>
+
+        <a href="#">
+            Terms
+        </a>
+
+        <a href="#">
+            Cookies
+        </a>
+
+    </div>
+
+</div>
+
+</footer>
+
+
+
+<script>
+
+
+/* =========================
+   SHOW / HIDE PASSWORD
+   ========================= */
+
+document
+.querySelectorAll(".show-password")
+.forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+        const input =
+        document.getElementById(
+            button.dataset.target
+        );
+
+
+        if(input.type==="password"){
+
+            input.type="text";
+            button.textContent="Hide";
+
+        }else{
+
+            input.type="password";
+            button.textContent="Show";
+
+        }
+
+    });
+
+});
+
+
+
+/* =========================
+   REGISTRATION
+   ========================= */
+
+const registerForm =
+document.getElementById("registerForm");
+
+const registrationContent =
+document.getElementById("registrationContent");
+
+const success =
+document.getElementById("success");
+
+const successMessage =
+document.getElementById("successMessage");
+
+
+registerForm.addEventListener("submit",event=>{
+
+    event.preventDefault();
+
+
+    const password =
+    document.getElementById("password").value;
+
+    const confirmPassword =
+    document.getElementById("confirmPassword").value;
+
+
+    if(password!==confirmPassword){
+
+        alert("Passwords do not match.");
+
+        return;
+
+    }
+
+
+    const accountType =
+    document.querySelector(
+        'input[name="accountType"]:checked'
+    ).value;
+
+
+    const company =
+    document.getElementById("company").value;
+
+
+    registrationContent.style.display="none";
+
+    success.style.display="block";
+
+
+    if(accountType==="supplier"){
+
+        successMessage.textContent =
+        "Thank you. " +
+        company +
+        " has been submitted for supplier verification. " +
+        "Once your business account is approved, " +
+        "you will be able to list stock lots.";
+
+    }else{
+
+        successMessage.textContent =
+        "Thank you. " +
+        company +
+        " has been registered as a B2B buyer. " +
+        "Once your business account is verified, " +
+        "you will be able to request offers from suppliers.";
+
+    }
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+});
+
+</script>
+
+
+</body>
+</html>
