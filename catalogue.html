@@ -295,6 +295,19 @@ header{
     font-size:12px;
     font-weight:bold;
 }
+.show-more{
+    border:0;
+    background:none;
+    padding:8px 0 0;
+    color:var(--teal);
+    font-size:12px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.show-more:hover{
+    text-decoration:underline;
+}
 
 .filter-group{
     padding:19px 0;
@@ -1095,53 +1108,193 @@ footer{
 
             <div class="filter-group">
 
-                <h3>
-                    Supplier country
-                </h3>
+    <h3>Supplier country</h3>
 
-                <label class="check">
-                    <input type="checkbox"
-                           name="country"
-                           value="Germany">
-                    Germany
-                </label>
+    <!-- Main EU countries -->
+    <div id="mainCountries">
 
-                <label class="check">
-                    <input type="checkbox"
-                           name="country"
-                           value="France">
-                    France
-                </label>
+        <label class="check">
+            <input type="checkbox" name="country" value="France">
+            France
+        </label>
 
-                <label class="check">
-                    <input type="checkbox"
-                           name="country"
-                           value="Italy">
-                    Italy
-                </label>
+        <label class="check">
+            <input type="checkbox" name="country" value="Germany">
+            Germany
+        </label>
 
-                <label class="check">
-                    <input type="checkbox"
-                           name="country"
-                           value="Poland">
-                    Poland
-                </label>
+        <label class="check">
+            <input type="checkbox" name="country" value="Italy">
+            Italy
+        </label>
 
-                <label class="check">
-                    <input type="checkbox"
-                           name="country"
-                           value="Netherlands">
-                    Netherlands
-                </label>
+        <label class="check">
+            <input type="checkbox" name="country" value="Netherlands">
+            Netherlands
+        </label>
 
-                <label class="check">
-                    <input type="checkbox"
-                           name="country"
-                           value="Lithuania">
-                    Lithuania
-                </label>
+        <label class="check">
+            <input type="checkbox" name="country" value="Poland">
+            Poland
+        </label>
 
-            </div>
+        <label class="check">
+            <input type="checkbox" name="country" value="Spain">
+            Spain
+        </label>
+
+    </div>
+
+
+    <!-- All 27 EU countries -->
+    <div id="allCountries" style="display:none;">
+
+        <label class="check">
+            <input type="checkbox" name="country" value="Austria">
+            Austria
+        </label>
+
+        <label class="check">
+            <input type="checkbox" name="country" value="Belgium">
+            Belgium
+        </label>
+
+        <label class="check">
+            <input type="checkbox" name="country" value="Bulgaria">
+            Bulgaria
+        </label>
+
+        <label class="check">
+            <input type="checkbox" name="country" value="Croatia">
+            Croatia
+        </label>
+
+        <label class="check">
+            <input type="checkbox" name="country" value="Cyprus">
+            Cyprus
+        </label>
+
+        <label class="check">
+            <input type="checkbox" name="country" value="Czechia">
+            Czechia
+        </label>
+
+        <label class="check">
+            <input type="checkbox" name="country" value="Denmark">
+            Denmark
+        </label>
+
+        <label class="check">
+            <input type="checkbox" name="country" value="Estonia">
+            Estonia
+        </label>
+
+        <label class="check">
+            <input type="checkbox" name="country" value="Finland">
+            Finland
+        </label>
+
+        <label class="check">
+            <input type="checkbox" name="country" value="France">
+            France
+        </label>
+
+        <label class="check">
+            <input type="checkbox" name="country" value="Germany">
+            Germany
+        </label>
+
+        <label class="check">
+            <input type="checkbox" name="country" value="Greece">
+            Greece
+        </label>
+
+        <label class="check">
+            <input type="checkbox" name="country" value="Hungary">
+            Hungary
+        </label>
+
+        <label class="check">
+            <input type="checkbox" name="country" value="Ireland">
+            Ireland
+        </label>
+
+        <label class="check">
+            <input type="checkbox" name="country" value="Italy">
+            Italy
+        </label>
+
+        <label class="check">
+            <input type="checkbox" name="country" value="Latvia">
+            Latvia
+        </label>
+
+        <label class="check">
+            <input type="checkbox" name="country" value="Lithuania">
+            Lithuania
+        </label>
+
+        <label class="check">
+            <input type="checkbox" name="country" value="Luxembourg">
+            Luxembourg
+        </label>
+
+        <label class="check">
+            <input type="checkbox" name="country" value="Malta">
+            Malta
+        </label>
+
+        <label class="check">
+            <input type="checkbox" name="country" value="Netherlands">
+            Netherlands
+        </label>
+
+        <label class="check">
+            <input type="checkbox" name="country" value="Poland">
+            Poland
+        </label>
+
+        <label class="check">
+            <input type="checkbox" name="country" value="Portugal">
+            Portugal
+        </label>
+
+        <label class="check">
+            <input type="checkbox" name="country" value="Romania">
+            Romania
+        </label>
+
+        <label class="check">
+            <input type="checkbox" name="country" value="Slovakia">
+            Slovakia
+        </label>
+
+        <label class="check">
+            <input type="checkbox" name="country" value="Slovenia">
+            Slovenia
+        </label>
+
+        <label class="check">
+            <input type="checkbox" name="country" value="Spain">
+            Spain
+        </label>
+
+        <label class="check">
+            <input type="checkbox" name="country" value="Sweden">
+            Sweden
+        </label>
+
+    </div>
+
+
+    <button
+        type="button"
+        id="showCountries"
+        class="show-more">
+        + Show all 27 countries
+    </button>
+
+</div>
 
 
 
@@ -2454,6 +2607,45 @@ document
     .toggle("open");
 
 };
+
+
+/* =========================
+   SHOW ALL EU COUNTRIES
+   ========================= */
+
+const showCountriesButton =
+document.getElementById("showCountries");
+
+const mainCountries =
+document.getElementById("mainCountries");
+
+const allCountries =
+document.getElementById("allCountries");
+
+showCountriesButton.addEventListener("click",()=>{
+
+    const isOpen =
+    allCountries.style.display === "block";
+
+    if(isOpen){
+
+        allCountries.style.display = "none";
+        mainCountries.style.display = "block";
+
+        showCountriesButton.textContent =
+        "+ Show all 27 countries";
+
+    }else{
+
+        mainCountries.style.display = "none";
+        allCountries.style.display = "block";
+
+        showCountriesButton.textContent =
+        "− Show main countries";
+
+    }
+
+});
 
 
 /* INITIAL LOAD */
