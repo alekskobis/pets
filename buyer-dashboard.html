@@ -1639,10 +1639,10 @@ const products = [
 
 
 /* =========================
-   DEMO REQUESTS
+   BUYER REQUESTS
    ========================= */
 
-const requests = [
+const demoRequests = [
 
     {
         id:1,
@@ -1704,6 +1704,37 @@ const requests = [
         price:2.40
     }
 
+];
+
+
+/* GET REQUESTS SENT FROM PRODUCT PAGE */
+
+const storedRequests =
+JSON.parse(
+    localStorage.getItem("buyerRequests") || "[]"
+);
+
+
+/* ADD DISPLAY DATA TO NEW REQUESTS */
+
+storedRequests.forEach(request=>{
+
+    if(!request.icon){
+        request.icon="📦";
+    }
+
+    if(!request.bg){
+        request.bg="#edf3e9";
+    }
+
+});
+
+
+/* NEW REQUESTS FIRST */
+
+const requests = [
+    ...storedRequests,
+    ...demoRequests
 ];
 
 

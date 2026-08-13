@@ -2174,11 +2174,69 @@ document
 
     event.preventDefault();
 
+    const quantity =
+    document.getElementById("requestQuantity").value;
+
+    const country =
+    document.getElementById("deliveryCountry").value;
+
+    const message =
+    document.getElementById("requestMessage").value;
+
+
+    const newRequest = {
+
+        id: Date.now(),
+
+        product:
+            document.querySelector("h1").textContent.trim(),
+
+        supplier:
+            "NordPet Foods",
+
+        country:
+            country,
+
+        quantity:
+            Number(quantity),
+
+        status:
+            "Sent",
+
+        price:
+            18.90,
+
+        message:
+            message,
+
+        createdAt:
+            new Date().toISOString()
+
+    };
+
+
+    const savedRequests =
+    JSON.parse(
+        localStorage.getItem("buyerRequests") || "[]"
+    );
+
+
+    savedRequests.unshift(newRequest);
+
+
+    localStorage.setItem(
+        "buyerRequests",
+        JSON.stringify(savedRequests)
+    );
+
+
     alert(
         "Request sent successfully."
     );
 
+
     requestModal.classList.remove("open");
+
 
     window.location.href =
     "buyer-dashboard.html";
