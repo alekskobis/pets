@@ -2252,7 +2252,7 @@ function render(){
 
     shown.map(item=>`
 
-        <article class="card">
+        <a class="card" href="product.html">
 
             <div
                 class="pic"
@@ -2339,7 +2339,7 @@ function render(){
 
             </div>
 
-        </article>
+        </a>
 
     `).join("")
 
@@ -2412,24 +2412,27 @@ function render(){
 
 
     document
-    .querySelectorAll(".fav")
-    .forEach(button=>{
+.querySelectorAll(".fav")
+.forEach(button=>{
 
-        button.onclick=()=>{
+    button.onclick=(event)=>{
 
-            button.textContent=
-            button.textContent==="♡"
-            ? "♥"
-            : "♡";
+        event.preventDefault();
+        event.stopPropagation();
 
-            button.style.color=
-            button.textContent==="♥"
-            ? "#e2565b"
-            : "";
+        button.textContent=
+        button.textContent==="♡"
+        ? "♥"
+        : "♡";
 
-        };
+        button.style.color=
+        button.textContent==="♥"
+        ? "#e2565b"
+        : "";
 
-    });
+    };
+
+});
 
 
     renderChips();
