@@ -234,10 +234,18 @@ footer{background:#0b1f32;color:white;padding:60px 0 25px;margin-top:80px}.foote
 
 <section><div class="container"><div class="heading"><div><span class="eyebrow">HOW IT WORKS</span><h2>Four simple steps to a deal</h2></div></div><div class="steps"><article><span>1</span><h3>Registration</h3><p>We perform a basic B2B verification of your company.</p></article><article><span>2</span><h3>List your stock</h3><p>The supplier provides product details, MOQ, price and shipping information.</p></article><article><span>3</span><h3>Order</h3><p>The buyer selects a lot and confirms the terms.</p></article><article><span>4</span><h3>Payment & Delivery</h3><p>The deal is confirmed, and the goods are dispatched to the buyer.</p></article></div></div></section>
 
-<section><div class="container news"><div><span class="eyebrow">РАННИЙ ДОСТУП</span><h2>Get new offers before anyone else</h2><p>Subscribe to receive the latest B2B offers.</p></div><div><form id="newsletter"><input id="email" type="email" required placeholder="Your email address"><button class="btn dark">Subscribe</button></form><div class="message" id="message"></div></div></div></section>
+<section><div class="container news"><div><span class="eyebrow">EARLY ACCESS</span><h2>Get new offers before anyone else</h2><p>Subscribe to receive the latest B2B offers.</p></div><div><form id="newsletter"><input id="email" type="email" required placeholder="Your email address"><button class="btn dark">Subscribe</button></form><div class="message" id="message"></div></div></div></section>
 </main>
 
-<footer><div class="container footer-grid"><div><div class="brand"><span class="logo">♥</span><span><strong style="color:white">Sweety pets</strong><small>B2B PET INVENTORY</small></span></div><p style="color:#9aabb8">Европейская платформа для реализации складских остатков товаров для животных.</p></div><div><h4>Покупателям</h4><a href="#offers">Каталог</a><a href="#">Как покупать</a><a href="#">Доставка</a></div><div><h4>Поставщикам</h4><a href="#supplier">Разместить товары</a><a href="#">Тарифы</a><a href="#">Логистика</a></div><div><h4>Компания</h4><a href="#">О проекте</a><a href="#">Контакты</a><a href="#">Помощь</a></div></div><div class="container bottom"><span>© 2026 Любимые питомцы</span><span>Privacy · Terms · Cookies</span></div></footer>
+<footer><div class="brand">
+    <span class="logo">
+        <img src="SweetyPets_logo symbol.png" alt="Sweety Pets logo">
+    </span>
+    <span>
+        <strong style="color:white">sweety pets</strong>
+        <small>B2B PET INVENTORY</small>
+    </span>
+</div>
 
 <script>
 const data=[
@@ -250,7 +258,7 @@ const data=[
 {id:7,c:["toys","cats"],t:"Интерактивные игрушки Cat Motion",s:"Milo Trade · Бельгия",r:"Закрытие линейки",m:"MOQ 75 шт.",p:4.6,o:11,d:58,a:"#f28c52"},
 {id:8,c:["beds","cats"],t:"Плетёные корзины Natural Nest",s:"EcoPet Home · Франция",r:"Старая упаковка",m:"MOQ 30 шт.",p:22.9,o:54,d:58,a:"#b49263"}];
 let cat="all",q="";const box=document.getElementById("products"),result=document.getElementById("result"),sort=document.getElementById("sort");
-function render(){let x=data.filter(i=>(cat==="all"||i.c.includes(cat))&&(`${i.t} ${i.s} ${i.r}`).toLowerCase().includes(q));x.sort((a,b)=>sort.value==="asc"?a.p-b.p:sort.value==="desc"?b.p-a.p:b.d-a.d);result.textContent=`Найдено предложений: ${x.length}`;box.innerHTML=x.length?x.map(i=>`<article class="card"><div class="pic" style="--accent:${i.a}"><span class="badge">−${i.d}%</span><button class="fav">♡</button><div class="shape"></div></div><div class="body"><span class="supplier">${i.s}</span><h3>${i.t}</h3><div class="meta"><span>${i.r}</span><span>${i.m}</span></div><div class="price"><div><del>€${i.o.toFixed(2)}</del><strong>€${i.p.toFixed(2)}</strong></div><small>за единицу<br>без НДС</small></div></div></article>`).join(""):`<div class="empty"><h3>Ничего не найдено</h3><p>Измените запрос или категорию.</p></div>`;document.querySelectorAll(".fav").forEach(b=>b.onclick=()=>{b.textContent=b.textContent==="♡"?"♥":"♡";b.style.color=b.textContent==="♥"?"#e2565b":""})}
+function render(){let x=data.filter(i=>(cat==="all"||i.c.includes(cat))&&(`${i.t} ${i.s} ${i.r}`).toLowerCase().includes(q));x.sort((a,b)=>sort.value==="asc"?a.p-b.p:sort.value==="desc"?b.p-a.p:b.d-a.d);result.textContent=`Search results: ${x.length}`;box.innerHTML=x.length?x.map(i=>`<article class="card"><div class="pic" style="--accent:${i.a}"><span class="badge">−${i.d}%</span><button class="fav">♡</button><div class="shape"></div></div><div class="body"><span class="supplier">${i.s}</span><h3>${i.t}</h3><div class="meta"><span>${i.r}</span><span>${i.m}</span></div><div class="price"><div><del>€${i.o.toFixed(2)}</del><strong>€${i.p.toFixed(2)}</strong></div><small>за единицу<br>без НДС</small></div></div></article>`).join(""):`<div class="empty"><h3>Ничего не найдено</h3><p>Измените запрос или категорию.</p></div>`;document.querySelectorAll(".fav").forEach(b=>b.onclick=()=>{b.textContent=b.textContent==="♡"?"♥":"♡";b.style.color=b.textContent==="♥"?"#e2565b":""})}
 document.querySelectorAll(".filter").forEach(b=>b.onclick=()=>{document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));b.classList.add("active");cat=b.dataset.cat;render();document.getElementById("offers").scrollIntoView()});
 document.querySelectorAll(".jump").forEach(b=>b.onclick=()=>{cat=b.dataset.cat;document.querySelectorAll(".filter").forEach(x=>x.classList.toggle("active",x.dataset.cat===cat));render();document.getElementById("offers").scrollIntoView()});
 document.getElementById("searchForm").onsubmit=e=>{e.preventDefault();q=document.getElementById("searchInput").value.toLowerCase().trim();render();document.getElementById("offers").scrollIntoView()};
