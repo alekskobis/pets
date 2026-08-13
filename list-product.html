@@ -1,0 +1,2557 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>List Your Stock — Sweety Pets</title>
+
+<style>
+
+:root{
+    --navy:#2E5B3B;
+    --teal:#4CAF50;
+    --orange:#7FBC78;
+    --cream:#B7D7A8;
+    --line:#E8EEE7;
+    --muted:#687582;
+    --soft:#F6F8F5;
+    --dark:#0b1f32;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    color:#17212b;
+    background:#f7f9f6;
+}
+
+.container{
+    width:min(1240px,calc(100% - 36px));
+    margin:auto;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,
+input,
+select,
+textarea{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+
+/* =========================
+   TOP BAR
+   ========================= */
+
+.top{
+    background:var(--navy);
+    color:#fff;
+    font-size:13px;
+}
+
+.top .container{
+    height:36px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.top a{
+    font-weight:bold;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+header{
+    background:#fff;
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    z-index:20;
+}
+
+.head{
+    min-height:76px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:25px;
+}
+
+.brand{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+.logo{
+    width:44px;
+    height:44px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
+.logo img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    display:block;
+}
+
+.brand strong{
+    display:block;
+    color:var(--navy);
+}
+
+.header-actions{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.header-actions a:first-child{
+    color:#53616c;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:13px 20px;
+    border-radius:8px;
+    border:1px solid var(--navy);
+    font-weight:bold;
+}
+
+.btn.dark{
+    background:var(--navy);
+    color:#fff;
+}
+
+
+/* =========================
+   PAGE HEADER
+   ========================= */
+
+.page-head{
+    background:#fff;
+    border-bottom:1px solid var(--line);
+}
+
+.page-head-inner{
+    padding:38px 0;
+}
+
+.eyebrow{
+    color:var(--teal);
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.page-head h1{
+    color:var(--navy);
+    font-size:38px;
+    letter-spacing:-1px;
+    margin:9px 0 9px;
+}
+
+.page-head p{
+    color:var(--muted);
+    margin:0;
+    line-height:1.55;
+    max-width:680px;
+}
+
+
+/* =========================
+   LAYOUT
+   ========================= */
+
+.page{
+    padding:40px 0 80px;
+}
+
+.layout{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 310px;
+    gap:30px;
+    align-items:start;
+}
+
+
+/* =========================
+   FORM CARD
+   ========================= */
+
+.form-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:16px;
+    overflow:hidden;
+}
+
+.form-section{
+    padding:30px;
+    border-bottom:1px solid var(--line);
+}
+
+.form-section:last-child{
+    border-bottom:0;
+}
+
+.section-title{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    margin-bottom:24px;
+}
+
+.section-number{
+    width:32px;
+    height:32px;
+    flex:0 0 32px;
+    border-radius:50%;
+    background:#e8f3e6;
+    color:var(--teal);
+    display:grid;
+    place-items:center;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.section-title h2{
+    color:var(--navy);
+    font-size:18px;
+    margin:0 0 4px;
+}
+
+.section-title p{
+    color:var(--muted);
+    font-size:12px;
+    margin:0;
+}
+
+
+/* =========================
+   FIELDS
+   ========================= */
+
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+.field{
+    margin-bottom:18px;
+}
+
+.field.full{
+    grid-column:1/-1;
+}
+
+.field label{
+    display:block;
+    color:#40505a;
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:7px;
+}
+
+.required{
+    color:var(--teal);
+}
+
+.field input,
+.field select,
+.field textarea{
+    width:100%;
+    border:1px solid #cbd6cf;
+    border-radius:8px;
+    background:#fff;
+    color:#27343d;
+    outline:none;
+    transition:.2s;
+}
+
+.field input,
+.field select{
+    height:46px;
+    padding:0 12px;
+}
+
+.field textarea{
+    min-height:125px;
+    padding:12px;
+    resize:vertical;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+    border-color:var(--teal);
+    box-shadow:0 0 0 3px rgba(76,175,80,.08);
+}
+
+.field input::placeholder,
+.field textarea::placeholder{
+    color:#a4adb3;
+}
+
+.field-note{
+    color:#89949b;
+    font-size:10px;
+    margin-top:6px;
+    line-height:1.4;
+}
+
+
+/* =========================
+   PRICE
+   ========================= */
+
+.price-box{
+    background:#f6f9f4;
+    border-radius:10px;
+    padding:18px;
+    margin-top:3px;
+}
+
+.discount-result{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.discount-result span{
+    color:var(--muted);
+    font-size:12px;
+}
+
+.discount-result strong{
+    color:var(--teal);
+    font-size:20px;
+}
+
+
+/* =========================
+   FILE UPLOAD
+   ========================= */
+
+.upload{
+    border:2px dashed #c8d6ca;
+    border-radius:12px;
+    padding:35px 20px;
+    text-align:center;
+    background:#fafcf9;
+    position:relative;
+    transition:.2s;
+}
+
+.upload:hover{
+    border-color:var(--teal);
+}
+
+.upload-icon{
+    width:48px;
+    height:48px;
+    margin:0 auto 13px;
+    border-radius:10px;
+    background:#e8f3e6;
+    color:var(--teal);
+    display:grid;
+    place-items:center;
+    font-size:23px;
+    font-weight:bold;
+}
+
+.upload strong{
+    display:block;
+    color:var(--navy);
+    font-size:14px;
+    margin-bottom:6px;
+}
+
+.upload p{
+    margin:0;
+    color:var(--muted);
+    font-size:11px;
+}
+
+.upload input{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    opacity:0;
+    cursor:pointer;
+}
+
+.image-list{
+    margin-top:15px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+}
+
+.image-preview{
+    position:relative;
+    aspect-ratio:1;
+    border-radius:9px;
+    overflow:hidden;
+    background:#eef2ec;
+    border:1px solid var(--line);
+}
+
+.image-preview img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+
+/* =========================
+   MARKETS
+   ========================= */
+
+.markets{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    margin-top:10px;
+}
+
+.market{
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:10px;
+    display:flex;
+    align-items:center;
+    gap:7px;
+    font-size:11px;
+    color:#53616c;
+}
+
+.market input{
+    accent-color:var(--teal);
+}
+
+
+/* =========================
+   SIDEBAR
+   ========================= */
+
+.sidebar{
+    display:grid;
+    gap:18px;
+    position:sticky;
+    top:105px;
+}
+
+.side-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:22px;
+}
+
+.side-card h3{
+    color:var(--navy);
+    font-size:16px;
+    margin:0 0 15px;
+}
+
+.check{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    padding:10px 0;
+    border-bottom:1px solid var(--line);
+}
+
+.check:last-child{
+    border-bottom:0;
+}
+
+.check-icon{
+    width:23px;
+    height:23px;
+    flex:0 0 23px;
+    border-radius:50%;
+    background:#e8f3e6;
+    color:var(--teal);
+    display:grid;
+    place-items:center;
+    font-size:10px;
+    font-weight:bold;
+}
+
+.check strong{
+    display:block;
+    color:var(--navy);
+    font-size:12px;
+    margin-bottom:3px;
+}
+
+.check span{
+    color:var(--muted);
+    font-size:10px;
+    line-height:1.4;
+}
+
+
+/* =========================
+   SUMMARY
+   ========================= */
+
+.summary-row{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    padding:10px 0;
+    border-bottom:1px solid var(--line);
+    font-size:11px;
+}
+
+.summary-row:last-child{
+    border-bottom:0;
+}
+
+.summary-row span{
+    color:var(--muted);
+}
+
+.summary-row strong{
+    color:var(--navy);
+    text-align:right;
+}
+
+
+/* =========================
+   SUBMIT AREA
+   ========================= */
+
+.submit-area{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.submit-note{
+    color:var(--muted);
+    font-size:11px;
+    line-height:1.5;
+    max-width:420px;
+}
+
+.submit-buttons{
+    display:flex;
+    gap:10px;
+}
+
+.draft{
+    height:48px;
+    padding:0 20px;
+    border:1px solid #cbd6cf;
+    border-radius:8px;
+    background:#fff;
+    color:var(--navy);
+    font-weight:bold;
+}
+
+.publish{
+    height:48px;
+    padding:0 24px;
+    border:0;
+    border-radius:8px;
+    background:var(--navy);
+    color:#fff;
+    font-weight:bold;
+}
+
+
+/* =========================
+   SUCCESS
+   ========================= */
+
+.success{
+    display:none;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:60px 30px;
+    text-align:center;
+}
+
+.success-icon{
+    width:72px;
+    height:72px;
+    border-radius:50%;
+    background:#e8f3e6;
+    color:var(--teal);
+    display:grid;
+    place-items:center;
+    margin:0 auto 20px;
+    font-size:30px;
+    font-weight:bold;
+}
+
+.success h2{
+    color:var(--navy);
+    margin:0 0 10px;
+}
+
+.success p{
+    color:var(--muted);
+    line-height:1.6;
+    max-width:550px;
+    margin:0 auto 25px;
+}
+
+.success-actions{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer{
+    background:var(--dark);
+    color:#fff;
+    padding:30px 0;
+}
+
+.footer-bottom{
+    display:flex;
+    justify-content:space-between;
+    gap:25px;
+    color:#8fa0ae;
+    font-size:11px;
+}
+
+.footer-links{
+    display:flex;
+    gap:20px;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media(max-width:950px){
+
+    .layout{
+        grid-template-columns:1fr;
+    }
+
+    .sidebar{
+        position:static;
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media(max-width:650px){
+
+    .top .container{
+        justify-content:center;
+    }
+
+    .top a{
+        display:none;
+    }
+
+    .header-actions a:first-child{
+        display:none;
+    }
+
+    .page-head h1{
+        font-size:31px;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .field.full{
+        grid-column:auto;
+    }
+
+    .markets{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .image-list{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .sidebar{
+        grid-template-columns:1fr;
+    }
+
+    .submit-area{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .submit-buttons{
+        flex-direction:column;
+    }
+
+    .draft,
+    .publish{
+        width:100%;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     TOP BAR
+     ========================= -->
+
+<div class="top">
+
+<div class="container">
+
+    <span>
+        European B2B pet inventory
+    </span>
+
+    <a href="catalogue.html">
+        View current offers
+    </a>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================
+     HEADER
+     ========================= -->
+
+<header>
+
+<div class="container head">
+
+    <a
+        class="brand"
+        href="index.html">
+
+        <span class="logo">
+
+            <img
+                src="SweetyPets_logo symbol.png"
+                alt="Sweety Pets logo">
+
+        </span>
+
+        <span>
+            <strong>sweety pets</strong>
+        </span>
+
+    </a>
+
+
+    <div class="header-actions">
+
+        <a href="catalogue.html">
+            Catalogue
+        </a>
+
+        <a
+            class="btn dark"
+            href="login.html">
+
+            Sign out
+
+        </a>
+
+    </div>
+
+</div>
+
+</header>
+
+
+
+<!-- =========================
+     PAGE HEADER
+     ========================= -->
+
+<section class="page-head">
+
+<div class="container page-head-inner">
+
+    <span class="eyebrow">
+        FOR SUPPLIERS
+    </span>
+
+    <h1>
+        List a stock lot
+    </h1>
+
+    <p>
+
+        Add your available pet product inventory
+        and define the commercial terms for
+        professional B2B buyers.
+
+    </p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     PAGE
+     ========================= -->
+
+<main class="page">
+
+<div class="container">
+
+<div class="layout">
+
+
+<!-- =========================
+     FORM
+     ========================= -->
+
+<div>
+
+
+<form
+    class="form-card"
+    id="productForm">
+
+
+<!-- =========================
+     PRODUCT INFORMATION
+     ========================= -->
+
+<section class="form-section">
+
+
+<div class="section-title">
+
+    <span class="section-number">
+        1
+    </span>
+
+    <div>
+
+        <h2>
+            Product information
+        </h2>
+
+        <p>
+            Tell buyers what you are offering.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<div class="grid">
+
+
+    <div class="field full">
+
+        <label for="productName">
+            Product name
+            <span class="required">*</span>
+        </label>
+
+        <input
+            id="productName"
+            type="text"
+            placeholder="e.g. Nordic Comfort Orthopaedic Pet Bed"
+            required>
+
+    </div>
+
+
+
+    <div class="field">
+
+        <label for="brand">
+            Brand
+            <span class="required">*</span>
+        </label>
+
+        <input
+            id="brand"
+            type="text"
+            placeholder="Brand name"
+            required>
+
+    </div>
+
+
+
+    <div class="field">
+
+        <label for="category">
+            Category
+            <span class="required">*</span>
+        </label>
+
+        <select
+            id="category"
+            required>
+
+            <option value="">
+                Select category
+            </option>
+
+            <option>Food</option>
+            <option>Treats</option>
+            <option>Beds & Furniture</option>
+            <option>Toys</option>
+            <option>Walking & Travel</option>
+            <option>Feeding</option>
+            <option>Grooming & Care</option>
+            <option>Health & Hygiene</option>
+            <option>Training</option>
+            <option>Clothing & Accessories</option>
+            <option>Cat Litter & Accessories</option>
+            <option>Aquatics</option>
+            <option>Small Animals</option>
+            <option>Birds</option>
+            <option>Other</option>
+
+        </select>
+
+    </div>
+
+
+
+    <div class="field">
+
+        <label for="petType">
+            Pet type
+            <span class="required">*</span>
+        </label>
+
+        <select
+            id="petType"
+            required>
+
+            <option value="">
+                Select pet type
+            </option>
+
+            <option>Dog</option>
+            <option>Cat</option>
+            <option>Dog & Cat</option>
+            <option>Fish</option>
+            <option>Bird</option>
+            <option>Small Animal</option>
+            <option>Other</option>
+
+        </select>
+
+    </div>
+
+
+
+    <div class="field">
+
+        <label for="sku">
+            SKU
+        </label>
+
+        <input
+            id="sku"
+            type="text"
+            placeholder="Supplier SKU">
+
+    </div>
+
+
+
+    <div class="field">
+
+        <label for="ean">
+            EAN / GTIN
+        </label>
+
+        <input
+            id="ean"
+            type="text"
+            placeholder="Product barcode">
+
+    </div>
+
+
+
+    <div class="field">
+
+        <label for="condition">
+            Product condition
+            <span class="required">*</span>
+        </label>
+
+        <select
+            id="condition"
+            required>
+
+            <option value="New">
+                New
+            </option>
+
+            <option value="New in previous-design packaging">
+                New in previous-design packaging
+            </option>
+
+        </select>
+
+    </div>
+
+
+
+    <div class="field">
+
+        <label for="reason">
+            Clearance reason
+            <span class="required">*</span>
+        </label>
+
+        <select
+            id="reason"
+            required>
+
+            <option value="">
+                Select reason
+            </option>
+
+            <option>
+                Seasonal collection
+            </option>
+
+            <option>
+                Old packaging
+            </option>
+
+            <option>
+                Discontinued product
+            </option>
+
+            <option>
+                Slow-moving SKU
+            </option>
+
+            <option>
+                Overstock
+            </option>
+
+            <option>
+                Packaging redesign
+            </option>
+
+            <option>
+                Range change
+            </option>
+
+            <option>
+                Other
+            </option>
+
+        </select>
+
+    </div>
+
+
+
+    <div class="field full">
+
+        <label for="description">
+            Product description
+            <span class="required">*</span>
+        </label>
+
+        <textarea
+            id="description"
+            maxlength="1500"
+            placeholder="Describe the product, materials, sizes, colours, packaging and any other information relevant to B2B buyers."
+            required></textarea>
+
+        <div class="field-note">
+            Maximum 1,500 characters.
+        </div>
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     STOCK & MOQ
+     ========================= -->
+
+<section class="form-section">
+
+
+<div class="section-title">
+
+    <span class="section-number">
+        2
+    </span>
+
+    <div>
+
+        <h2>
+            Stock & order quantity
+        </h2>
+
+        <p>
+            Define how much stock is available.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<div class="grid">
+
+
+    <div class="field">
+
+        <label for="quantity">
+            Available quantity
+            <span class="required">*</span>
+        </label>
+
+        <input
+            id="quantity"
+            type="number"
+            min="1"
+            placeholder="e.g. 1250"
+            required>
+
+        <div class="field-note">
+            Total units currently available.
+        </div>
+
+    </div>
+
+
+
+    <div class="field">
+
+        <label for="moq">
+            Minimum order quantity (MOQ)
+            <span class="required">*</span>
+        </label>
+
+        <input
+            id="moq"
+            type="number"
+            min="1"
+            placeholder="e.g. 100"
+            required>
+
+        <div class="field-note">
+            Minimum number of units per buyer order.
+        </div>
+
+    </div>
+
+
+
+    <div class="field">
+
+        <label for="unitsPerCase">
+            Units per carton
+        </label>
+
+        <input
+            id="unitsPerCase"
+            type="number"
+            min="1"
+            placeholder="e.g. 10">
+
+    </div>
+
+
+
+    <div class="field">
+
+        <label for="pallets">
+            Number of pallets
+        </label>
+
+        <input
+            id="pallets"
+            type="number"
+            min="0"
+            placeholder="Optional">
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     PRICING
+     ========================= -->
+
+<section class="form-section">
+
+
+<div class="section-title">
+
+    <span class="section-number">
+        3
+    </span>
+
+    <div>
+
+        <h2>
+            Pricing
+        </h2>
+
+        <p>
+            Set your B2B price for this stock lot.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<div class="grid">
+
+
+    <div class="field">
+
+        <label for="regularPrice">
+            Regular wholesale price
+            <span class="required">*</span>
+        </label>
+
+        <input
+            id="regularPrice"
+            type="number"
+            min="0"
+            step="0.01"
+            placeholder="€ 0.00"
+            required>
+
+        <div class="field-note">
+            Price per unit, excluding VAT.
+        </div>
+
+    </div>
+
+
+
+    <div class="field">
+
+        <label for="offerPrice">
+            Offer price
+            <span class="required">*</span>
+        </label>
+
+        <input
+            id="offerPrice"
+            type="number"
+            min="0"
+            step="0.01"
+            placeholder="€ 0.00"
+            required>
+
+        <div class="field-note">
+            B2B offer price per unit, excluding VAT.
+        </div>
+
+    </div>
+
+
+
+    <div class="field">
+
+        <label for="currency">
+            Currency
+        </label>
+
+        <select id="currency">
+
+            <option value="EUR">
+                EUR — €
+            </option>
+
+        </select>
+
+    </div>
+
+
+
+    <div class="field">
+
+        <label for="vat">
+            VAT
+        </label>
+
+        <select id="vat">
+
+            <option>
+                Price excludes VAT
+            </option>
+
+            <option>
+                Price includes VAT
+            </option>
+
+        </select>
+
+    </div>
+
+
+
+    <div class="field full">
+
+        <div class="price-box">
+
+            <div class="discount-result">
+
+                <span>
+                    Discount vs. regular wholesale price
+                </span>
+
+                <strong id="discount">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     LOCATION & DELIVERY
+     ========================= -->
+
+<section class="form-section">
+
+
+<div class="section-title">
+
+    <span class="section-number">
+        4
+    </span>
+
+    <div>
+
+        <h2>
+            Location & delivery
+        </h2>
+
+        <p>
+            Tell buyers where the goods are located.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<div class="grid">
+
+
+    <div class="field">
+
+        <label for="country">
+            Supplier country
+            <span class="required">*</span>
+        </label>
+
+        <select
+            id="country"
+            required>
+
+            <option value="">
+                Select country
+            </option>
+
+            <option>Austria</option>
+            <option>Belgium</option>
+            <option>Bulgaria</option>
+            <option>Croatia</option>
+            <option>Cyprus</option>
+            <option>Czechia</option>
+            <option>Denmark</option>
+            <option>Estonia</option>
+            <option>Finland</option>
+            <option>France</option>
+            <option>Germany</option>
+            <option>Greece</option>
+            <option>Hungary</option>
+            <option>Ireland</option>
+            <option>Italy</option>
+            <option>Latvia</option>
+            <option>Lithuania</option>
+            <option>Luxembourg</option>
+            <option>Malta</option>
+            <option>Netherlands</option>
+            <option>Poland</option>
+            <option>Portugal</option>
+            <option>Romania</option>
+            <option>Slovakia</option>
+            <option>Slovenia</option>
+            <option>Spain</option>
+            <option>Sweden</option>
+
+        </select>
+
+    </div>
+
+
+
+    <div class="field">
+
+        <label for="warehouse">
+            Warehouse location
+            <span class="required">*</span>
+        </label>
+
+        <input
+            id="warehouse"
+            type="text"
+            placeholder="City"
+            required>
+
+    </div>
+
+
+
+    <div class="field">
+
+        <label for="leadTime">
+            Dispatch time
+        </label>
+
+        <select id="leadTime">
+
+            <option>
+                1–2 business days
+            </option>
+
+            <option>
+                3–5 business days
+            </option>
+
+            <option>
+                5–10 business days
+            </option>
+
+            <option>
+                To be agreed
+            </option>
+
+        </select>
+
+    </div>
+
+
+
+    <div class="field">
+
+        <label for="delivery">
+            Delivery terms
+        </label>
+
+        <select id="delivery">
+
+            <option>
+                Buyer arranges transport
+            </option>
+
+            <option>
+                Supplier can arrange delivery
+            </option>
+
+            <option>
+                Both options available
+            </option>
+
+            <option>
+                To be agreed
+            </option>
+
+        </select>
+
+    </div>
+
+
+</div>
+
+
+
+<div class="field">
+
+    <label>
+        Available sales markets
+    </label>
+
+    <div class="field-note">
+        Select where this offer may be sold.
+    </div>
+
+
+    <div class="markets">
+
+        <label class="market">
+            <input
+                type="checkbox"
+                id="allEU"
+                checked>
+            All EU countries
+        </label>
+
+        <label class="market">
+            <input
+                type="checkbox"
+                class="countryMarket"
+                value="Germany">
+            Germany
+        </label>
+
+        <label class="market">
+            <input
+                type="checkbox"
+                class="countryMarket"
+                value="France">
+            France
+        </label>
+
+        <label class="market">
+            <input
+                type="checkbox"
+                class="countryMarket"
+                value="Italy">
+            Italy
+        </label>
+
+        <label class="market">
+            <input
+                type="checkbox"
+                class="countryMarket"
+                value="Spain">
+            Spain
+        </label>
+
+        <label class="market">
+            <input
+                type="checkbox"
+                class="countryMarket"
+                value="Netherlands">
+            Netherlands
+        </label>
+
+        <label class="market">
+            <input
+                type="checkbox"
+                class="countryMarket"
+                value="Poland">
+            Poland
+        </label>
+
+        <label class="market">
+            <input
+                type="checkbox"
+                class="countryMarket"
+                value="Sweden">
+            Sweden
+        </label>
+
+        <label class="market">
+            <input
+                type="checkbox"
+                class="countryMarket"
+                value="Other">
+            Other EU markets
+        </label>
+
+    </div>
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================
+     IMAGES
+     ========================= -->
+
+<section class="form-section">
+
+
+<div class="section-title">
+
+    <span class="section-number">
+        5
+    </span>
+
+    <div>
+
+        <h2>
+            Product images
+        </h2>
+
+        <p>
+            Add clear images of the product and packaging.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<div class="upload">
+
+    <div class="upload-icon">
+        +
+    </div>
+
+    <strong>
+        Upload product images
+    </strong>
+
+    <p>
+        JPG, PNG or WEBP · Up to 8 images
+    </p>
+
+    <input
+        id="images"
+        type="file"
+        accept="image/jpeg,image/png,image/webp"
+        multiple>
+
+</div>
+
+
+<div
+    class="image-list"
+    id="imageList">
+</div>
+
+
+</section>
+
+
+
+<!-- =========================
+     ADDITIONAL INFORMATION
+     ========================= -->
+
+<section class="form-section">
+
+
+<div class="section-title">
+
+    <span class="section-number">
+        6
+    </span>
+
+    <div>
+
+        <h2>
+            Additional information
+        </h2>
+
+        <p>
+            Optional information for professional buyers.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<div class="grid">
+
+
+    <div class="field">
+
+        <label for="expiry">
+            Best before / expiry date
+        </label>
+
+        <input
+            id="expiry"
+            type="date">
+
+        <div class="field-note">
+            Relevant for food, treats and other dated products.
+        </div>
+
+    </div>
+
+
+
+    <div class="field">
+
+        <label for="documents">
+            Product documentation
+        </label>
+
+        <select id="documents">
+
+            <option>
+                Available on request
+            </option>
+
+            <option>
+                Not applicable
+            </option>
+
+        </select>
+
+    </div>
+
+
+
+    <div class="field full">
+
+        <label for="notes">
+            Additional notes
+        </label>
+
+        <textarea
+            id="notes"
+            placeholder="Packaging details, pallet dimensions, certificates, special conditions or other information."></textarea>
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     SUBMIT
+     ========================= -->
+
+<section class="form-section">
+
+
+<div class="submit-area">
+
+
+    <div class="submit-note">
+
+        By submitting this offer, you confirm that
+        the information provided is accurate and that
+        your company is authorised to sell these goods.
+
+    </div>
+
+
+    <div class="submit-buttons">
+
+        <button
+            type="button"
+            class="draft"
+            id="draftButton">
+
+            Save draft
+
+        </button>
+
+
+        <button
+            type="submit"
+            class="publish">
+
+            Submit offer
+
+        </button>
+
+    </div>
+
+
+</div>
+
+
+</section>
+
+
+</form>
+
+
+
+<!-- =========================
+     SUCCESS
+     ========================= -->
+
+<section
+    class="success"
+    id="success">
+
+
+    <div class="success-icon">
+        ✓
+    </div>
+
+
+    <h2>
+        Your offer has been submitted
+    </h2>
+
+
+    <p>
+
+        Thank you. Your stock lot has been received.
+        After review, the offer can be published
+        in the Sweety Pets B2B catalogue.
+
+    </p>
+
+
+    <div class="success-actions">
+
+        <a
+            class="btn dark"
+            href="catalogue.html">
+
+            View catalogue
+
+        </a>
+
+
+        <button
+            class="draft"
+            type="button"
+            id="newOffer">
+
+            Add another offer
+
+        </button>
+
+    </div>
+
+
+</section>
+
+
+</div>
+
+
+
+<!-- =========================
+     SIDEBAR
+     ========================= -->
+
+<aside class="sidebar">
+
+
+<div class="side-card">
+
+    <h3>
+        Before you submit
+    </h3>
+
+
+    <div class="check">
+
+        <span class="check-icon">
+            ✓
+        </span>
+
+        <div>
+
+            <strong>
+                New products only
+            </strong>
+
+            <span>
+                Products must be new and suitable for B2B resale.
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="check">
+
+        <span class="check-icon">
+            ✓
+        </span>
+
+        <div>
+
+            <strong>
+                Accurate quantities
+            </strong>
+
+            <span>
+                Enter the stock currently available for sale.
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="check">
+
+        <span class="check-icon">
+            ✓
+        </span>
+
+        <div>
+
+            <strong>
+                Clear B2B pricing
+            </strong>
+
+            <span>
+                Prices should clearly state whether VAT is included.
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="check">
+
+        <span class="check-icon">
+            ✓
+        </span>
+
+        <div>
+
+            <strong>
+                Good product images
+            </strong>
+
+            <span>
+                Show the actual product and packaging where possible.
+            </span>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- LIVE SUMMARY -->
+
+<div class="side-card">
+
+    <h3>
+        Offer summary
+    </h3>
+
+
+    <div class="summary-row">
+
+        <span>
+            Product
+        </span>
+
+        <strong id="summaryProduct">
+            —
+        </strong>
+
+    </div>
+
+
+    <div class="summary-row">
+
+        <span>
+            Quantity
+        </span>
+
+        <strong id="summaryQuantity">
+            —
+        </strong>
+
+    </div>
+
+
+    <div class="summary-row">
+
+        <span>
+            MOQ
+        </span>
+
+        <strong id="summaryMOQ">
+            —
+        </strong>
+
+    </div>
+
+
+    <div class="summary-row">
+
+        <span>
+            Offer price
+        </span>
+
+        <strong id="summaryPrice">
+            —
+        </strong>
+
+    </div>
+
+
+    <div class="summary-row">
+
+        <span>
+            Discount
+        </span>
+
+        <strong id="summaryDiscount">
+            —
+        </strong>
+
+    </div>
+
+
+    <div class="summary-row">
+
+        <span>
+            Warehouse
+        </span>
+
+        <strong id="summaryWarehouse">
+            —
+        </strong>
+
+    </div>
+
+
+</div>
+
+
+</aside>
+
+
+</div>
+
+</div>
+
+</main>
+
+
+
+<!-- =========================
+     FOOTER
+     ========================= -->
+
+<footer>
+
+<div class="container footer-bottom">
+
+
+    <span>
+        © 2026 Sweety Pets
+    </span>
+
+
+    <div class="footer-links">
+
+        <a href="#">
+            Privacy
+        </a>
+
+        <a href="#">
+            Terms
+        </a>
+
+        <a href="#">
+            Help
+        </a>
+
+    </div>
+
+
+</div>
+
+</footer>
+
+
+
+<script>
+
+
+/* =========================
+   ELEMENTS
+   ========================= */
+
+const productForm =
+document.getElementById("productForm");
+
+const productName =
+document.getElementById("productName");
+
+const quantity =
+document.getElementById("quantity");
+
+const moq =
+document.getElementById("moq");
+
+const regularPrice =
+document.getElementById("regularPrice");
+
+const offerPrice =
+document.getElementById("offerPrice");
+
+const warehouse =
+document.getElementById("warehouse");
+
+const discount =
+document.getElementById("discount");
+
+const summaryProduct =
+document.getElementById("summaryProduct");
+
+const summaryQuantity =
+document.getElementById("summaryQuantity");
+
+const summaryMOQ =
+document.getElementById("summaryMOQ");
+
+const summaryPrice =
+document.getElementById("summaryPrice");
+
+const summaryDiscount =
+document.getElementById("summaryDiscount");
+
+const summaryWarehouse =
+document.getElementById("summaryWarehouse");
+
+
+
+/* =========================
+   DISCOUNT CALCULATION
+   ========================= */
+
+function calculateDiscount(){
+
+    const regular =
+    parseFloat(regularPrice.value);
+
+    const offer =
+    parseFloat(offerPrice.value);
+
+
+    if(
+        regular>0 &&
+        offer>=0 &&
+        offer<regular
+    ){
+
+        const value =
+        Math.round(
+            (1 - offer / regular) * 100
+        );
+
+
+        discount.textContent =
+        "−" + value + "%";
+
+        summaryDiscount.textContent =
+        "−" + value + "%";
+
+    }else{
+
+        discount.textContent="—";
+
+        summaryDiscount.textContent="—";
+
+    }
+
+}
+
+
+
+regularPrice.addEventListener(
+    "input",
+    calculateDiscount
+);
+
+offerPrice.addEventListener(
+    "input",
+    calculateDiscount
+);
+
+
+
+/* =========================
+   LIVE SUMMARY
+   ========================= */
+
+productName.addEventListener("input",()=>{
+
+    summaryProduct.textContent =
+    productName.value.trim() || "—";
+
+});
+
+
+quantity.addEventListener("input",()=>{
+
+    summaryQuantity.textContent =
+    quantity.value
+    ? Number(quantity.value).toLocaleString("en-US") + " units"
+    : "—";
+
+});
+
+
+moq.addEventListener("input",()=>{
+
+    summaryMOQ.textContent =
+    moq.value
+    ? Number(moq.value).toLocaleString("en-US") + " units"
+    : "—";
+
+});
+
+
+offerPrice.addEventListener("input",()=>{
+
+    summaryPrice.textContent =
+    offerPrice.value
+    ? "€" + Number(offerPrice.value).toFixed(2)
+    : "—";
+
+});
+
+
+warehouse.addEventListener("input",()=>{
+
+    summaryWarehouse.textContent =
+    warehouse.value.trim() || "—";
+
+});
+
+
+
+/* =========================
+   IMAGE PREVIEW
+   ========================= */
+
+const images =
+document.getElementById("images");
+
+const imageList =
+document.getElementById("imageList");
+
+
+images.addEventListener("change",()=>{
+
+    imageList.innerHTML="";
+
+
+    const files =
+    Array.from(images.files).slice(0,8);
+
+
+    files.forEach(file=>{
+
+        const reader =
+        new FileReader();
+
+
+        reader.onload=event=>{
+
+            const preview =
+            document.createElement("div");
+
+            preview.className =
+            "image-preview";
+
+
+            const image =
+            document.createElement("img");
+
+            image.src =
+            event.target.result;
+
+            image.alt =
+            "Product preview";
+
+
+            preview.appendChild(image);
+
+            imageList.appendChild(preview);
+
+        };
+
+
+        reader.readAsDataURL(file);
+
+    });
+
+});
+
+
+
+/* =========================
+   SALES MARKETS
+   ========================= */
+
+const allEU =
+document.getElementById("allEU");
+
+const countryMarkets =
+document.querySelectorAll(".countryMarket");
+
+
+countryMarkets.forEach(box=>{
+
+    box.addEventListener("change",()=>{
+
+        if(box.checked){
+
+            allEU.checked=false;
+
+        }
+
+    });
+
+});
+
+
+allEU.addEventListener("change",()=>{
+
+    if(allEU.checked){
+
+        countryMarkets.forEach(box=>{
+
+            box.checked=false;
+
+        });
+
+    }
+
+});
+
+
+
+/* =========================
+   SAVE DRAFT
+   ========================= */
+
+document
+.getElementById("draftButton")
+.addEventListener("click",()=>{
+
+    alert(
+        "Draft saving will be available when the supplier account backend is connected."
+    );
+
+});
+
+
+
+/* =========================
+   SUBMIT OFFER
+   ========================= */
+
+productForm.addEventListener(
+    "submit",
+    event=>{
+
+        event.preventDefault();
+
+
+        const available =
+        Number(quantity.value);
+
+        const minimum =
+        Number(moq.value);
+
+
+        if(minimum>available){
+
+            alert(
+                "MOQ cannot be higher than the available quantity."
+            );
+
+            return;
+
+        }
+
+
+        const regular =
+        Number(regularPrice.value);
+
+        const offer =
+        Number(offerPrice.value);
+
+
+        if(offer>regular){
+
+            alert(
+                "Offer price cannot be higher than the regular wholesale price."
+            );
+
+            return;
+
+        }
+
+
+        productForm.style.display =
+        "none";
+
+
+        document
+        .getElementById("success")
+        .style.display =
+        "block";
+
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
+    }
+);
+
+
+
+/* =========================
+   NEW OFFER
+   ========================= */
+
+document
+.getElementById("newOffer")
+.addEventListener("click",()=>{
+
+
+    productForm.reset();
+
+    imageList.innerHTML="";
+
+    discount.textContent="—";
+
+    summaryProduct.textContent="—";
+    summaryQuantity.textContent="—";
+    summaryMOQ.textContent="—";
+    summaryPrice.textContent="—";
+    summaryDiscount.textContent="—";
+    summaryWarehouse.textContent="—";
+
+
+    allEU.checked=true;
+
+
+    document
+    .getElementById("success")
+    .style.display=
+    "none";
+
+
+    productForm.style.display=
+    "block";
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>

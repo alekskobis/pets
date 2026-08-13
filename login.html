@@ -1,0 +1,1007 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Sign In — Sweety Pets</title>
+
+<style>
+
+:root{
+    --navy:#2E5B3B;
+    --teal:#4CAF50;
+    --cream:#B7D7A8;
+    --line:#E8EEE7;
+    --muted:#687582;
+    --soft:#F6F8F5;
+    --dark:#0b1f32;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    color:#17212b;
+    background:#fff;
+}
+
+.container{
+    width:min(1240px,calc(100% - 36px));
+    margin:auto;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,
+input{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+
+/* =========================
+   TOP BAR
+   ========================= */
+
+.top{
+    background:var(--navy);
+    color:#fff;
+    font-size:13px;
+}
+
+.top .container{
+    height:36px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.top a{
+    font-weight:bold;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+header{
+    background:#fff;
+    border-bottom:1px solid var(--line);
+}
+
+.head{
+    min-height:82px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.brand{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+.logo{
+    width:44px;
+    height:44px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
+.logo img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    display:block;
+}
+
+.brand strong{
+    display:block;
+    color:var(--navy);
+}
+
+.register-link{
+    color:#53616c;
+    font-size:14px;
+}
+
+.register-link a{
+    color:var(--navy);
+    font-weight:bold;
+    margin-left:5px;
+}
+
+
+/* =========================
+   LOGIN PAGE
+   ========================= */
+
+.login-page{
+    min-height:calc(100vh - 118px);
+    background:
+        linear-gradient(
+            120deg,
+            #f6f9f4 0%,
+            #ffffff 50%,
+            #edf5ea 100%
+        );
+
+    padding:70px 0 90px;
+}
+
+.login-grid{
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:90px;
+    align-items:center;
+    max-width:1050px;
+    margin:auto;
+}
+
+
+/* =========================
+   LEFT SIDE
+   ========================= */
+
+.intro{
+    padding:20px 0;
+}
+
+.eyebrow{
+    color:var(--teal);
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.intro h1{
+    color:var(--navy);
+    font-size:48px;
+    line-height:1.07;
+    letter-spacing:-1.5px;
+    margin:14px 0 18px;
+}
+
+.intro>p{
+    color:var(--muted);
+    font-size:16px;
+    line-height:1.65;
+    max-width:450px;
+}
+
+
+/* BENEFITS */
+
+.benefits{
+    margin-top:35px;
+    display:grid;
+    gap:17px;
+}
+
+.benefit{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+}
+
+.benefit-icon{
+    width:28px;
+    height:28px;
+    flex:0 0 28px;
+    border-radius:50%;
+    background:#e6f2e5;
+    color:var(--teal);
+    display:grid;
+    place-items:center;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.benefit strong{
+    display:block;
+    color:var(--navy);
+    font-size:14px;
+    margin-bottom:3px;
+}
+
+.benefit span{
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.45;
+}
+
+
+/* =========================
+   LOGIN CARD
+   ========================= */
+
+.login-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:18px;
+    box-shadow:0 18px 55px rgba(35,75,48,.09);
+    padding:40px;
+    max-width:500px;
+    width:100%;
+}
+
+.login-card h2{
+    color:var(--navy);
+    font-size:28px;
+    margin:0 0 7px;
+}
+
+.login-intro{
+    color:var(--muted);
+    font-size:13px;
+    margin:0 0 30px;
+}
+
+
+/* =========================
+   FORM
+   ========================= */
+
+.field{
+    margin-bottom:20px;
+}
+
+.field label{
+    display:block;
+    color:#40505a;
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:7px;
+}
+
+.field input{
+    width:100%;
+    height:48px;
+    border:1px solid #cbd6cf;
+    border-radius:8px;
+    padding:0 13px;
+    outline:none;
+    color:#27343d;
+    transition:.2s;
+}
+
+.field input:focus{
+    border-color:var(--teal);
+    box-shadow:0 0 0 3px rgba(76,175,80,.09);
+}
+
+.field input::placeholder{
+    color:#a3adb3;
+}
+
+
+/* PASSWORD */
+
+.password-wrap{
+    position:relative;
+}
+
+.password-wrap input{
+    padding-right:65px;
+}
+
+.show-password{
+    position:absolute;
+    right:11px;
+    top:50%;
+    transform:translateY(-50%);
+    border:0;
+    background:none;
+    color:var(--teal);
+    font-size:11px;
+    font-weight:bold;
+}
+
+
+/* LOGIN OPTIONS */
+
+.login-options{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    margin:-3px 0 24px;
+}
+
+.remember{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    color:var(--muted);
+    font-size:11px;
+}
+
+.remember input{
+    accent-color:var(--teal);
+}
+
+.forgot{
+    color:var(--teal);
+    font-size:11px;
+    font-weight:bold;
+}
+
+
+/* BUTTON */
+
+.submit{
+    width:100%;
+    height:52px;
+    border:0;
+    border-radius:9px;
+    background:var(--navy);
+    color:#fff;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.submit:hover{
+    opacity:.93;
+}
+
+
+/* REGISTER CTA */
+
+.new-account{
+    margin-top:27px;
+    padding-top:24px;
+    border-top:1px solid var(--line);
+    text-align:center;
+}
+
+.new-account span{
+    display:block;
+    color:var(--muted);
+    font-size:12px;
+    margin-bottom:13px;
+}
+
+.create-account{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    height:48px;
+    border:1px solid var(--navy);
+    border-radius:9px;
+    color:var(--navy);
+    font-size:13px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.create-account:hover{
+    background:#f3f8f1;
+}
+
+
+/* SECURITY */
+
+.security{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:6px;
+    color:#89949b;
+    font-size:10px;
+    margin-top:18px;
+}
+
+
+/* =========================
+   MESSAGE
+   ========================= */
+
+.demo-message{
+    display:none;
+    margin-bottom:20px;
+    padding:13px 15px;
+    border-radius:8px;
+    background:#edf5ed;
+    color:var(--navy);
+    font-size:12px;
+    line-height:1.5;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer{
+    background:var(--dark);
+    color:#fff;
+    padding:30px 0;
+}
+
+.footer-bottom{
+    display:flex;
+    justify-content:space-between;
+    gap:25px;
+    align-items:center;
+    color:#8fa0ae;
+    font-size:11px;
+}
+
+.footer-links{
+    display:flex;
+    gap:20px;
+}
+
+.footer-links a:hover{
+    color:#fff;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media(max-width:850px){
+
+    .login-grid{
+        grid-template-columns:1fr;
+        gap:40px;
+        max-width:600px;
+    }
+
+    .intro{
+        text-align:center;
+    }
+
+    .intro>p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .benefits{
+        max-width:430px;
+        margin-left:auto;
+        margin-right:auto;
+        text-align:left;
+    }
+
+    .login-card{
+        margin:auto;
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .top .container{
+        justify-content:center;
+    }
+
+    .top a{
+        display:none;
+    }
+
+    .head{
+        min-height:70px;
+    }
+
+    .register-link{
+        font-size:12px;
+    }
+
+    .login-page{
+        padding:40px 0 60px;
+    }
+
+    .intro h1{
+        font-size:36px;
+    }
+
+    .login-card{
+        padding:27px 20px;
+    }
+
+    .login-options{
+        align-items:flex-start;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     TOP BAR
+     ========================= -->
+
+<div class="top">
+
+    <div class="container">
+
+        <span>
+            European B2B pet inventory
+        </span>
+
+        <a href="suppliers.html">
+            List your stock for free
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     HEADER
+     ========================= -->
+
+<header>
+
+<div class="container head">
+
+
+    <a
+        class="brand"
+        href="index.html">
+
+        <span class="logo">
+
+            <img
+                src="SweetyPets_logo symbol.png"
+                alt="Sweety Pets logo">
+
+        </span>
+
+        <span>
+
+            <strong>
+                sweety pets
+            </strong>
+
+        </span>
+
+    </a>
+
+
+    <div class="register-link">
+
+        New to Sweety Pets?
+
+        <a href="register.html">
+            Create account
+        </a>
+
+    </div>
+
+
+</div>
+
+</header>
+
+
+
+<!-- =========================
+     LOGIN
+     ========================= -->
+
+<main class="login-page">
+
+<div class="container">
+
+<div class="login-grid">
+
+
+<!-- LEFT -->
+
+<section class="intro">
+
+
+    <span class="eyebrow">
+        SWEETY PETS B2B
+    </span>
+
+
+    <h1>
+        Welcome back
+    </h1>
+
+
+    <p>
+
+        Sign in to access B2B pet stock offers,
+        manage requests and work with professional
+        buyers and suppliers across Europe.
+
+    </p>
+
+
+
+    <div class="benefits">
+
+
+        <div class="benefit">
+
+            <div class="benefit-icon">
+                ✓
+            </div>
+
+            <div>
+
+                <strong>
+                    Access B2B offers
+                </strong>
+
+                <span>
+                    Browse available surplus stock lots.
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="benefit">
+
+            <div class="benefit-icon">
+                ✓
+            </div>
+
+            <div>
+
+                <strong>
+                    Manage your requests
+                </strong>
+
+                <span>
+                    Keep track of your B2B enquiries.
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="benefit">
+
+            <div class="benefit-icon">
+                ✓
+            </div>
+
+            <div>
+
+                <strong>
+                    Manage your stock
+                </strong>
+
+                <span>
+                    Suppliers can manage their active offers.
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- LOGIN CARD -->
+
+<section class="login-card">
+
+
+    <h2>
+        Sign in
+    </h2>
+
+
+    <p class="login-intro">
+
+        Sign in to your Sweety Pets business account.
+
+    </p>
+
+
+
+    <div
+        class="demo-message"
+        id="demoMessage">
+
+        The login interface is ready.
+        Account authentication will be connected
+        when the platform backend is added.
+
+    </div>
+
+
+
+    <form id="loginForm">
+
+
+        <div class="field">
+
+            <label for="email">
+                Business email
+            </label>
+
+            <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="name@company.com"
+                autocomplete="email"
+                required>
+
+        </div>
+
+
+
+        <div class="field">
+
+            <label for="password">
+                Password
+            </label>
+
+
+            <div class="password-wrap">
+
+                <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    placeholder="Enter your password"
+                    autocomplete="current-password"
+                    required>
+
+
+                <button
+                    type="button"
+                    class="show-password"
+                    id="showPassword">
+
+                    Show
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="login-options">
+
+
+            <label class="remember">
+
+                <input
+                    type="checkbox"
+                    id="remember">
+
+                <span>
+                    Remember me
+                </span>
+
+            </label>
+
+
+            <a
+                class="forgot"
+                href="#">
+
+                Forgot password?
+
+            </a>
+
+
+        </div>
+
+
+
+        <button
+            class="submit"
+            type="submit">
+
+            Sign in
+
+        </button>
+
+
+    </form>
+
+
+
+    <div class="new-account">
+
+        <span>
+            Don't have a business account yet?
+        </span>
+
+        <a
+            class="create-account"
+            href="register.html">
+
+            Create B2B account
+
+        </a>
+
+    </div>
+
+
+
+    <div class="security">
+
+        <span>✓</span>
+
+        <span>
+            Secure access for verified B2B users
+        </span>
+
+    </div>
+
+
+</section>
+
+
+</div>
+
+</div>
+
+</main>
+
+
+
+<!-- =========================
+     FOOTER
+     ========================= -->
+
+<footer>
+
+<div class="container footer-bottom">
+
+
+    <span>
+        © 2026 Sweety Pets
+    </span>
+
+
+    <div class="footer-links">
+
+        <a href="#">
+            Privacy
+        </a>
+
+        <a href="#">
+            Terms
+        </a>
+
+        <a href="#">
+            Cookies
+        </a>
+
+    </div>
+
+
+</div>
+
+</footer>
+
+
+
+<script>
+
+
+/* =========================
+   SHOW PASSWORD
+   ========================= */
+
+const password =
+document.getElementById("password");
+
+const showPassword =
+document.getElementById("showPassword");
+
+
+showPassword.addEventListener("click",()=>{
+
+
+    if(password.type==="password"){
+
+        password.type="text";
+
+        showPassword.textContent="Hide";
+
+    }else{
+
+        password.type="password";
+
+        showPassword.textContent="Show";
+
+    }
+
+
+});
+
+
+
+/* =========================
+   LOGIN FORM
+   ========================= */
+
+const loginForm =
+document.getElementById("loginForm");
+
+const demoMessage =
+document.getElementById("demoMessage");
+
+
+loginForm.addEventListener("submit",event=>{
+
+    event.preventDefault();
+
+
+    /*
+    ========================================
+    BACKEND AUTHENTICATION WILL GO HERE
+    ========================================
+
+    At the moment this is only
+    the frontend version of login.
+
+    Do not store passwords in
+    localStorage or JavaScript.
+    */
+
+
+    demoMessage.style.display="block";
+
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>
