@@ -1,0 +1,2468 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Catalogue — Sweety Pets B2B Pet Inventory</title>
+
+<style>
+
+:root{
+    --navy:#2E5B3B;
+    --teal:#4CAF50;
+    --orange:#7FBC78;
+    --cream:#B7D7A8;
+    --line:#E8EEE7;
+    --muted:#687582;
+    --soft:#F6F8F5;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    color:#17212b;
+    background:#fff;
+}
+
+.container{
+    width:min(1240px,calc(100% - 36px));
+    margin:auto;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,
+input,
+select{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+
+/* =========================
+   TOP BAR
+   ========================= */
+
+.top{
+    background:var(--navy);
+    color:white;
+    font-size:13px;
+}
+
+.top .container{
+    height:36px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+header{
+    position:sticky;
+    top:0;
+    background:#fff;
+    z-index:20;
+    border-bottom:1px solid var(--line);
+}
+
+.head{
+    height:82px;
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    gap:26px;
+    align-items:center;
+}
+
+.brand{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+.logo{
+    width:44px;
+    height:44px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:transparent;
+    overflow:hidden;
+}
+
+.logo img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    display:block;
+}
+
+.brand strong{
+    display:block;
+    color:var(--navy);
+}
+
+.brand small{
+    color:var(--teal);
+    font-weight:bold;
+    letter-spacing:1.4px;
+    font-size:9px;
+}
+
+
+/* SEARCH */
+
+.search{
+    height:48px;
+    border:1px solid #b9c5cc;
+    border-radius:8px;
+    display:flex;
+    overflow:hidden;
+}
+
+.search input{
+    border:0;
+    outline:0;
+    flex:1;
+    padding:0 15px;
+}
+
+.search button{
+    border:0;
+    background:var(--teal);
+    color:#fff;
+    padding:0 22px;
+    font-weight:bold;
+}
+
+
+/* HEADER ACTIONS */
+
+.actions{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:13px 20px;
+    border-radius:8px;
+    font-weight:bold;
+    border:1px solid var(--navy);
+}
+
+.btn.dark{
+    background:var(--navy);
+    color:white;
+}
+
+
+/* =========================
+   NAVIGATION
+   ========================= */
+
+.nav{
+    border-top:1px solid var(--line);
+}
+
+.nav .container{
+    display:flex;
+    gap:25px;
+    overflow:auto;
+}
+
+.nav a{
+    padding:15px 0;
+    white-space:nowrap;
+    color:#4b5863;
+    font-size:14px;
+}
+
+.nav a.active{
+    color:var(--teal);
+    box-shadow:inset 0 -3px var(--teal);
+    font-weight:bold;
+}
+
+
+/* =========================
+   CATALOGUE HEADER
+   ========================= */
+
+.catalogue-head{
+    padding:52px 0 30px;
+    background:linear-gradient(
+        180deg,
+        #F3F7F1 0%,
+        #ffffff 100%
+    );
+}
+
+.eyebrow{
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:2px;
+    color:var(--teal);
+}
+
+.catalogue-head h1{
+    font-size:48px;
+    line-height:1.05;
+    letter-spacing:-1.8px;
+    color:var(--navy);
+    margin:10px 0 12px;
+}
+
+.catalogue-head p{
+    margin:0;
+    color:var(--muted);
+    font-size:17px;
+    max-width:720px;
+    line-height:1.5;
+}
+
+
+/* =========================
+   CATALOGUE
+   ========================= */
+
+.catalogue{
+    padding:34px 0 80px;
+}
+
+.layout{
+    display:grid;
+    grid-template-columns:245px minmax(0,1fr);
+    gap:34px;
+    align-items:start;
+}
+
+
+/* =========================
+   FILTERS
+   ========================= */
+
+.filters{
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:20px;
+    background:#fff;
+    position:sticky;
+    top:140px;
+}
+
+.filter-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding-bottom:16px;
+    border-bottom:1px solid var(--line);
+}
+
+.filter-top strong{
+    color:var(--navy);
+    font-size:18px;
+}
+
+.clear{
+    border:0;
+    background:none;
+    color:var(--teal);
+    padding:0;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.filter-group{
+    padding:19px 0;
+    border-bottom:1px solid var(--line);
+}
+
+.filter-group:last-child{
+    border-bottom:0;
+    padding-bottom:0;
+}
+
+.filter-group h3{
+    font-size:13px;
+    margin:0 0 13px;
+    color:var(--navy);
+}
+
+.check{
+    display:flex;
+    gap:9px;
+    align-items:center;
+    margin:10px 0;
+    color:#4e5b65;
+    font-size:13px;
+}
+
+.check input{
+    accent-color:var(--teal);
+}
+
+.range{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+}
+
+.range input{
+    width:100%;
+    padding:9px;
+    border:1px solid #ccd6d0;
+    border-radius:7px;
+    outline:0;
+}
+
+
+/* =========================
+   RESULTS / SORT
+   ========================= */
+
+.results-top{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.result-count{
+    font-size:14px;
+    color:var(--muted);
+}
+
+.result-count strong{
+    color:var(--navy);
+}
+
+.sort-wrap{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    color:var(--muted);
+    font-size:13px;
+}
+
+.sort-wrap select{
+    padding:10px 12px;
+    border:1px solid #ccd6d0;
+    border-radius:8px;
+    background:white;
+    outline:0;
+}
+
+
+/* =========================
+   ACTIVE FILTERS
+   ========================= */
+
+.active-filters{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin:-4px 0 18px;
+}
+
+.chip{
+    border:1px solid #dce7de;
+    background:#f5f8f4;
+    border-radius:20px;
+    padding:7px 10px;
+    font-size:12px;
+    color:#4e5b65;
+}
+
+
+/* =========================
+   PRODUCT GRID
+   ========================= */
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:20px;
+}
+
+.card{
+    border:1px solid var(--line);
+    border-radius:16px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    background:#fff;
+    transition:.2s;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 14px 34px rgba(16,42,67,.10);
+}
+
+.pic{
+    aspect-ratio:1.25;
+    background:var(--pic);
+    display:grid;
+    place-items:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.product-art{
+    width:58%;
+    height:52%;
+    border-radius:18px;
+    background:rgba(255,255,255,.72);
+    display:grid;
+    place-items:center;
+    font-size:55px;
+    box-shadow:0 12px 30px rgba(0,0,0,.07);
+}
+
+.badge{
+    position:absolute;
+    left:12px;
+    top:12px;
+    background:var(--orange);
+    color:white;
+    font-size:12px;
+    font-weight:bold;
+    padding:7px 9px;
+    border-radius:7px;
+}
+
+.fav{
+    position:absolute;
+    right:12px;
+    top:10px;
+    border:0;
+    background:white;
+    border-radius:50%;
+    width:36px;
+    height:36px;
+    font-size:20px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+.body{
+    padding:17px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    flex:1;
+}
+
+.supplier{
+    color:var(--teal);
+    font-size:11px;
+    font-weight:bold;
+    text-transform:uppercase;
+}
+
+.body h3{
+    font-size:16px;
+    line-height:1.3;
+    color:var(--navy);
+    margin:0;
+    min-height:42px;
+}
+
+.meta{
+    display:flex;
+    gap:5px;
+    flex-wrap:wrap;
+}
+
+.meta span{
+    background:#f0f3f1;
+    border-radius:5px;
+    padding:5px 6px;
+    font-size:10px;
+    color:#53616c;
+}
+
+.stockline{
+    font-size:11px;
+    color:var(--muted);
+}
+
+.price{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    margin-top:auto;
+    padding-top:6px;
+}
+
+.price strong{
+    font-size:21px;
+    color:var(--navy);
+    display:block;
+}
+
+.price del{
+    color:var(--muted);
+    font-size:12px;
+}
+
+.price small{
+    color:var(--muted);
+    text-align:right;
+    font-size:10px;
+}
+
+
+/* =========================
+   EMPTY RESULT
+   ========================= */
+
+.empty{
+    grid-column:1/-1;
+    text-align:center;
+    padding:70px 20px;
+    background:var(--soft);
+    border-radius:15px;
+    color:var(--muted);
+}
+
+.empty h3{
+    color:var(--navy);
+}
+
+
+/* =========================
+   PAGINATION
+   ========================= */
+
+.pagination{
+    display:flex;
+    justify-content:center;
+    gap:7px;
+    margin-top:34px;
+}
+
+.pagination button{
+    min-width:38px;
+    height:38px;
+    border:1px solid var(--line);
+    border-radius:8px;
+    background:white;
+    color:#53616c;
+}
+
+.pagination button.active{
+    background:var(--navy);
+    border-color:var(--navy);
+    color:white;
+}
+
+
+/* MOBILE FILTER BUTTON */
+
+.mobile-filter{
+    display:none;
+    border:1px solid var(--navy);
+    background:white;
+    color:var(--navy);
+    padding:10px 14px;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer{
+    background:#0b1f32;
+    color:white;
+    padding:60px 0 25px;
+    margin-top:20px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr repeat(3,1fr);
+    gap:38px;
+}
+
+.footer-grid h4{
+    margin-top:0;
+}
+
+.footer-grid a{
+    display:block;
+    color:#b9c6d1;
+    font-size:14px;
+    margin:9px 0;
+}
+
+.bottom{
+    border-top:1px solid rgba(255,255,255,.13);
+    margin-top:40px;
+    padding-top:20px;
+    color:#8394a3;
+    font-size:12px;
+    display:flex;
+    justify-content:space-between;
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media(max-width:1000px){
+
+    .head{
+        grid-template-columns:1fr;
+        height:auto;
+        padding:14px 0;
+    }
+
+    .actions{
+        display:none;
+    }
+
+    .layout{
+        grid-template-columns:1fr;
+    }
+
+    .filters{
+        display:none;
+        position:static;
+    }
+
+    .filters.open{
+        display:block;
+    }
+
+    .mobile-filter{
+        display:inline-flex;
+    }
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media(max-width:650px){
+
+    .top .container{
+        justify-content:center;
+    }
+
+    .top a{
+        display:none;
+    }
+
+    .nav .container{
+        gap:18px;
+    }
+
+    .catalogue-head h1{
+        font-size:38px;
+    }
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    .results-top{
+        align-items:flex-start;
+        flex-wrap:wrap;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-grid>div:first-child{
+        grid-column:1/-1;
+    }
+
+    .bottom{
+        flex-direction:column;
+        gap:7px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     TOP BAR
+     ========================= -->
+
+<div class="top">
+    <div class="container">
+
+        <span>European B2B pet inventory</span>
+
+        <a href="index.html#supplier">
+            List your stock for free
+        </a>
+
+    </div>
+</div>
+
+
+<!-- =========================
+     HEADER
+     ========================= -->
+
+<header>
+
+    <div class="container head">
+
+        <a class="brand" href="index.html">
+
+            <span class="logo">
+                <img src="SweetyPets_logo symbol.png"
+                     alt="Sweety Pets logo">
+            </span>
+
+            <span>
+                <strong>sweety pets</strong>
+                <small></small>
+            </span>
+
+        </a>
+
+
+        <form class="search" id="searchForm">
+
+            <input
+                id="searchInput"
+                placeholder="Search products, brands or suppliers">
+
+            <button>
+                Search
+            </button>
+
+        </form>
+
+
+        <div class="actions">
+
+            <a href="#">
+                Sign in
+            </a>
+
+            <a class="btn dark" href="#">
+                Register
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <nav class="nav">
+
+        <div class="container">
+
+            <a class="active" href="catalogue.html">
+                All offers
+            </a>
+
+            <a href="#" data-quick="food">
+                Food
+            </a>
+
+            <a href="#" data-quick="treats">
+                Treats
+            </a>
+
+            <a href="#" data-quick="beds">
+                Beds & Furniture
+            </a>
+
+            <a href="#" data-quick="toys">
+                Toys
+            </a>
+
+            <a href="#" data-quick="walking">
+                Walking & Travel
+            </a>
+
+            <a href="#" data-quick="feeding">
+                Feeding
+            </a>
+
+            <a href="#" data-quick="care">
+                Grooming & Care
+            </a>
+
+            <a href="#" data-quick="litter">
+                Litter & Toilets
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================
+     MAIN
+     ========================= -->
+
+<main>
+
+
+<section class="catalogue-head">
+
+    <div class="container">
+
+        <span class="eyebrow">
+            B2B PET INVENTORY
+        </span>
+
+        <h1>
+            All offers
+        </h1>
+
+        <p>
+            Discover clearance stock, seasonal collections and discontinued
+            pet products from European suppliers.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<section class="catalogue">
+
+<div class="container">
+
+
+    <div class="results-top">
+
+        <div style="display:flex;gap:12px;align-items:center">
+
+            <button class="mobile-filter" id="mobileFilter">
+                Filters
+            </button>
+
+            <div class="result-count" id="resultCount"></div>
+
+        </div>
+
+
+        <div class="sort-wrap">
+
+            <span>
+                Sort by
+            </span>
+
+            <select id="sort">
+
+                <option value="discount">
+                    Highest discount
+                </option>
+
+                <option value="priceAsc">
+                    Price: low to high
+                </option>
+
+                <option value="priceDesc">
+                    Price: high to low
+                </option>
+
+                <option value="moq">
+                    Lowest MOQ
+                </option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="layout">
+
+
+        <!-- =========================
+             FILTERS
+             ========================= -->
+
+        <aside class="filters" id="filters">
+
+
+            <div class="filter-top">
+
+                <strong>
+                    Filters
+                </strong>
+
+                <button class="clear" id="clearFilters">
+                    Clear all
+                </button>
+
+            </div>
+
+
+
+            <div class="filter-group">
+
+                <h3>
+                    Category
+                </h3>
+
+                <label class="check">
+                    <input type="checkbox"
+                           name="category"
+                           value="food">
+                    Food
+                </label>
+
+                <label class="check">
+                    <input type="checkbox"
+                           name="category"
+                           value="treats">
+                    Treats
+                </label>
+
+                <label class="check">
+                    <input type="checkbox"
+                           name="category"
+                           value="beds">
+                    Beds & Furniture
+                </label>
+
+                <label class="check">
+                    <input type="checkbox"
+                           name="category"
+                           value="toys">
+                    Toys
+                </label>
+
+                <label class="check">
+                    <input type="checkbox"
+                           name="category"
+                           value="walking">
+                    Walking & Travel
+                </label>
+
+                <label class="check">
+                    <input type="checkbox"
+                           name="category"
+                           value="feeding">
+                    Feeding
+                </label>
+
+                <label class="check">
+                    <input type="checkbox"
+                           name="category"
+                           value="care">
+                    Grooming & Care
+                </label>
+
+                <label class="check">
+                    <input type="checkbox"
+                           name="category"
+                           value="litter">
+                    Litter & Toilets
+                </label>
+
+            </div>
+
+
+
+            <div class="filter-group">
+
+                <h3>
+                    Pet type
+                </h3>
+
+                <label class="check">
+                    <input type="checkbox"
+                           name="pet"
+                           value="dogs">
+                    Dogs
+                </label>
+
+                <label class="check">
+                    <input type="checkbox"
+                           name="pet"
+                           value="cats">
+                    Cats
+                </label>
+
+                <label class="check">
+                    <input type="checkbox"
+                           name="pet"
+                           value="small">
+                    Small Pets
+                </label>
+
+                <label class="check">
+                    <input type="checkbox"
+                           name="pet"
+                           value="birds">
+                    Birds
+                </label>
+
+                <label class="check">
+                    <input type="checkbox"
+                           name="pet"
+                           value="fish">
+                    Fish
+                </label>
+
+            </div>
+
+
+
+            <div class="filter-group">
+
+                <h3>
+                    Clearance reason
+                </h3>
+
+                <label class="check">
+                    <input type="checkbox"
+                           name="reason"
+                           value="seasonal">
+                    Seasonal collections
+                </label>
+
+                <label class="check">
+                    <input type="checkbox"
+                           name="reason"
+                           value="packaging">
+                    Old packaging
+                </label>
+
+                <label class="check">
+                    <input type="checkbox"
+                           name="reason"
+                           value="discontinued">
+                    Discontinued
+                </label>
+
+                <label class="check">
+                    <input type="checkbox"
+                           name="reason"
+                           value="slow">
+                    Slow-moving
+                </label>
+
+            </div>
+
+
+
+            <div class="filter-group">
+
+                <h3>
+                    Supplier country
+                </h3>
+
+                <label class="check">
+                    <input type="checkbox"
+                           name="country"
+                           value="Germany">
+                    Germany
+                </label>
+
+                <label class="check">
+                    <input type="checkbox"
+                           name="country"
+                           value="France">
+                    France
+                </label>
+
+                <label class="check">
+                    <input type="checkbox"
+                           name="country"
+                           value="Italy">
+                    Italy
+                </label>
+
+                <label class="check">
+                    <input type="checkbox"
+                           name="country"
+                           value="Poland">
+                    Poland
+                </label>
+
+                <label class="check">
+                    <input type="checkbox"
+                           name="country"
+                           value="Netherlands">
+                    Netherlands
+                </label>
+
+                <label class="check">
+                    <input type="checkbox"
+                           name="country"
+                           value="Lithuania">
+                    Lithuania
+                </label>
+
+            </div>
+
+
+
+            <div class="filter-group">
+
+                <h3>
+                    Price per unit, €
+                </h3>
+
+                <div class="range">
+
+                    <input
+                        id="minPrice"
+                        type="number"
+                        min="0"
+                        placeholder="Min">
+
+                    <input
+                        id="maxPrice"
+                        type="number"
+                        min="0"
+                        placeholder="Max">
+
+                </div>
+
+            </div>
+
+
+
+            <div class="filter-group">
+
+                <h3>
+                    MOQ
+                </h3>
+
+                <label class="check">
+                    <input type="checkbox"
+                           name="moq"
+                           value="50">
+                    Under 50
+                </label>
+
+                <label class="check">
+                    <input type="checkbox"
+                           name="moq"
+                           value="100">
+                    50–100
+                </label>
+
+                <label class="check">
+                    <input type="checkbox"
+                           name="moq"
+                           value="500">
+                    101–500
+                </label>
+
+                <label class="check">
+                    <input type="checkbox"
+                           name="moq"
+                           value="501">
+                    500+
+                </label>
+
+            </div>
+
+
+
+            <div class="filter-group">
+
+                <h3>
+                    Discount
+                </h3>
+
+                <label class="check">
+                    <input type="radio"
+                           name="discount"
+                           value="20">
+                    20%+
+                </label>
+
+                <label class="check">
+                    <input type="radio"
+                           name="discount"
+                           value="40">
+                    40%+
+                </label>
+
+                <label class="check">
+                    <input type="radio"
+                           name="discount"
+                           value="60">
+                    60%+
+                </label>
+
+                <label class="check">
+                    <input type="radio"
+                           name="discount"
+                           value="70">
+                    70%+
+                </label>
+
+            </div>
+
+
+        </aside>
+
+
+        <!-- =========================
+             PRODUCTS
+             ========================= -->
+
+        <div>
+
+            <div class="active-filters"
+                 id="activeFilters">
+            </div>
+
+            <div class="products"
+                 id="products">
+            </div>
+
+            <div class="pagination"
+                 id="pagination">
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+     ========================= -->
+
+<footer>
+
+    <div class="container footer-grid">
+
+
+        <div>
+
+            <div class="brand">
+
+                <span class="logo">
+
+                    <img
+                        src="SweetyPets_logo symbol.png"
+                        alt="Sweety Pets logo">
+
+                </span>
+
+                <span>
+
+                    <strong style="color:white">
+                        sweety pets
+                    </strong>
+
+                    <small>
+                        B2B PET INVENTORY
+                    </small>
+
+                </span>
+
+            </div>
+
+            <p style="color:#9aabb8">
+
+                A European B2B platform for buying and selling
+                surplus pet product stock.
+
+            </p>
+
+        </div>
+
+
+
+        <div>
+
+            <h4>
+                For buyers
+            </h4>
+
+            <a href="catalogue.html">
+                Catalogue
+            </a>
+
+            <a href="#">
+                How to buy
+            </a>
+
+            <a href="#">
+                Delivery
+            </a>
+
+        </div>
+
+
+
+        <div>
+
+            <h4>
+                For suppliers
+            </h4>
+
+            <a href="index.html#supplier">
+                List products
+            </a>
+
+            <a href="#">
+                Pricing
+            </a>
+
+            <a href="#">
+                Logistics
+            </a>
+
+        </div>
+
+
+
+        <div>
+
+            <h4>
+                Company
+            </h4>
+
+            <a href="#">
+                About us
+            </a>
+
+            <a href="#">
+                Contacts
+            </a>
+
+            <a href="#">
+                Help
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="container bottom">
+
+        <span>
+            © 2026 Sweety Pets
+        </span>
+
+        <span>
+            Privacy · Terms · Cookies
+        </span>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+
+/* =========================
+   PRODUCT DATABASE
+   ========================= */
+
+const data=[
+
+{
+    id:1,
+    category:"food",
+    pet:["dogs"],
+    title:"Premium Dry Dog Food — Chicken 12 kg",
+    supplier:"NordPet Foods",
+    country:"Germany",
+    reason:"packaging",
+    reasonLabel:"Old packaging",
+    moq:40,
+    price:18.90,
+    old:42.00,
+    discount:55,
+    stock:620,
+    icon:"🥣",
+    pic:"#e9efe1"
+},
+
+{
+    id:2,
+    category:"food",
+    pet:["cats"],
+    title:"Wet Cat Food Selection — 400 g",
+    supplier:"Baltic Pet Nutrition",
+    country:"Lithuania",
+    reason:"slow",
+    reasonLabel:"Slow-moving",
+    moq:120,
+    price:0.89,
+    old:1.95,
+    discount:54,
+    stock:2400,
+    icon:"🥫",
+    pic:"#f3e8dc"
+},
+
+{
+    id:3,
+    category:"treats",
+    pet:["dogs"],
+    title:"Natural Dental Chews",
+    supplier:"Happy Tail GmbH",
+    country:"Germany",
+    reason:"discontinued",
+    reasonLabel:"Discontinued",
+    moq:100,
+    price:1.35,
+    old:3.40,
+    discount:60,
+    stock:1800,
+    icon:"🦴",
+    pic:"#eee7d8"
+},
+
+{
+    id:4,
+    category:"beds",
+    pet:["dogs","cats"],
+    title:"Nordic Comfort Pet Beds",
+    supplier:"PawNordic",
+    country:"Poland",
+    reason:"seasonal",
+    reasonLabel:"Seasonal collection",
+    moq:40,
+    price:19.90,
+    old:49.90,
+    discount:60,
+    stock:380,
+    icon:"🛏️",
+    pic:"#e1ece7"
+},
+
+{
+    id:5,
+    category:"toys",
+    pet:["dogs"],
+    title:"Eco Rope Toy Collection",
+    supplier:"PetWerk",
+    country:"Germany",
+    reason:"packaging",
+    reasonLabel:"Old packaging",
+    moq:120,
+    price:2.40,
+    old:6.50,
+    discount:63,
+    stock:1450,
+    icon:"🎾",
+    pic:"#f6ead8"
+},
+
+{
+    id:6,
+    category:"toys",
+    pet:["cats"],
+    title:"Interactive Cat Motion Toys",
+    supplier:"Milo Trade",
+    country:"France",
+    reason:"discontinued",
+    reasonLabel:"Discontinued",
+    moq:75,
+    price:4.60,
+    old:11.00,
+    discount:58,
+    stock:740,
+    icon:"🐭",
+    pic:"#e9e4f1"
+},
+
+{
+    id:7,
+    category:"walking",
+    pet:["dogs"],
+    title:"Urban Walk Leash Collection",
+    supplier:"Dog & Co",
+    country:"Lithuania",
+    reason:"discontinued",
+    reasonLabel:"Discontinued",
+    moq:80,
+    price:5.80,
+    old:14.50,
+    discount:60,
+    stock:960,
+    icon:"🦮",
+    pic:"#e2efec"
+},
+
+{
+    id:8,
+    category:"walking",
+    pet:["dogs","cats"],
+    title:"Soft Travel Carriers",
+    supplier:"PetWay",
+    country:"Netherlands",
+    reason:"seasonal",
+    reasonLabel:"Seasonal collection",
+    moq:35,
+    price:16.50,
+    old:39.90,
+    discount:59,
+    stock:310,
+    icon:"🧳",
+    pic:"#e2ebf1"
+},
+
+{
+    id:9,
+    category:"feeding",
+    pet:["dogs","cats"],
+    title:"Stainless Steel Feeding Bowls",
+    supplier:"CasaPet",
+    country:"Italy",
+    reason:"slow",
+    reasonLabel:"Slow-moving",
+    moq:150,
+    price:2.10,
+    old:5.50,
+    discount:62,
+    stock:2200,
+    icon:"🥣",
+    pic:"#e8ecec"
+},
+
+{
+    id:10,
+    category:"care",
+    pet:["dogs","cats"],
+    title:"Grooming Brush & Comb Set",
+    supplier:"CarePet",
+    country:"Italy",
+    reason:"slow",
+    reasonLabel:"Slow-moving",
+    moq:100,
+    price:3.10,
+    old:7.90,
+    discount:61,
+    stock:980,
+    icon:"🧴",
+    pic:"#e2efe2"
+},
+
+{
+    id:11,
+    category:"litter",
+    pet:["cats"],
+    title:"Covered Cat Litter Trays",
+    supplier:"MiaCasa",
+    country:"Poland",
+    reason:"packaging",
+    reasonLabel:"Old packaging",
+    moq:30,
+    price:12.90,
+    old:29.90,
+    discount:57,
+    stock:430,
+    icon:"🐈",
+    pic:"#eee8df"
+},
+
+{
+    id:12,
+    category:"food",
+    pet:["birds"],
+    title:"Premium Bird Seed Mix 2 kg",
+    supplier:"AviaNature",
+    country:"France",
+    reason:"slow",
+    reasonLabel:"Slow-moving",
+    moq:80,
+    price:3.90,
+    old:8.20,
+    discount:52,
+    stock:860,
+    icon:"🐦",
+    pic:"#edf0d9"
+},
+
+{
+    id:13,
+    category:"food",
+    pet:["small"],
+    title:"Complete Rabbit Food 3 kg",
+    supplier:"GreenPet",
+    country:"Netherlands",
+    reason:"packaging",
+    reasonLabel:"Old packaging",
+    moq:60,
+    price:4.80,
+    old:10.50,
+    discount:54,
+    stock:690,
+    icon:"🐇",
+    pic:"#e5eee0"
+},
+
+{
+    id:14,
+    category:"food",
+    pet:["fish"],
+    title:"Aquarium Fish Flakes 500 ml",
+    supplier:"AquaFeed",
+    country:"Germany",
+    reason:"discontinued",
+    reasonLabel:"Discontinued",
+    moq:100,
+    price:2.70,
+    old:6.90,
+    discount:61,
+    stock:1200,
+    icon:"🐟",
+    pic:"#dfeff2"
+},
+
+{
+    id:15,
+    category:"beds",
+    pet:["cats"],
+    title:"Natural Woven Cat Baskets",
+    supplier:"EcoPet Home",
+    country:"France",
+    reason:"seasonal",
+    reasonLabel:"Seasonal collection",
+    moq:30,
+    price:22.90,
+    old:54.00,
+    discount:58,
+    stock:270,
+    icon:"🧺",
+    pic:"#eee6d8"
+},
+
+{
+    id:16,
+    category:"treats",
+    pet:["cats"],
+    title:"Salmon Cat Treats 80 g",
+    supplier:"Nordic Bites",
+    country:"Poland",
+    reason:"packaging",
+    reasonLabel:"Old packaging",
+    moq:200,
+    price:0.72,
+    old:1.90,
+    discount:62,
+    stock:3200,
+    icon:"🐟",
+    pic:"#f1e4df"
+},
+
+{
+    id:17,
+    category:"care",
+    pet:["dogs"],
+    title:"Pet Shampoo Sensitive 500 ml",
+    supplier:"BioPet Care",
+    country:"France",
+    reason:"discontinued",
+    reasonLabel:"Discontinued",
+    moq:90,
+    price:3.80,
+    old:9.50,
+    discount:60,
+    stock:780,
+    icon:"🧴",
+    pic:"#e4efeb"
+},
+
+{
+    id:18,
+    category:"feeding",
+    pet:["dogs","cats"],
+    title:"Ceramic Bowl Collection",
+    supplier:"PetLiving",
+    country:"Netherlands",
+    reason:"seasonal",
+    reasonLabel:"Seasonal collection",
+    moq:50,
+    price:4.90,
+    old:12.90,
+    discount:62,
+    stock:540,
+    icon:"🥣",
+    pic:"#ece6df"
+}
+
+];
+
+
+/* =========================
+   LABELS
+   ========================= */
+
+const labels={
+
+    category:{
+        food:"Food",
+        treats:"Treats",
+        beds:"Beds & Furniture",
+        toys:"Toys",
+        walking:"Walking & Travel",
+        feeding:"Feeding",
+        care:"Grooming & Care",
+        litter:"Litter & Toilets"
+    },
+
+    pet:{
+        dogs:"Dogs",
+        cats:"Cats",
+        small:"Small Pets",
+        birds:"Birds",
+        fish:"Fish"
+    },
+
+    reason:{
+        seasonal:"Seasonal collections",
+        packaging:"Old packaging",
+        discontinued:"Discontinued",
+        slow:"Slow-moving"
+    }
+
+};
+
+
+/* =========================
+   VARIABLES
+   ========================= */
+
+let query="";
+let page=1;
+
+const perPage=9;
+
+const products=
+document.getElementById("products");
+
+const resultCount=
+document.getElementById("resultCount");
+
+const pagination=
+document.getElementById("pagination");
+
+const activeFilters=
+document.getElementById("activeFilters");
+
+
+/* =========================
+   GET SELECTED FILTERS
+   ========================= */
+
+function selected(name){
+
+    return [
+        ...document.querySelectorAll(
+            `input[name="${name}"]:checked`
+        )
+    ].map(x=>x.value);
+
+}
+
+
+/* =========================
+   MOQ FILTER
+   ========================= */
+
+function moqMatch(value,groups){
+
+    if(!groups.length){
+        return true;
+    }
+
+    return groups.some(group=>{
+
+        if(group==="50"){
+            return value<50;
+        }
+
+        if(group==="100"){
+            return value>=50 && value<=100;
+        }
+
+        if(group==="500"){
+            return value>100 && value<=500;
+        }
+
+        return value>500;
+
+    });
+
+}
+
+
+/* =========================
+   FILTER PRODUCTS
+   ========================= */
+
+function filtered(){
+
+    const categories=
+    selected("category");
+
+    const pets=
+    selected("pet");
+
+    const reasons=
+    selected("reason");
+
+    const countries=
+    selected("country");
+
+    const moqs=
+    selected("moq");
+
+    const discount=
+    selected("discount")[0];
+
+
+    const min=
+    parseFloat(
+        document.getElementById("minPrice").value
+    );
+
+    const max=
+    parseFloat(
+        document.getElementById("maxPrice").value
+    );
+
+
+    let result=data.filter(item=>
+
+        (
+            !categories.length ||
+            categories.includes(item.category)
+        )
+
+        &&
+
+        (
+            !pets.length ||
+            pets.some(
+                pet=>item.pet.includes(pet)
+            )
+        )
+
+        &&
+
+        (
+            !reasons.length ||
+            reasons.includes(item.reason)
+        )
+
+        &&
+
+        (
+            !countries.length ||
+            countries.includes(item.country)
+        )
+
+        &&
+
+        moqMatch(
+            item.moq,
+            moqs
+        )
+
+        &&
+
+        (
+            !discount ||
+            item.discount>=Number(discount)
+        )
+
+        &&
+
+        (
+            isNaN(min) ||
+            item.price>=min
+        )
+
+        &&
+
+        (
+            isNaN(max) ||
+            item.price<=max
+        )
+
+        &&
+
+        (
+            `${item.title}
+             ${item.supplier}
+             ${item.country}
+             ${item.reasonLabel}`
+            .toLowerCase()
+            .includes(query)
+        )
+
+    );
+
+
+    const sort=
+    document.getElementById("sort").value;
+
+
+    result.sort((a,b)=>{
+
+        if(sort==="priceAsc"){
+            return a.price-b.price;
+        }
+
+        if(sort==="priceDesc"){
+            return b.price-a.price;
+        }
+
+        if(sort==="moq"){
+            return a.moq-b.moq;
+        }
+
+        return b.discount-a.discount;
+
+    });
+
+
+    return result;
+
+}
+
+
+/* =========================
+   ACTIVE FILTER CHIPS
+   ========================= */
+
+function renderChips(){
+
+    const chips=[];
+
+
+    [
+        "category",
+        "pet",
+        "reason",
+        "country",
+        "moq",
+        "discount"
+    ]
+    .forEach(name=>{
+
+        selected(name)
+        .forEach(value=>{
+
+            let text=
+            labels[name]?.[value] || value;
+
+
+            if(name==="moq"){
+
+                if(value==="50"){
+                    text="MOQ under 50";
+                }
+
+                if(value==="100"){
+                    text="MOQ 50–100";
+                }
+
+                if(value==="500"){
+                    text="MOQ 101–500";
+                }
+
+                if(value==="501"){
+                    text="MOQ 500+";
+                }
+
+            }
+
+
+            if(name==="discount"){
+                text=`Discount ${value}%+`;
+            }
+
+
+            chips.push(
+                `<span class="chip">
+                    ${text}
+                </span>`
+            );
+
+        });
+
+    });
+
+
+    activeFilters.innerHTML=
+    chips.join("");
+
+}
+
+
+/* =========================
+   RENDER PRODUCTS
+   ========================= */
+
+function render(){
+
+    const result=
+    filtered();
+
+
+    const pages=
+    Math.max(
+        1,
+        Math.ceil(
+            result.length/perPage
+        )
+    );
+
+
+    if(page>pages){
+        page=1;
+    }
+
+
+    const start=
+    (page-1)*perPage;
+
+
+    const shown=
+    result.slice(
+        start,
+        start+perPage
+    );
+
+
+    resultCount.innerHTML=
+    `Search results: <strong>${result.length}</strong>`;
+
+
+    products.innerHTML=
+    shown.length
+
+    ?
+
+    shown.map(item=>`
+
+        <article class="card">
+
+            <div
+                class="pic"
+                style="--pic:${item.pic}">
+
+                <span class="badge">
+                    −${item.discount}%
+                </span>
+
+                <button
+                    class="fav"
+                    aria-label="Add to favourites">
+                    ♡
+                </button>
+
+                <div class="product-art">
+                    ${item.icon}
+                </div>
+
+            </div>
+
+
+            <div class="body">
+
+                <span class="supplier">
+
+                    ${item.supplier}
+                    ·
+                    ${item.country}
+
+                </span>
+
+
+                <h3>
+                    ${item.title}
+                </h3>
+
+
+                <div class="meta">
+
+                    <span>
+                        ${item.reasonLabel}
+                    </span>
+
+                    <span>
+                        MOQ ${item.moq} pcs
+                    </span>
+
+                </div>
+
+
+                <div class="stockline">
+
+                    ${item.stock.toLocaleString("en-US")}
+                    units available
+
+                </div>
+
+
+                <div class="price">
+
+                    <div>
+
+                        <del>
+                            €${item.old.toFixed(2)}
+                        </del>
+
+                        <strong>
+                            €${item.price.toFixed(2)}
+                        </strong>
+
+                    </div>
+
+
+                    <small>
+
+                        per unit
+                        <br>
+                        excl. VAT
+
+                    </small>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    `).join("")
+
+    :
+
+    `
+
+        <div class="empty">
+
+            <h3>
+                No offers found
+            </h3>
+
+            <p>
+                Try changing your filters
+                or search query.
+            </p>
+
+        </div>
+
+    `;
+
+
+    pagination.innerHTML=
+    pages>1
+
+    ?
+
+    Array.from(
+        {length:pages},
+        (_,index)=>`
+
+            <button
+                class="${index+1===page ? "active" : ""}"
+                data-page="${index+1}">
+
+                ${index+1}
+
+            </button>
+
+        `
+    ).join("")
+
+    :
+
+    "";
+
+
+    pagination
+    .querySelectorAll("button")
+    .forEach(button=>{
+
+        button.onclick=()=>{
+
+            page=
+            Number(
+                button.dataset.page
+            );
+
+            render();
+
+            window.scrollTo({
+                top:250,
+                behavior:"smooth"
+            });
+
+        };
+
+    });
+
+
+    document
+    .querySelectorAll(".fav")
+    .forEach(button=>{
+
+        button.onclick=()=>{
+
+            button.textContent=
+            button.textContent==="♡"
+            ? "♥"
+            : "♡";
+
+            button.style.color=
+            button.textContent==="♥"
+            ? "#e2565b"
+            : "";
+
+        };
+
+    });
+
+
+    renderChips();
+
+}
+
+
+/* =========================
+   FILTER EVENTS
+   ========================= */
+
+document
+.querySelectorAll("#filters input")
+.forEach(element=>{
+
+    element.addEventListener(
+        "change",
+        ()=>{
+
+            page=1;
+            render();
+
+        }
+    );
+
+});
+
+
+[
+    "minPrice",
+    "maxPrice"
+]
+.forEach(id=>{
+
+    document
+    .getElementById(id)
+    .addEventListener(
+        "input",
+        ()=>{
+
+            page=1;
+            render();
+
+        }
+    );
+
+});
+
+
+/* SORT */
+
+document
+.getElementById("sort")
+.addEventListener(
+    "change",
+    render
+);
+
+
+/* SEARCH */
+
+document
+.getElementById("searchForm")
+.onsubmit=event=>{
+
+    event.preventDefault();
+
+    query=
+    document
+    .getElementById("searchInput")
+    .value
+    .toLowerCase()
+    .trim();
+
+    page=1;
+
+    render();
+
+};
+
+
+/* CLEAR FILTERS */
+
+document
+.getElementById("clearFilters")
+.onclick=()=>{
+
+    document
+    .querySelectorAll("#filters input")
+    .forEach(input=>{
+
+        if(
+            input.type==="checkbox" ||
+            input.type==="radio"
+        ){
+
+            input.checked=false;
+
+        }
+        else{
+
+            input.value="";
+
+        }
+
+    });
+
+
+    query="";
+
+    document
+    .getElementById("searchInput")
+    .value="";
+
+
+    page=1;
+
+    render();
+
+};
+
+
+/* =========================
+   QUICK CATEGORY NAV
+   ========================= */
+
+document
+.querySelectorAll("[data-quick]")
+.forEach(link=>{
+
+    link.onclick=event=>{
+
+        event.preventDefault();
+
+
+        document
+        .querySelectorAll(
+            'input[name="category"]'
+        )
+        .forEach(input=>{
+
+            input.checked=
+            input.value===
+            link.dataset.quick;
+
+        });
+
+
+        page=1;
+
+        render();
+
+
+        window.scrollTo({
+            top:250,
+            behavior:"smooth"
+        });
+
+    };
+
+});
+
+
+/* =========================
+   MOBILE FILTER
+   ========================= */
+
+document
+.getElementById("mobileFilter")
+.onclick=()=>{
+
+    document
+    .getElementById("filters")
+    .classList
+    .toggle("open");
+
+};
+
+
+/* INITIAL LOAD */
+
+render();
+
+
+</script>
+
+
+</body>
+</html>
