@@ -2175,12 +2175,13 @@ document
     event.preventDefault();
 
     alert(
-        "Your request has been prepared. " +
-        "Account registration will be required " +
-        "to send requests when the platform is launched."
+        "Request sent successfully."
     );
 
     requestModal.classList.remove("open");
+
+    window.location.href =
+    "buyer-dashboard.html";
 
 });
 
