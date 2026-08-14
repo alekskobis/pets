@@ -190,6 +190,7 @@ header{
 
 .nav{
     border-top:1px solid var(--line);
+    padding:15px 0;
 }
 
 .nav .container{
@@ -200,10 +201,15 @@ header{
 }
 
 .nav a{
-    padding:15px 0;
+    padding:4px 0;
     white-space:nowrap;
     color:#4b5863;
     font-size:14px;
+    border-bottom:2px solid transparent;
+}
+
+.nav a:hover{
+    border-bottom-color:#4CAF50;
 }
 
 .nav a.active{
