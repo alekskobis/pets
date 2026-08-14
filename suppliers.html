@@ -76,7 +76,7 @@ button{
 }
 
 .top a{
-    font-weight:bold;
+    font-weight:400;
 }
 
 
@@ -216,25 +216,26 @@ header{
 
 .nav{
     border-top:1px solid var(--line);
+    padding:15px 0;
 }
 
 .nav .container{
     display:flex;
+    justify-content:center;
     gap:25px;
     overflow:auto;
 }
 
 .nav a{
-    padding:15px 0;
+    padding:4px 0;
     white-space:nowrap;
     color:#4b5863;
-    font-size:14px;
+    font-size:16px;
+    border-bottom:2px solid transparent;
 }
 
-.nav a.active{
-    color:var(--teal);
-    box-shadow:inset 0 -3px var(--teal);
-    font-weight:bold;
+.nav a:hover{
+    border-bottom-color:#4CAF50;
 }
 
 
@@ -867,9 +868,9 @@ header{
    ========================= */
 
 footer{
-    background:var(--dark);
+    background:#225B37;
     color:white;
-    padding:60px 0 25px;
+    padding:60px 0 40px;
 }
 
 .footer-grid{
@@ -884,22 +885,16 @@ footer{
 
 .footer-grid a{
     display:block;
-    color:#b9c6d1;
+    color:#F3F6EF;
     font-size:14px;
     margin:9px 0;
-}
-
-.footer-text{
-    color:#9aabb8;
-    line-height:1.55;
-    max-width:360px;
 }
 
 .bottom{
     border-top:1px solid rgba(255,255,255,.13);
     margin-top:40px;
     padding-top:20px;
-    color:#8394a3;
+    color:#F3F6EF;
     font-size:12px;
     display:flex;
     justify-content:space-between;
@@ -1094,24 +1089,11 @@ footer{
 
 
     <a class="brand" href="index.html">
-
-        <span class="logo">
-
-            <img
-                src="SweetyPets_logo symbol.png"
-                alt="Sweety Pets logo">
-
-        </span>
-
-        <span>
-
-            <strong>
-                sweety pets
-            </strong>
-
-        </span>
-
-    </a>
+    <img
+        src="SweetyPets_landscape logo_no ground.png"
+        alt="Sweety Pets"
+        style="width:180px;height:auto;display:block;">
+</a>
 
 
     <form
@@ -2385,133 +2367,50 @@ footer{
 
 <footer>
 
-<div class="container footer-grid">
+    <div class="container footer-grid">
 
+        <div>
+            <div class="brand">
+                <img
+                    src="SweetyPets_landscape logo light_no ground.png"
+                    alt="Sweety Pets"
+                    style="width:180px;height:auto;display:block;">
+            </div>
 
-<div>
+            <p style="color:#F3F6EF">
+                European B2B pet inventory platform
+            </p>
+        </div>
 
-    <a
-        class="brand"
-        href="index.html">
+        <div>
+            <h4>For buyers</h4>
+            <a href="catalogue.html">Catalogue</a>
+            <a href="#">How to buy</a>
+            <a href="#">Delivery</a>
+        </div>
 
-        <span class="logo">
+        <div>
+            <h4>For suppliers</h4>
+            <a href="suppliers.html">List products</a>
+            <a href="#">Pricing</a>
+            <a href="#">Logistics</a>
+        </div>
 
-            <img
-                src="SweetyPets_logo symbol.png"
-                alt="Sweety Pets logo">
+        <div>
+            <h4>Company</h4>
+            <a href="#">About us</a>
+            <a href="#">Contacts</a>
+            <a href="#">Help</a>
+        </div>
 
-        </span>
+    </div>
 
-        <span>
-
-            <strong style="color:white">
-                sweety pets
-            </strong>
-
-            <small>
-                B2B PET INVENTORY
-            </small>
-
-        </span>
-
-    </a>
-
-
-    <p class="footer-text">
-
-        A European B2B platform for buying
-        and selling surplus pet product stock.
-
-    </p>
-
-</div>
-
-
-
-<div>
-
-    <h4>
-        For buyers
-    </h4>
-
-    <a href="catalogue.html">
-        Catalogue
-    </a>
-
-    <a href="#">
-        How to buy
-    </a>
-
-    <a href="#">
-        Delivery
-    </a>
-
-</div>
-
-
-
-<div>
-
-    <h4>
-        For suppliers
-    </h4>
-
-    <a href="suppliers.html">
-        Sell stock
-    </a>
-
-    <a href="#">
-        Pricing
-    </a>
-
-    <a href="#">
-        Logistics
-    </a>
-
-</div>
-
-
-
-<div>
-
-    <h4>
-        Company
-    </h4>
-
-    <a href="#">
-        About us
-    </a>
-
-    <a href="#">
-        Contacts
-    </a>
-
-    <a href="#">
-        Help
-    </a>
-
-</div>
-
-
-</div>
-
-
-
-<div class="container bottom">
-
-    <span>
-        © 2026 Sweety Pets
-    </span>
-
-    <span>
-        Privacy · Terms · Cookies
-    </span>
-
-</div>
+    <div class="container bottom">
+        <span>© 2026 Sweety Pets</span>
+        <span>Privacy · Terms · Cookies</span>
+    </div>
 
 </footer>
-
-
 
 <script>
 
