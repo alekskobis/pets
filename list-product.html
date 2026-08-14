@@ -80,7 +80,7 @@ button{
 }
 
 .top a{
-    font-weight:bold;
+    font-weight:400;
 }
 
 
@@ -447,26 +447,11 @@ header{
    MARKETS
    ========================= */
 
-.markets{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:10px;
-    margin-top:10px;
-}
-
-.market{
-    border:1px solid var(--line);
-    border-radius:8px;
-    padding:10px;
-    display:flex;
-    align-items:center;
-    gap:7px;
-    font-size:11px;
-    color:#53616c;
-}
-
-.market input{
-    accent-color:var(--teal);
+.market input[type="checkbox"]{
+    width:13px;
+    height:13px;
+    flex:0 0 13px;
+    margin:0;
 }
 
 
@@ -769,9 +754,9 @@ footer{
         European B2B pet inventory
     </span>
 
-    <a href="catalogue.html">
-        View current offers
-    </a>
+    <a href="register.html">
+    List your stock for free
+</a>
 
 </div>
 
@@ -787,23 +772,12 @@ footer{
 
 <div class="container head">
 
-    <a
-        class="brand"
-        href="index.html">
-
-        <span class="logo">
-
-            <img
-                src="SweetyPets_logo symbol_no ground.png"
-                alt="Sweety Pets logo">
-
-        </span>
-
-        <span>
-            <strong>sweety pets</strong>
-        </span>
-
-    </a>
+    <a class="brand" href="index.html">
+    <img
+        src="SweetyPets_landscape logo_no ground.png"
+        alt="Sweety Pets"
+        style="width:180px;height:auto;display:block;">
+</a>
 
 
     <div class="header-actions">
@@ -1579,79 +1553,150 @@ footer{
 
     <div class="markets">
 
-        <label class="market">
-            <input
-                type="checkbox"
-                id="allEU"
-                checked>
-            All EU countries
-        </label>
+    <label class="market">
+        <input
+            type="checkbox"
+            id="allEU"
+            checked>
+        All EU countries
+    </label>
 
-        <label class="market">
-            <input
-                type="checkbox"
-                class="countryMarket"
-                value="Germany">
-            Germany
-        </label>
+    <label class="market">
+        <input type="checkbox" class="countryMarket" value="Austria">
+        Austria
+    </label>
 
-        <label class="market">
-            <input
-                type="checkbox"
-                class="countryMarket"
-                value="France">
-            France
-        </label>
+    <label class="market">
+        <input type="checkbox" class="countryMarket" value="Belgium">
+        Belgium
+    </label>
 
-        <label class="market">
-            <input
-                type="checkbox"
-                class="countryMarket"
-                value="Italy">
-            Italy
-        </label>
+    <label class="market">
+        <input type="checkbox" class="countryMarket" value="Bulgaria">
+        Bulgaria
+    </label>
 
-        <label class="market">
-            <input
-                type="checkbox"
-                class="countryMarket"
-                value="Spain">
-            Spain
-        </label>
+    <label class="market">
+        <input type="checkbox" class="countryMarket" value="Croatia">
+        Croatia
+    </label>
 
-        <label class="market">
-            <input
-                type="checkbox"
-                class="countryMarket"
-                value="Netherlands">
-            Netherlands
-        </label>
+    <label class="market">
+        <input type="checkbox" class="countryMarket" value="Cyprus">
+        Cyprus
+    </label>
 
-        <label class="market">
-            <input
-                type="checkbox"
-                class="countryMarket"
-                value="Poland">
-            Poland
-        </label>
+    <label class="market">
+        <input type="checkbox" class="countryMarket" value="Czechia">
+        Czechia
+    </label>
 
-        <label class="market">
-            <input
-                type="checkbox"
-                class="countryMarket"
-                value="Sweden">
-            Sweden
-        </label>
+    <label class="market">
+        <input type="checkbox" class="countryMarket" value="Denmark">
+        Denmark
+    </label>
 
-        <label class="market">
-            <input
-                type="checkbox"
-                class="countryMarket"
-                value="Other">
-            Other EU markets
-        </label>
+    <label class="market">
+        <input type="checkbox" class="countryMarket" value="Estonia">
+        Estonia
+    </label>
 
-    </div>
+    <label class="market">
+        <input type="checkbox" class="countryMarket" value="Finland">
+        Finland
+    </label>
+
+    <label class="market">
+        <input type="checkbox" class="countryMarket" value="France">
+        France
+    </label>
+
+    <label class="market">
+        <input type="checkbox" class="countryMarket" value="Germany">
+        Germany
+    </label>
+
+    <label class="market">
+        <input type="checkbox" class="countryMarket" value="Greece">
+        Greece
+    </label>
+
+    <label class="market">
+        <input type="checkbox" class="countryMarket" value="Hungary">
+        Hungary
+    </label>
+
+    <label class="market">
+        <input type="checkbox" class="countryMarket" value="Ireland">
+        Ireland
+    </label>
+
+    <label class="market">
+        <input type="checkbox" class="countryMarket" value="Italy">
+        Italy
+    </label>
+
+    <label class="market">
+        <input type="checkbox" class="countryMarket" value="Latvia">
+        Latvia
+    </label>
+
+    <label class="market">
+        <input type="checkbox" class="countryMarket" value="Lithuania">
+        Lithuania
+    </label>
+
+    <label class="market">
+        <input type="checkbox" class="countryMarket" value="Luxembourg">
+        Luxembourg
+    </label>
+
+    <label class="market">
+        <input type="checkbox" class="countryMarket" value="Malta">
+        Malta
+    </label>
+
+    <label class="market">
+        <input type="checkbox" class="countryMarket" value="Netherlands">
+        Netherlands
+    </label>
+
+    <label class="market">
+        <input type="checkbox" class="countryMarket" value="Poland">
+        Poland
+    </label>
+
+    <label class="market">
+        <input type="checkbox" class="countryMarket" value="Portugal">
+        Portugal
+    </label>
+
+    <label class="market">
+        <input type="checkbox" class="countryMarket" value="Romania">
+        Romania
+    </label>
+
+    <label class="market">
+        <input type="checkbox" class="countryMarket" value="Slovakia">
+        Slovakia
+    </label>
+
+    <label class="market">
+        <input type="checkbox" class="countryMarket" value="Slovenia">
+        Slovenia
+    </label>
+
+    <label class="market">
+        <input type="checkbox" class="countryMarket" value="Spain">
+        Spain
+    </label>
+
+    <label class="market">
+        <input type="checkbox" class="countryMarket" value="Sweden">
+        Sweden
+    </label>
+
+</div>
 
 </div>
 
@@ -2135,32 +2180,50 @@ footer{
 
 <footer>
 
-<div class="container footer-bottom">
+    <div class="container footer-grid">
 
+        <div>
 
-    <span>
-        © 2026 Sweety Pets
-    </span>
+            <div class="brand">
+                <img
+                    src="SweetyPets_landscape logo light_no ground.png"
+                    alt="Sweety Pets"
+                    style="width:180px;height:auto;display:block;">
+            </div>
 
+            <p style="color:#F3F6EF">
+                European B2B pet inventory platform
+            </p>
 
-    <div class="footer-links">
+        </div>
 
-        <a href="#">
-            Privacy
-        </a>
+        <div>
+            <h4>For buyers</h4>
+            <a href="catalogue.html">Catalogue</a>
+            <a href="#">How to buy</a>
+            <a href="#">Delivery</a>
+        </div>
 
-        <a href="#">
-            Terms
-        </a>
+        <div>
+            <h4>For suppliers</h4>
+            <a href="suppliers.html">List products</a>
+            <a href="#">Pricing</a>
+            <a href="#">Logistics</a>
+        </div>
 
-        <a href="#">
-            Help
-        </a>
+        <div>
+            <h4>Company</h4>
+            <a href="#">About us</a>
+            <a href="#">Contacts</a>
+            <a href="#">Help</a>
+        </div>
 
     </div>
 
-
-</div>
+    <div class="container bottom">
+        <span>© 2026 Sweety Pets</span>
+        <span>Privacy · Terms · Cookies</span>
+    </div>
 
 </footer>
 
