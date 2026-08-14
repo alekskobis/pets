@@ -47,7 +47,7 @@ header{position:sticky;top:0;background:#fff;z-index:20;border-bottom:1px solid 
     font-size:9px;
 }
 .search{height:48px;border:1px solid #b9c5cc;border-radius:8px;display:flex;overflow:hidden}.search input{border:0;outline:0;flex:1;padding:0 15px}.search button{border:0;background:var(--teal);color:#fff;padding:0 22px;font-weight:bold}.actions{display:flex;align-items:center;gap:16px;font-size:14px;font-weight:bold}.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:8px;font-weight:bold;border:1px solid var(--navy)}.btn.dark{background:var(--navy);color:white}.btn.light{background:white}.btn.orange{background:var(--orange);border-color:var(--orange);color:var(--navy)}
-.nav{border-top:1px solid var(--line)}.nav .container{display:flex;gap:25px;overflow:auto}.nav button{border:0;background:none;padding:15px 0;white-space:nowrap;color:#4b5863}.nav button.active{color:var(--teal);box-shadow:inset 0 -3px var(--teal)}
+.nav{border-top:1px solid var(--line)}.nav .container{display:flex;justify-content:center;gap:25px;overflow:auto}
 .hero{
     position:relative;
     min-height:680px;
@@ -94,7 +94,7 @@ header{position:sticky;top:0;background:#fff;z-index:20;border-bottom:1px solid 
 
 .hero-text{
     max-width:680px;
-    margin-left:60px;
+    margin-left:100px;
 }
 
 .hero .eyebrow{
@@ -176,9 +176,22 @@ footer{background:#225B37;color:white;padding:60px 0 40px;margin-top:80px}.foote
     <form class="search" id="searchForm"><input id="searchInput" placeholder="Search by product, brand or supplier"><button>Search</button></form>
     <div class="actions"><a href="login.html">Sign in</a><a class="btn dark" href="register.html">Register</a></div>
 </div>
-  <nav class="nav"><div class="container">
-    <button class="filter active" data-cat="all">All offers</button><button class="filter" data-cat="beds">Лежанки</button><button class="filter" data-cat="toys">Игрушки</button><button class="filter" data-cat="walk">Для прогулок</button><button class="filter" data-cat="carriers">Переноски</button><button class="filter" data-cat="care">Уход</button><button class="filter" data-cat="cats">Для кошек</button>
-  </div></nav>
+  <nav class="nav">
+    <div class="container">
+
+        <a class="active" href="catalogue.html">All offers</a>
+        <a href="catalogue.html?category=food">Food</a>
+        <a href="catalogue.html?category=treats">Treats</a>
+        <a href="catalogue.html?category=beds">Beds & Furniture</a>
+        <a href="catalogue.html?category=toys">Toys</a>
+        <a href="catalogue.html?category=walking">Walking & Travel</a>
+        <a href="catalogue.html?category=feeding">Feeding</a>
+        <a href="catalogue.html?category=care">Grooming & Care</a>
+        <a href="catalogue.html?category=litter">Litter & Toilets</a>
+
+    </div>
+</nav>
+
 </header>
 
 <main>
@@ -228,9 +241,6 @@ footer{background:#225B37;color:white;padding:60px 0 40px;margin-top:80px}.foote
     </div>
 
 </section>
-
-<section><div class="container"><div class="heading"><div><span class="eyebrow">CATEGORIES</span><h2>What are you looking for?</h2></div><a href="#offers">View all →</a></div>
-<div class="cats"><button class="cat jump" data-cat="beds">🛏️<b>Loungers</b><small>128 lots</small></button><button class="cat jump" data-cat="toys">🎾<b>Toys</b><small>214 lots</small></button><button class="cat jump" data-cat="walk">🦮<b>Walking</b><small>96 lots</small></button><button class="cat jump" data-cat="carriers">🧳<b>Carriers</b><small>62 lots</small></button><button class="cat jump" data-cat="care">🧴<b>Care</b><small>81 lots</small></button><button class="cat jump" data-cat="cats">🐈<b>Cats</b><small>170 lots</small></button></div></div></section>
 
 <section id="offers"><div class="container"><div class="heading"><div><span class="eyebrow">AVAILABLE STOCK</span><h2>Great deals on pet inventory</h2></div></div>
 <div class="toolbar"><span id="result">Showing all offers</span><select id="sort"><option value="discount">By discount</option><option value="asc">Price ↑</option><option value="desc">Price ↓</option></select></div><div class="products" id="products"></div></div></section>
