@@ -79,7 +79,7 @@ button{
 }
 
 .top a{
-    font-weight:bold;
+    font-weight:400;
 }
 
 
@@ -674,23 +674,36 @@ tr:last-child td{
    ========================= */
 
 footer{
-    background:var(--dark);
-    color:#fff;
-    padding:30px 0;
+    background:#225B37;
+    color:white;
+    padding:60px 0 40px;
 }
 
-.footer-bottom{
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr repeat(3,1fr);
+    gap:38px;
+}
+
+.footer-grid h4{
+    margin-top:0;
+}
+
+.footer-grid a{
+    display:block;
+    color:#F3F6EF;
+    font-size:14px;
+    margin:9px 0;
+}
+
+.bottom{
+    border-top:1px solid rgba(255,255,255,.13);
+    margin-top:40px;
+    padding-top:20px;
+    color:#F3F6EF;
+    font-size:12px;
     display:flex;
-    align-items:center;
     justify-content:space-between;
-    gap:20px;
-    color:#8fa0ae;
-    font-size:11px;
-}
-
-.footer-links{
-    display:flex;
-    gap:20px;
 }
 
 
@@ -781,9 +794,9 @@ footer{
         European B2B pet inventory
     </span>
 
-    <a href="catalogue.html">
-        Browse marketplace
-    </a>
+    <a href="register.html">
+    List your stock for free
+</a>
 
 </div>
 
@@ -800,23 +813,12 @@ footer{
 <div class="container head">
 
 
-    <a
-        class="brand"
-        href="index.html">
-
-        <span class="logo">
-
-            <img
-                src="SweetyPets_logo symbol.png"
-                alt="Sweety Pets logo">
-
-        </span>
-
-        <strong>
-            sweety pets
-        </strong>
-
-    </a>
+    <a class="brand" href="index.html">
+    <img
+        src="SweetyPets_landscape logo_no ground.png"
+        alt="Sweety Pets"
+        style="width:180px;height:auto;display:block;">
+</a>
 
 
     <div class="head-actions">
@@ -1529,29 +1531,50 @@ footer{
 
 <footer>
 
-<div class="container footer-bottom">
+    <div class="container footer-grid">
 
-    <span>
-        © 2026 Sweety Pets
-    </span>
+        <div>
 
-    <div class="footer-links">
+            <div class="brand">
+                <img
+                    src="SweetyPets_landscape logo light_no ground.png"
+                    alt="Sweety Pets"
+                    style="width:180px;height:auto;display:block;">
+            </div>
 
-        <a href="#">
-            Privacy
-        </a>
+            <p style="color:#F3F6EF">
+                European B2B pet inventory platform
+            </p>
 
-        <a href="#">
-            Terms
-        </a>
+        </div>
 
-        <a href="#">
-            Help
-        </a>
+        <div>
+            <h4>For buyers</h4>
+            <a href="catalogue.html">Catalogue</a>
+            <a href="#">How to buy</a>
+            <a href="#">Delivery</a>
+        </div>
+
+        <div>
+            <h4>For suppliers</h4>
+            <a href="suppliers.html">List products</a>
+            <a href="#">Pricing</a>
+            <a href="#">Logistics</a>
+        </div>
+
+        <div>
+            <h4>Company</h4>
+            <a href="#">About us</a>
+            <a href="#">Contacts</a>
+            <a href="#">Help</a>
+        </div>
 
     </div>
 
-</div>
+    <div class="container bottom">
+        <span>© 2026 Sweety Pets</span>
+        <span>Privacy · Terms · Cookies</span>
+    </div>
 
 </footer>
 
