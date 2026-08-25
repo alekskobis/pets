@@ -1,0 +1,1178 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>How to Sell — Sweety Pets</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --navy:#2E5B3B;
+    --teal:#4CAF50;
+    --orange:#7FBC78;
+    --cream:#B7D7A8;
+    --line:#E8EEE7;
+    --muted:#687582;
+    --soft:#F6F8F5;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:"Montserrat",Arial,sans-serif;
+    color:#17212b;
+    background:#fff;
+}
+
+.container{
+    width:min(1240px,calc(100% - 36px));
+    margin:auto;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+
+/* =========================
+   TOP BAR
+   ========================= */
+
+.top{
+    background:var(--navy);
+    color:#fff;
+    font-size:13px;
+}
+
+.top .container{
+    height:36px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.top a{
+    font-weight:400;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+header{
+    background:#fff;
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    z-index:20;
+}
+
+.head{
+    min-height:76px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:25px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+}
+
+.header-actions{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.header-actions a:first-child{
+    color:#53616c;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:13px 20px;
+    border-radius:8px;
+    border:1px solid var(--navy);
+    font-weight:600;
+}
+
+.btn.dark{
+    background:var(--navy);
+    color:#fff;
+}
+
+
+/* =========================
+   CATEGORY NAVIGATION
+   ========================= */
+
+.nav{
+    background:#fff;
+    border-bottom:1px solid var(--line);
+}
+
+.nav .container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:25px;
+    overflow:auto;
+}
+
+.nav a{
+    padding:15px 0;
+    white-space:nowrap;
+    color:#4b5863;
+    font-size:16px;
+    border-bottom:2px solid transparent;
+}
+
+.nav a:hover{
+    border-bottom-color:#4CAF50;
+}
+
+
+/* =========================
+   HERO
+   ========================= */
+
+.hero{
+    background:#F6F8F5;
+    border-bottom:1px solid var(--line);
+}
+
+.hero-inner{
+    padding:72px 0 70px;
+    text-align:center;
+    max-width:850px;
+    margin:auto;
+}
+
+.eyebrow{
+    display:block;
+    color:var(--teal);
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:2px;
+    margin-bottom:12px;
+}
+
+.hero h1{
+    margin:0;
+    color:var(--navy);
+    font-size:48px;
+    line-height:1.1;
+    letter-spacing:-1.5px;
+}
+
+.hero p{
+    max-width:740px;
+    margin:20px auto 0;
+    color:var(--muted);
+    font-size:16px;
+    line-height:1.7;
+}
+
+
+/* =========================
+   PROCESS
+   ========================= */
+
+.process{
+    padding:80px 0;
+}
+
+.section-head{
+    text-align:center;
+    max-width:720px;
+    margin:0 auto 50px;
+}
+
+.section-head h2{
+    color:var(--navy);
+    font-size:32px;
+    margin:0 0 12px;
+}
+
+.section-head p{
+    color:var(--muted);
+    line-height:1.6;
+    margin:0;
+}
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:15px;
+}
+
+.step{
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:26px 20px;
+    background:#fff;
+}
+
+.step-number{
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    background:#e8f3e6;
+    color:var(--navy);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.step h3{
+    color:var(--navy);
+    font-size:15px;
+    margin:0 0 10px;
+}
+
+.step p{
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.6;
+    margin:0;
+}
+
+
+/* =========================
+   DETAILED PROCESS
+   ========================= */
+
+.details{
+    background:var(--soft);
+    padding:80px 0;
+}
+
+.detail-list{
+    max-width:900px;
+    margin:auto;
+    display:grid;
+    gap:20px;
+}
+
+.detail{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:30px;
+    display:grid;
+    grid-template-columns:55px 1fr;
+    gap:20px;
+}
+
+.detail-number{
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    background:var(--navy);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+}
+
+.detail h3{
+    margin:2px 0 8px;
+    color:var(--navy);
+    font-size:18px;
+}
+
+.detail p{
+    margin:0;
+    color:var(--muted);
+    line-height:1.65;
+    font-size:13px;
+}
+
+
+/* =========================
+   WHAT YOU CAN LIST
+   ========================= */
+
+.inventory{
+    padding:80px 0;
+}
+
+.inventory-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.inventory-card{
+    padding:30px;
+    border:1px solid var(--line);
+    border-radius:14px;
+    background:#fff;
+}
+
+.inventory-card h3{
+    color:var(--navy);
+    margin:0 0 10px;
+    font-size:17px;
+}
+
+.inventory-card p{
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.65;
+    margin:0;
+}
+
+
+/* =========================
+   CTA
+   ========================= */
+
+.cta{
+    padding:0 0 80px;
+}
+
+.cta-box{
+    background:var(--navy);
+    border-radius:18px;
+    padding:55px 40px;
+    text-align:center;
+    color:#fff;
+}
+
+.cta-box h2{
+    margin:0 0 12px;
+    font-size:30px;
+}
+
+.cta-box p{
+    color:#dce9df;
+    margin:0 auto 25px;
+    max-width:650px;
+    line-height:1.6;
+}
+
+.cta-button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    background:#fff;
+    color:var(--navy);
+    border-radius:8px;
+    padding:14px 24px;
+    font-size:13px;
+    font-weight:700;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer{
+    background:#225B37;
+    color:white;
+    padding:60px 0 40px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr repeat(3,1fr);
+    gap:38px;
+}
+
+.footer-grid h4{
+    margin-top:0;
+}
+
+.footer-grid a{
+    display:block;
+    color:#F3F6EF;
+    font-size:14px;
+    margin:9px 0;
+}
+
+.bottom{
+    border-top:1px solid rgba(255,255,255,.13);
+    margin-top:40px;
+    padding-top:20px;
+    color:#F3F6EF;
+    font-size:12px;
+    display:flex;
+    justify-content:space-between;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media(max-width:1100px){
+
+    .steps{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+}
+
+@media(max-width:950px){
+
+    .inventory-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media(max-width:650px){
+
+    .top .container{
+        justify-content:center;
+    }
+
+    .top a{
+        display:none;
+    }
+
+    .header-actions a:first-child{
+        display:none;
+    }
+
+    .hero-inner{
+        padding:50px 0;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .steps{
+        grid-template-columns:1fr;
+    }
+
+    .detail{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .bottom{
+        flex-direction:column;
+        gap:10px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     TOP BAR
+     ========================= -->
+
+<div class="top">
+
+    <div class="container">
+
+        <span>
+            European B2B pet inventory
+        </span>
+
+        <a href="register.html">
+            List your stock for free
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     HEADER
+     ========================= -->
+
+<header>
+
+    <div class="container head">
+
+        <a class="brand" href="index.html">
+
+            <img
+                src="SweetyPets_landscape logo_no ground.png"
+                alt="Sweety Pets"
+                style="width:180px;height:auto;display:block;">
+
+        </a>
+
+        <div class="header-actions">
+
+            <a href="catalogue.html">
+                Catalogue
+            </a>
+
+            <a class="btn dark" href="login.html">
+                Sign in
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     CATEGORY NAVIGATION
+     ========================= -->
+
+<nav class="nav">
+
+    <div class="container">
+
+        <a href="catalogue.html">
+            All offers
+        </a>
+
+        <a href="catalogue.html#food">
+            Food
+        </a>
+
+        <a href="catalogue.html#treats">
+            Treats
+        </a>
+
+        <a href="catalogue.html#beds">
+            Beds & Furniture
+        </a>
+
+        <a href="catalogue.html#toys">
+            Toys
+        </a>
+
+        <a href="catalogue.html#walking">
+            Walking & Travel
+        </a>
+
+        <a href="catalogue.html#feeding">
+            Feeding
+        </a>
+
+        <a href="catalogue.html#grooming">
+            Grooming & Care
+        </a>
+
+        <a href="catalogue.html#litter">
+            Litter & Toilets
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+     ========================= -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="hero-inner">
+
+            <span class="eyebrow">
+                FOR SUPPLIERS
+            </span>
+
+            <h1>
+                How to sell
+            </h1>
+
+            <p>
+                Turn available pet product inventory into new B2B opportunities.
+                Create your supplier account, list available stock and receive
+                requests from business buyers across Europe.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROCESS OVERVIEW
+     ========================= -->
+
+<section class="process">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <h2>
+                From available stock to a completed deal
+            </h2>
+
+            <p>
+                Selling through Sweety Pets follows a simple six-step B2B process.
+            </p>
+
+        </div>
+
+
+        <div class="steps">
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    1
+                </div>
+
+                <h3>
+                    Register
+                </h3>
+
+                <p>
+                    Create a supplier account and provide your
+                    company information.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    2
+                </div>
+
+                <h3>
+                    Verification
+                </h3>
+
+                <p>
+                    Your company information is reviewed before
+                    you start trading on the platform.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    3
+                </div>
+
+                <h3>
+                    List your stock
+                </h3>
+
+                <p>
+                    Create a lot with product details, quantity,
+                    MOQ, price and warehouse location.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    4
+                </div>
+
+                <h3>
+                    Receive requests
+                </h3>
+
+                <p>
+                    Interested business buyers can send requests
+                    for your available stock.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    5
+                </div>
+
+                <h3>
+                    Agree the deal
+                </h3>
+
+                <p>
+                    Confirm quantity, price, payment and
+                    delivery conditions with the buyer.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    6
+                </div>
+
+                <h3>
+                    Ship the goods
+                </h3>
+
+                <p>
+                    Prepare the order and dispatch or release
+                    the goods according to the agreed terms.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     DETAILED PROCESS
+     ========================= -->
+
+<section class="details">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <h2>
+                How the selling process works
+            </h2>
+
+            <p>
+                A closer look at each stage of selling your inventory.
+            </p>
+
+        </div>
+
+
+        <div class="detail-list">
+
+
+            <div class="detail">
+
+                <div class="detail-number">
+                    1
+                </div>
+
+                <div>
+
+                    <h3>
+                        Create your supplier account
+                    </h3>
+
+                    <p>
+                        Register your business and provide the basic company
+                        information required to create a supplier profile.
+                        Registration gives you access to the supplier tools
+                        needed to manage your inventory and buyer requests.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="detail">
+
+                <div class="detail-number">
+                    2
+                </div>
+
+                <div>
+
+                    <h3>
+                        Complete company verification
+                    </h3>
+
+                    <p>
+                        Before trading, company information may be reviewed
+                        to help maintain a professional B2B environment.
+                        Verification is intended to make it easier for buyers
+                        and suppliers to identify legitimate business partners.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="detail">
+
+                <div class="detail-number">
+                    3
+                </div>
+
+                <div>
+
+                    <h3>
+                        Create an inventory lot
+                    </h3>
+
+                    <p>
+                        Add the product name, brand, category, condition,
+                        available quantity, minimum order quantity, B2B price,
+                        VAT information, warehouse location, available sales
+                        markets, photos and other relevant product details.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="detail">
+
+                <div class="detail-number">
+                    4
+                </div>
+
+                <div>
+
+                    <h3>
+                        Receive buyer requests
+                    </h3>
+
+                    <p>
+                        When a buyer is interested in your stock, they can
+                        submit a request for the quantity they need. Requests
+                        can then be reviewed and managed through your
+                        supplier account.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="detail">
+
+                <div class="detail-number">
+                    5
+                </div>
+
+                <div>
+
+                    <h3>
+                        Agree the commercial terms
+                    </h3>
+
+                    <p>
+                        Confirm the final quantity, price, VAT treatment,
+                        payment conditions, product availability, transport
+                        arrangements and any other conditions required
+                        to complete the B2B transaction.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="detail">
+
+                <div class="detail-number">
+                    6
+                </div>
+
+                <div>
+
+                    <h3>
+                        Prepare and ship the goods
+                    </h3>
+
+                    <p>
+                        Once the transaction is confirmed, prepare the goods
+                        for collection or shipment. Delivery can be organised
+                        by the supplier, buyer or according to separately
+                        agreed logistics terms.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     INVENTORY TYPES
+     ========================= -->
+
+<section class="inventory">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <h2>
+                What can you list?
+            </h2>
+
+            <p>
+                Sweety Pets is focused on helping European pet businesses
+                find new buyers for available inventory.
+            </p>
+
+        </div>
+
+
+        <div class="inventory-grid">
+
+
+            <div class="inventory-card">
+
+                <h3>
+                    Overstock & slow-moving stock
+                </h3>
+
+                <p>
+                    Products that remain in your warehouse longer than
+                    planned or inventory that exceeds your current
+                    distribution requirements.
+                </p>
+
+            </div>
+
+
+            <div class="inventory-card">
+
+                <h3>
+                    Seasonal & discontinued products
+                </h3>
+
+                <p>
+                    Previous seasonal collections, discontinued ranges
+                    and products being replaced by newer models,
+                    designs or packaging.
+                </p>
+
+            </div>
+
+
+            <div class="inventory-card">
+
+                <h3>
+                    Clearance inventory
+                </h3>
+
+                <p>
+                    Stock available for B2B clearance because of
+                    assortment changes, warehouse optimisation,
+                    packaging updates or other commercial reasons.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+     ========================= -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <h2>
+                Have pet product stock to sell?
+            </h2>
+
+            <p>
+                Create your supplier account and start presenting
+                available inventory to business buyers across Europe.
+            </p>
+
+            <a
+                class="cta-button"
+                href="register.html">
+
+                List your stock for free
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+     ========================= -->
+
+<footer>
+
+    <div class="container footer-grid">
+
+        <div>
+
+            <div class="brand">
+
+                <img
+                    src="SweetyPets_landscape logo light_no ground.png"
+                    alt="Sweety Pets"
+                    style="width:180px;height:auto;display:block;">
+
+            </div>
+
+            <p style="color:#F3F6EF">
+                European B2B pet inventory platform
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                For buyers
+            </h4>
+
+            <a href="catalogue.html">
+                Catalogue
+            </a>
+
+            <a href="how-to-buy.html">
+                How to buy
+            </a>
+
+            <a href="#">
+                Delivery
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                For suppliers
+            </h4>
+
+            <a href="how-to-sell.html">
+                How to sell
+            </a>
+
+            <a href="register.html">
+                List products
+            </a>
+
+            <a href="#">
+                Pricing
+            </a>
+
+            <a href="#">
+                Logistics
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Company
+            </h4>
+
+            <a href="#">
+                About us
+            </a>
+
+            <a href="#">
+                Contacts
+            </a>
+
+            <a href="#">
+                Help
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="container bottom">
+
+        <span>
+            © 2026 Sweety Pets
+        </span>
+
+        <span>
+            Privacy · Terms · Cookies
+        </span>
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>
