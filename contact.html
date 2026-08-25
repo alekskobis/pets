@@ -1,0 +1,1101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Contact Us — Sweety Pets</title>
+
+<meta name="description"
+content="Contact Sweety Pets — the European B2B pet inventory platform. Buyer, supplier, logistics and technical enquiries.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --navy:#2E5B3B;
+    --teal:#4CAF50;
+    --light-green:#E8F3E6;
+    --line:#E8EEE7;
+    --muted:#687582;
+    --soft:#F6F8F5;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:"Montserrat",Arial,sans-serif;
+    color:#17212b;
+    background:#fff;
+}
+
+.container{
+    width:min(1240px,calc(100% - 36px));
+    margin:auto;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+
+/* =========================
+   TOP BAR
+   ========================= */
+
+.top{
+    background:var(--navy);
+    color:#fff;
+    font-size:13px;
+}
+
+.top .container{
+    height:36px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.top a{
+    font-weight:400;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+header{
+    background:#fff;
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    z-index:20;
+}
+
+.head{
+    min-height:76px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:25px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+}
+
+.header-actions{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.header-actions a:first-child{
+    color:#53616c;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:13px 20px;
+    border-radius:8px;
+    border:1px solid var(--navy);
+    font-weight:600;
+}
+
+.btn.dark{
+    background:var(--navy);
+    color:#fff;
+}
+
+
+/* =========================
+   CATEGORY NAVIGATION
+   ========================= */
+
+.nav{
+    background:#fff;
+    border-bottom:1px solid var(--line);
+}
+
+.nav .container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:25px;
+    overflow:auto;
+}
+
+.nav a{
+    padding:15px 0;
+    white-space:nowrap;
+    color:#4b5863;
+    font-size:16px;
+    border-bottom:2px solid transparent;
+}
+
+.nav a:hover{
+    border-bottom-color:#4CAF50;
+}
+
+
+/* =========================
+   HERO
+   ========================= */
+
+.hero{
+    background:var(--soft);
+    border-bottom:1px solid var(--line);
+}
+
+.hero-inner{
+    padding:72px 0 68px;
+    text-align:center;
+    max-width:820px;
+    margin:auto;
+}
+
+.eyebrow{
+    display:block;
+    color:var(--teal);
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:2px;
+    margin-bottom:12px;
+}
+
+.hero h1{
+    margin:0;
+    color:var(--navy);
+    font-size:48px;
+    line-height:1.1;
+    letter-spacing:-1.5px;
+}
+
+.hero p{
+    max-width:700px;
+    margin:20px auto 0;
+    color:var(--muted);
+    font-size:16px;
+    line-height:1.7;
+}
+
+
+/* =========================
+   CONTACT
+   ========================= */
+
+.contact{
+    padding:80px 0;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:.75fr 1.25fr;
+    gap:70px;
+    align-items:start;
+}
+
+
+/* LEFT SIDE */
+
+.contact-info h2{
+    color:var(--navy);
+    font-size:30px;
+    margin:0 0 18px;
+}
+
+.contact-info > p{
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.75;
+    margin:0 0 35px;
+}
+
+.contact-item{
+    border-top:1px solid var(--line);
+    padding:22px 0;
+}
+
+.contact-item:last-child{
+    border-bottom:1px solid var(--line);
+}
+
+.contact-item span{
+    display:block;
+    color:var(--teal);
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:1.3px;
+    margin-bottom:7px;
+}
+
+.contact-item h3{
+    color:var(--navy);
+    font-size:15px;
+    margin:0 0 6px;
+}
+
+.contact-item p{
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.6;
+    margin:0;
+}
+
+
+/* =========================
+   FORM
+   ========================= */
+
+.form-card{
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:38px;
+    background:#fff;
+}
+
+.form-card h2{
+    color:var(--navy);
+    font-size:25px;
+    margin:0 0 8px;
+}
+
+.form-intro{
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.6;
+    margin:0 0 30px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.field{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.field.full{
+    grid-column:1 / -1;
+}
+
+.field label{
+    color:#34424d;
+    font-size:12px;
+    font-weight:600;
+}
+
+.required{
+    color:var(--teal);
+}
+
+.field input,
+.field select,
+.field textarea{
+    width:100%;
+    border:1px solid #dfe6df;
+    border-radius:8px;
+    background:#fff;
+    padding:13px 14px;
+    font-family:"Montserrat",Arial,sans-serif;
+    font-size:13px;
+    color:#17212b;
+    outline:none;
+    transition:.15s;
+}
+
+.field select{
+    cursor:pointer;
+}
+
+.field textarea{
+    min-height:150px;
+    resize:vertical;
+    line-height:1.6;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+    border-color:var(--teal);
+    box-shadow:0 0 0 3px rgba(76,175,80,.08);
+}
+
+.field input::placeholder,
+.field textarea::placeholder{
+    color:#9aa5ad;
+}
+
+.form-note{
+    color:#7b8790;
+    font-size:11px;
+    line-height:1.55;
+    margin:20px 0;
+}
+
+.submit-btn{
+    border:0;
+    background:var(--navy);
+    color:#fff;
+    border-radius:8px;
+    padding:14px 25px;
+    font-family:"Montserrat",Arial,sans-serif;
+    font-size:13px;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.submit-btn:hover{
+    background:#244c32;
+}
+
+
+/* =========================
+   HELP
+   ========================= */
+
+.help{
+    background:var(--soft);
+    padding:75px 0;
+}
+
+.section-head{
+    text-align:center;
+    max-width:720px;
+    margin:0 auto 45px;
+}
+
+.section-head h2{
+    color:var(--navy);
+    font-size:30px;
+    margin:0 0 12px;
+}
+
+.section-head p{
+    color:var(--muted);
+    line-height:1.7;
+    margin:0;
+    font-size:14px;
+}
+
+.help-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.help-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:28px;
+}
+
+.help-card h3{
+    color:var(--navy);
+    font-size:16px;
+    margin:0 0 9px;
+}
+
+.help-card p{
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.65;
+    margin:0 0 15px;
+}
+
+.help-card a{
+    color:var(--teal);
+    font-size:12px;
+    font-weight:700;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer{
+    background:#225B37;
+    color:white;
+    padding:60px 0 40px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr repeat(3,1fr);
+    gap:38px;
+}
+
+.footer-grid h4{
+    margin-top:0;
+}
+
+.footer-grid a{
+    display:block;
+    color:#F3F6EF;
+    font-size:14px;
+    margin:9px 0;
+}
+
+.bottom{
+    border-top:1px solid rgba(255,255,255,.13);
+    margin-top:40px;
+    padding-top:20px;
+    color:#F3F6EF;
+    font-size:12px;
+    display:flex;
+    justify-content:space-between;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media(max-width:900px){
+
+    .contact-grid{
+        grid-template-columns:1fr;
+        gap:45px;
+    }
+
+    .help-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media(max-width:650px){
+
+    .top .container{
+        justify-content:center;
+    }
+
+    .top a{
+        display:none;
+    }
+
+    .header-actions a:first-child{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .hero-inner{
+        padding:50px 0;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .field.full{
+        grid-column:auto;
+    }
+
+    .form-card{
+        padding:25px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .bottom{
+        flex-direction:column;
+        gap:10px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- TOP BAR -->
+
+<div class="top">
+
+    <div class="container">
+
+        <span>
+            European B2B pet inventory
+        </span>
+
+        <a href="register.html">
+            List your stock for free
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="container head">
+
+        <a class="brand" href="index.html">
+
+            <img
+                src="SweetyPets_landscape logo_no ground.png"
+                alt="Sweety Pets"
+                style="width:180px;height:auto;display:block;">
+
+        </a>
+
+        <div class="header-actions">
+
+            <a href="catalogue.html">
+                Catalogue
+            </a>
+
+            <a class="btn dark" href="login.html">
+                Sign in
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- CATEGORY NAVIGATION -->
+
+<nav class="nav">
+
+    <div class="container">
+
+        <a href="catalogue.html">All offers</a>
+        <a href="catalogue.html#food">Food</a>
+        <a href="catalogue.html#treats">Treats</a>
+        <a href="catalogue.html#beds">Beds & Furniture</a>
+        <a href="catalogue.html#toys">Toys</a>
+        <a href="catalogue.html#walking">Walking & Travel</a>
+        <a href="catalogue.html#feeding">Feeding</a>
+        <a href="catalogue.html#grooming">Grooming & Care</a>
+        <a href="catalogue.html#litter">Litter & Toilets</a>
+
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="hero-inner">
+
+            <span class="eyebrow">
+                CONTACT SWEETY PETS
+            </span>
+
+            <h1>
+                Contact us
+            </h1>
+
+            <p>
+                Have a question about buying, selling, logistics
+                or using the platform? Send us a message and select
+                the topic that best matches your enquiry.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact">
+
+    <div class="container contact-grid">
+
+
+        <!-- LEFT -->
+
+        <div class="contact-info">
+
+            <h2>
+                How can we help?
+            </h2>
+
+            <p>
+                Sweety Pets is focused on B2B pet inventory.
+                Tell us what you need and your enquiry can be
+                directed to the right area.
+            </p>
+
+
+            <div class="contact-item">
+
+                <span>BUYERS</span>
+
+                <h3>
+                    Buying & product enquiries
+                </h3>
+
+                <p>
+                    Questions about offers, purchasing,
+                    quantities or the buying process.
+                </p>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <span>SUPPLIERS</span>
+
+                <h3>
+                    Selling & listing inventory
+                </h3>
+
+                <p>
+                    Questions about supplier registration,
+                    verification or listing available stock.
+                </p>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <span>LOGISTICS</span>
+
+                <h3>
+                    Delivery & transport
+                </h3>
+
+                <p>
+                    Questions relating to warehouse locations,
+                    delivery arrangements or logistics.
+                </p>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <span>SUPPORT</span>
+
+                <h3>
+                    Platform support
+                </h3>
+
+                <p>
+                    Login problems, account issues or
+                    technical questions about the platform.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- FORM -->
+
+        <div class="form-card">
+
+            <h2>
+                Send us a message
+            </h2>
+
+            <p class="form-intro">
+                Complete the form below and tell us how we can help.
+            </p>
+
+
+            <form id="contactForm">
+
+
+                <div class="form-grid">
+
+
+                    <div class="field full">
+
+                        <label for="topic">
+                            Topic <span class="required">*</span>
+                        </label>
+
+                        <select
+                            id="topic"
+                            name="topic"
+                            required>
+
+                            <option value="" selected disabled>
+                                Select a topic
+                            </option>
+
+                            <option value="buyer">
+                                Buyer
+                            </option>
+
+                            <option value="supplier">
+                                Supplier
+                            </option>
+
+                            <option value="logistics">
+                                Logistics
+                            </option>
+
+                            <option value="technical">
+                                Technical issue
+                            </option>
+
+                            <option value="other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="name">
+                            Your name <span class="required">*</span>
+                        </label>
+
+                        <input
+                            id="name"
+                            name="name"
+                            type="text"
+                            placeholder="Your name"
+                            required>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="company">
+                            Company
+                        </label>
+
+                        <input
+                            id="company"
+                            name="company"
+                            type="text"
+                            placeholder="Company name">
+
+                    </div>
+
+
+                    <div class="field full">
+
+                        <label for="email">
+                            Business email <span class="required">*</span>
+                        </label>
+
+                        <input
+                            id="email"
+                            name="email"
+                            type="email"
+                            placeholder="name@company.com"
+                            required>
+
+                    </div>
+
+
+                    <div class="field full">
+
+                        <label for="message">
+                            Message <span class="required">*</span>
+                        </label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            placeholder="Tell us how we can help..."
+                            required></textarea>
+
+                    </div>
+
+
+                </div>
+
+
+                <p class="form-note">
+                    By submitting this form, you agree that Sweety Pets
+                    may use the information provided to respond to your enquiry.
+                </p>
+
+
+                <button
+                    class="submit-btn"
+                    type="submit">
+
+                    Send message
+
+                </button>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- HELP -->
+
+<section class="help">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <h2>
+                Looking for information first?
+            </h2>
+
+            <p>
+                These pages may already answer your question.
+            </p>
+
+        </div>
+
+
+        <div class="help-grid">
+
+
+            <div class="help-card">
+
+                <h3>
+                    Buying on Sweety Pets
+                </h3>
+
+                <p>
+                    Learn how to find an offer, send a request,
+                    agree terms and organise delivery.
+                </p>
+
+                <a href="how-to-buy.html">
+                    How to buy →
+                </a>
+
+            </div>
+
+
+            <div class="help-card">
+
+                <h3>
+                    Selling on Sweety Pets
+                </h3>
+
+                <p>
+                    Learn about registration, verification,
+                    listing stock and receiving buyer requests.
+                </p>
+
+                <a href="how-to-sell.html">
+                    How to sell →
+                </a>
+
+            </div>
+
+
+            <div class="help-card">
+
+                <h3>
+                    About Sweety Pets
+                </h3>
+
+                <p>
+                    Learn why the platform exists and how our
+                    B2B pet inventory model works.
+                </p>
+
+                <a href="about.html">
+                    About us →
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container footer-grid">
+
+
+        <div>
+
+            <div class="brand">
+
+                <img
+                    src="SweetyPets_landscape logo light_no ground.png"
+                    alt="Sweety Pets"
+                    style="width:180px;height:auto;display:block;">
+
+            </div>
+
+            <p style="color:#F3F6EF">
+                European B2B pet inventory platform
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>For buyers</h4>
+
+            <a href="catalogue.html">
+                Catalogue
+            </a>
+
+            <a href="how-to-buy.html">
+                How to buy
+            </a>
+
+            <a href="#">
+                Delivery
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>For suppliers</h4>
+
+            <a href="how-to-sell.html">
+                How to sell
+            </a>
+
+            <a href="register.html">
+                List products
+            </a>
+
+            <a href="#">
+                Pricing
+            </a>
+
+            <a href="#">
+                Logistics
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>Company</h4>
+
+            <a href="about.html">
+                About us
+            </a>
+
+            <a href="contact.html">
+                Contacts
+            </a>
+
+            <a href="#">
+                Help
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="container bottom">
+
+        <span>
+            © 2026 Sweety Pets
+        </span>
+
+        <span>
+            Privacy · Terms · Cookies
+        </span>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+/*
+IMPORTANT
+
+The form interface is ready, but GitHub Pages cannot process
+form submissions by itself.
+
+When the backend/form service is connected later,
+replace this temporary handler with the actual submission logic.
+*/
+
+const contactForm = document.getElementById("contactForm");
+
+contactForm.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    alert(
+        "The contact form interface is ready. Online message submission will be enabled when the form service is connected."
+    );
+
+});
+
+</script>
+
+
+</body>
+</html>
