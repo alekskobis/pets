@@ -1,0 +1,1248 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>About Sweety Pets — European B2B Pet Inventory Platform</title>
+
+<meta name="description"
+content="Sweety Pets is a European B2B pet inventory platform connecting suppliers with business buyers looking for available stock, overstock, seasonal collections and discontinued pet products.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --navy:#2E5B3B;
+    --teal:#4CAF50;
+    --light-green:#E8F3E6;
+    --line:#E8EEE7;
+    --muted:#687582;
+    --soft:#F6F8F5;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:"Montserrat",Arial,sans-serif;
+    color:#17212b;
+    background:#fff;
+}
+
+.container{
+    width:min(1240px,calc(100% - 36px));
+    margin:auto;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+
+/* =========================
+   TOP BAR
+   ========================= */
+
+.top{
+    background:var(--navy);
+    color:#fff;
+    font-size:13px;
+}
+
+.top .container{
+    height:36px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.top a{
+    font-weight:400;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+header{
+    background:#fff;
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    z-index:20;
+}
+
+.head{
+    min-height:76px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:25px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+}
+
+.header-actions{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.header-actions a:first-child{
+    color:#53616c;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:13px 20px;
+    border-radius:8px;
+    border:1px solid var(--navy);
+    font-weight:600;
+}
+
+.btn.dark{
+    background:var(--navy);
+    color:#fff;
+}
+
+
+/* =========================
+   CATEGORY NAVIGATION
+   ========================= */
+
+.nav{
+    background:#fff;
+    border-bottom:1px solid var(--line);
+}
+
+.nav .container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:25px;
+    overflow:auto;
+}
+
+.nav a{
+    padding:15px 0;
+    white-space:nowrap;
+    color:#4b5863;
+    font-size:16px;
+    border-bottom:2px solid transparent;
+}
+
+.nav a:hover{
+    border-bottom-color:#4CAF50;
+}
+
+
+/* =========================
+   HERO
+   ========================= */
+
+.hero{
+    background:var(--soft);
+    border-bottom:1px solid var(--line);
+}
+
+.hero-inner{
+    padding:82px 0 80px;
+    text-align:center;
+    max-width:900px;
+    margin:auto;
+}
+
+.eyebrow{
+    display:block;
+    color:var(--teal);
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:2px;
+    margin-bottom:12px;
+}
+
+.hero h1{
+    margin:0;
+    color:var(--navy);
+    font-size:48px;
+    line-height:1.1;
+    letter-spacing:-1.5px;
+}
+
+.hero p{
+    max-width:760px;
+    margin:22px auto 0;
+    color:var(--muted);
+    font-size:16px;
+    line-height:1.75;
+}
+
+
+/* =========================
+   INTRO
+   ========================= */
+
+.intro{
+    padding:85px 0;
+}
+
+.intro-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+    align-items:center;
+}
+
+.intro h2{
+    color:var(--navy);
+    font-size:34px;
+    line-height:1.25;
+    margin:0 0 20px;
+}
+
+.intro p{
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.8;
+    margin:0 0 15px;
+}
+
+.intro-box{
+    background:var(--navy);
+    border-radius:18px;
+    padding:45px;
+    color:#fff;
+}
+
+.intro-box span{
+    display:block;
+    color:#B7D7A8;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1.5px;
+    margin-bottom:15px;
+}
+
+.intro-box h3{
+    font-size:27px;
+    line-height:1.35;
+    margin:0;
+}
+
+
+/* =========================
+   WHY
+   ========================= */
+
+.why{
+    background:var(--soft);
+    padding:80px 0;
+}
+
+.section-head{
+    text-align:center;
+    max-width:720px;
+    margin:0 auto 50px;
+}
+
+.section-head h2{
+    color:var(--navy);
+    font-size:32px;
+    margin:0 0 12px;
+}
+
+.section-head p{
+    color:var(--muted);
+    line-height:1.7;
+    margin:0;
+    font-size:14px;
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.why-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:32px;
+}
+
+.number{
+    width:40px;
+    height:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--light-green);
+    color:var(--navy);
+    border-radius:50%;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:22px;
+}
+
+.why-card h3{
+    color:var(--navy);
+    margin:0 0 12px;
+    font-size:17px;
+}
+
+.why-card p{
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.7;
+    margin:0;
+}
+
+
+/* =========================
+   HOW PLATFORM WORKS
+   ========================= */
+
+.model{
+    padding:85px 0;
+}
+
+.model-grid{
+    display:grid;
+    grid-template-columns:1fr 80px 1fr;
+    align-items:stretch;
+    max-width:1000px;
+    margin:auto;
+}
+
+.model-card{
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:38px;
+}
+
+.model-label{
+    color:var(--teal);
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1.5px;
+}
+
+.model-card h3{
+    color:var(--navy);
+    font-size:23px;
+    margin:10px 0 18px;
+}
+
+.model-card p{
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.7;
+    margin:0;
+}
+
+.model-arrow{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--teal);
+    font-size:28px;
+}
+
+
+/* =========================
+   INVENTORY
+   ========================= */
+
+.inventory{
+    background:var(--soft);
+    padding:80px 0;
+}
+
+.inventory-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.inventory-item{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:25px;
+}
+
+.inventory-item h3{
+    color:var(--navy);
+    font-size:15px;
+    margin:0 0 8px;
+}
+
+.inventory-item p{
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.6;
+    margin:0;
+}
+
+
+/* =========================
+   MISSION
+   ========================= */
+
+.mission{
+    padding:85px 0;
+}
+
+.mission-box{
+    max-width:950px;
+    margin:auto;
+    text-align:center;
+}
+
+.mission-box h2{
+    color:var(--navy);
+    font-size:34px;
+    margin:0 0 20px;
+}
+
+.mission-box p{
+    color:var(--muted);
+    font-size:15px;
+    line-height:1.8;
+    max-width:760px;
+    margin:auto;
+}
+
+
+/* =========================
+   CTA
+   ========================= */
+
+.cta{
+    padding:0 0 80px;
+}
+
+.cta-box{
+    background:var(--navy);
+    border-radius:18px;
+    padding:55px 40px;
+    text-align:center;
+    color:#fff;
+}
+
+.cta-box h2{
+    margin:0 0 12px;
+    font-size:30px;
+}
+
+.cta-box p{
+    color:#dce9df;
+    margin:0 auto 26px;
+    max-width:650px;
+    line-height:1.6;
+}
+
+.cta-buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.cta-button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    background:#fff;
+    color:var(--navy);
+    border-radius:8px;
+    padding:14px 24px;
+    font-size:13px;
+    font-weight:700;
+}
+
+.cta-button.secondary{
+    background:transparent;
+    color:#fff;
+    border:1px solid rgba(255,255,255,.55);
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer{
+    background:#225B37;
+    color:white;
+    padding:60px 0 40px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr repeat(3,1fr);
+    gap:38px;
+}
+
+.footer-grid h4{
+    margin-top:0;
+}
+
+.footer-grid a{
+    display:block;
+    color:#F3F6EF;
+    font-size:14px;
+    margin:9px 0;
+}
+
+.bottom{
+    border-top:1px solid rgba(255,255,255,.13);
+    margin-top:40px;
+    padding-top:20px;
+    color:#F3F6EF;
+    font-size:12px;
+    display:flex;
+    justify-content:space-between;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media(max-width:950px){
+
+    .intro-grid{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+    .why-grid{
+        grid-template-columns:1fr;
+    }
+
+    .inventory-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media(max-width:650px){
+
+    .top .container{
+        justify-content:center;
+    }
+
+    .top a{
+        display:none;
+    }
+
+    .header-actions a:first-child{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .hero-inner{
+        padding:55px 0;
+    }
+
+    .model-grid{
+        grid-template-columns:1fr;
+        gap:15px;
+    }
+
+    .model-arrow{
+        transform:rotate(90deg);
+    }
+
+    .inventory-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .bottom{
+        flex-direction:column;
+        gap:10px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- TOP BAR -->
+
+<div class="top">
+
+    <div class="container">
+
+        <span>
+            European B2B pet inventory
+        </span>
+
+        <a href="register.html">
+            List your stock for free
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="container head">
+
+        <a class="brand" href="index.html">
+
+            <img
+                src="SweetyPets_landscape logo_no ground.png"
+                alt="Sweety Pets"
+                style="width:180px;height:auto;display:block;">
+
+        </a>
+
+        <div class="header-actions">
+
+            <a href="catalogue.html">
+                Catalogue
+            </a>
+
+            <a class="btn dark" href="login.html">
+                Sign in
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- CATEGORY NAVIGATION -->
+
+<nav class="nav">
+
+    <div class="container">
+
+        <a href="catalogue.html">All offers</a>
+
+        <a href="catalogue.html#food">Food</a>
+
+        <a href="catalogue.html#treats">Treats</a>
+
+        <a href="catalogue.html#beds">Beds & Furniture</a>
+
+        <a href="catalogue.html#toys">Toys</a>
+
+        <a href="catalogue.html#walking">Walking & Travel</a>
+
+        <a href="catalogue.html#feeding">Feeding</a>
+
+        <a href="catalogue.html#grooming">Grooming & Care</a>
+
+        <a href="catalogue.html#litter">Litter & Toilets</a>
+
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="hero-inner">
+
+            <span class="eyebrow">
+                ABOUT SWEETY PETS
+            </span>
+
+            <h1>
+                A better way to move pet inventory across Europe
+            </h1>
+
+            <p>
+                Sweety Pets is a European B2B pet inventory platform
+                connecting suppliers with professional buyers looking
+                for available stock, overstock, seasonal collections
+                and discontinued pet products.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- INTRO -->
+
+<section class="intro">
+
+    <div class="container intro-grid">
+
+        <div>
+
+            <h2>
+                Why Sweety Pets exists
+            </h2>
+
+            <p>
+                Pet businesses across Europe hold inventory that may no
+                longer fit their current sales plans — even though the
+                products can still have commercial value for another buyer.
+            </p>
+
+            <p>
+                Overstock, slow-moving products, previous collections,
+                discontinued ranges and packaging changes can leave perfectly
+                sellable products sitting in warehouses.
+            </p>
+
+            <p>
+                At the same time, retailers, distributors and other
+                professional buyers are constantly looking for attractive
+                products and new purchasing opportunities.
+            </p>
+
+            <p>
+                Sweety Pets is designed to bring these two sides together
+                in one specialised B2B environment.
+            </p>
+
+        </div>
+
+
+        <div class="intro-box">
+
+            <span>
+                OUR IDEA
+            </span>
+
+            <h3>
+                Available stock in one business can become a new opportunity
+                for another.
+            </h3>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WHY -->
+
+<section class="why">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <h2>
+                Built for the pet industry
+            </h2>
+
+            <p>
+                Instead of mixing thousands of unrelated product categories,
+                Sweety Pets focuses specifically on B2B pet products and
+                available inventory.
+            </p>
+
+        </div>
+
+
+        <div class="why-grid">
+
+            <div class="why-card">
+
+                <div class="number">01</div>
+
+                <h3>
+                    For suppliers
+                </h3>
+
+                <p>
+                    A dedicated place to present available inventory to
+                    professional buyers beyond existing sales channels and
+                    distribution networks.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="number">02</div>
+
+                <h3>
+                    For buyers
+                </h3>
+
+                <p>
+                    A focused catalogue for discovering B2B pet inventory
+                    opportunities from suppliers across Europe.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="number">03</div>
+
+                <h3>
+                    For inventory
+                </h3>
+
+                <p>
+                    A second commercial opportunity for products that
+                    remain sellable but no longer fit the supplier's
+                    primary sales strategy.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MODEL -->
+
+<section class="model">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <h2>
+                How the platform works
+            </h2>
+
+            <p>
+                Sweety Pets connects supply and demand without turning
+                inventory discovery into a complicated process.
+            </p>
+
+        </div>
+
+
+        <div class="model-grid">
+
+            <div class="model-card">
+
+                <span class="model-label">
+                    SUPPLIERS
+                </span>
+
+                <h3>
+                    List available stock
+                </h3>
+
+                <p>
+                    Suppliers publish product lots with relevant B2B
+                    information including quantity, MOQ, price,
+                    warehouse location and available sales markets.
+                </p>
+
+            </div>
+
+
+            <div class="model-arrow">
+                →
+            </div>
+
+
+            <div class="model-card">
+
+                <span class="model-label">
+                    BUYERS
+                </span>
+
+                <h3>
+                    Discover and request
+                </h3>
+
+                <p>
+                    Professional buyers discover relevant inventory,
+                    review the offer and submit a request. Commercial
+                    and delivery conditions are then agreed as part
+                    of the B2B transaction.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- INVENTORY -->
+
+<section class="inventory">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <h2>
+                Inventory with another opportunity
+            </h2>
+
+            <p>
+                The platform is designed around products that remain
+                commercially usable but require a new sales channel.
+            </p>
+
+        </div>
+
+
+        <div class="inventory-grid">
+
+            <div class="inventory-item">
+
+                <h3>
+                    Overstock
+                </h3>
+
+                <p>
+                    Inventory exceeding current sales or distribution needs.
+                </p>
+
+            </div>
+
+
+            <div class="inventory-item">
+
+                <h3>
+                    Slow-moving stock
+                </h3>
+
+                <p>
+                    Products that remain in warehouses longer than planned.
+                </p>
+
+            </div>
+
+
+            <div class="inventory-item">
+
+                <h3>
+                    Seasonal collections
+                </h3>
+
+                <p>
+                    Previous or remaining seasonal product collections.
+                </p>
+
+            </div>
+
+
+            <div class="inventory-item">
+
+                <h3>
+                    Discontinued products
+                </h3>
+
+                <p>
+                    Products or ranges that are no longer part of the
+                    supplier's main assortment.
+                </p>
+
+            </div>
+
+
+            <div class="inventory-item">
+
+                <h3>
+                    Packaging changes
+                </h3>
+
+                <p>
+                    Sellable inventory remaining after packaging or
+                    branding updates.
+                </p>
+
+            </div>
+
+
+            <div class="inventory-item">
+
+                <h3>
+                    Assortment changes
+                </h3>
+
+                <p>
+                    Products removed as companies optimise or change
+                    their product assortment.
+                </p>
+
+            </div>
+
+
+            <div class="inventory-item">
+
+                <h3>
+                    Clearance stock
+                </h3>
+
+                <p>
+                    Inventory suppliers want to move through an
+                    additional B2B sales channel.
+                </p>
+
+            </div>
+
+
+            <div class="inventory-item">
+
+                <h3>
+                    Available lots
+                </h3>
+
+                <p>
+                    Other business-ready pet product inventory offered
+                    as defined B2B lots.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MISSION -->
+
+<section class="mission">
+
+    <div class="container">
+
+        <div class="mission-box">
+
+            <span class="eyebrow">
+                OUR MISSION
+            </span>
+
+            <h2>
+                Make existing inventory easier to discover
+            </h2>
+
+            <p>
+                Our goal is to create a focused European B2B environment
+                where pet industry suppliers can find additional demand
+                for available stock and professional buyers can discover
+                new inventory opportunities more efficiently.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <h2>
+                Explore Sweety Pets
+            </h2>
+
+            <p>
+                Discover available pet inventory or present your
+                company's stock to professional buyers across Europe.
+            </p>
+
+            <div class="cta-buttons">
+
+                <a
+                    class="cta-button"
+                    href="catalogue.html">
+
+                    Browse all offers
+
+                </a>
+
+                <a
+                    class="cta-button secondary"
+                    href="register.html">
+
+                    List your stock for free
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container footer-grid">
+
+        <div>
+
+            <div class="brand">
+
+                <img
+                    src="SweetyPets_landscape logo light_no ground.png"
+                    alt="Sweety Pets"
+                    style="width:180px;height:auto;display:block;">
+
+            </div>
+
+            <p style="color:#F3F6EF">
+                European B2B pet inventory platform
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                For buyers
+            </h4>
+
+            <a href="catalogue.html">
+                Catalogue
+            </a>
+
+            <a href="how-to-buy.html">
+                How to buy
+            </a>
+
+            <a href="#">
+                Delivery
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                For suppliers
+            </h4>
+
+            <a href="how-to-sell.html">
+                How to sell
+            </a>
+
+            <a href="register.html">
+                List products
+            </a>
+
+            <a href="#">
+                Pricing
+            </a>
+
+            <a href="#">
+                Logistics
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Company
+            </h4>
+
+            <a href="about.html">
+                About us
+            </a>
+
+            <a href="#">
+                Contacts
+            </a>
+
+            <a href="#">
+                Help
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="container bottom">
+
+        <span>
+            © 2026 Sweety Pets
+        </span>
+
+        <span>
+            Privacy · Terms · Cookies
+        </span>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
