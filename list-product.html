@@ -2302,7 +2302,14 @@ document.getElementById("summaryDiscount");
 const summaryWarehouse =
 document.getElementById("summaryWarehouse");
 
+/* =========================
+   CURRENT SUPPLIER
+   ========================= */
 
+const currentSupplier = {
+    id: "101",
+    name: "NordPet Foods GmbH"
+};
 
 /* =========================
    DISCOUNT CALCULATION
@@ -2574,6 +2581,78 @@ productForm.addEventListener(
 
         }
 
+/* Create offer linked to current supplier */
+
+const selectedMarkets = allEU.checked
+    ? ["ALL_EU"]
+    : Array.from(countryMarkets)
+        .filter(box => box.checked)
+        .map(box => box.value);
+
+const newOffer = {
+
+    id: Date.now(),
+
+    supplierId: currentSupplier.id,
+
+    title: productName.value.trim(),
+
+    brand: document.getElementById("brand").value.trim(),
+
+    category: document.getElementById("category").value,
+
+    petType: document.getElementById("petType").value,
+
+    sku: document.getElementById("sku").value.trim(),
+
+    ean: document.getElementById("ean").value.trim(),
+
+    condition: document.getElementById("condition").value,
+
+    reason: document.getElementById("reason").value,
+
+    description: document.getElementById("description").value.trim(),
+
+    stock: available,
+
+    moq: minimum,
+
+    unitsPerCase:
+        Number(document.getElementById("unitsPerCase").value) || null,
+
+    pallets:
+        Number(document.getElementById("pallets").value) || null,
+
+    regularPrice: regular,
+
+    price: offer,
+
+    currency: document.getElementById("currency").value,
+
+    vat: document.getElementById("vat").value,
+
+    country: document.getElementById("country").value,
+
+    warehouse: warehouse.value.trim(),
+
+    leadTime: document.getElementById("leadTime").value,
+
+    delivery: document.getElementById("delivery").value,
+
+    markets: selectedMarkets,
+
+    expiry: document.getElementById("expiry").value || null,
+
+    documents: document.getElementById("documents").value,
+
+    notes: document.getElementById("notes").value.trim(),
+
+    status: "Pending",
+
+    createdAt: new Date().toISOString()
+};
+
+console.log("New offer:", newOffer);
 
         productForm.style.display =
         "none";
