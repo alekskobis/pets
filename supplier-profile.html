@@ -902,254 +902,526 @@ footer{
 ======================================== */
 
 const suppliers = {
-
     "101": {
         id: "101",
-        name: "Pet Products Europe OÜ",
-        initials: "PP",
-        city: "Tallinn",
-        country: "Estonia",
-        type: "Supplier",
+        name: "NordPet Foods",
+        initials: "NP",
+        city: "Hamburg",
+        country: "Germany",
+        type: "Manufacturer",
         since: "2026",
         verified: true,
-
-        description:
-            "European supplier of pet products serving professional retailers and distributors. The company uses Sweety Pets to offer available inventory, overstock and selected product lots to B2B buyers across European markets."
+        activeOffers: 18,
+        description: "NordPet Foods is a European pet industry company offering available inventory, overstock, discontinued ranges and selected B2B lots to professional buyers through Sweety Pets."
     },
 
     "102": {
         id: "102",
-        name: "Nordic Pet Trade AB",
-        initials: "NP",
-        city: "Stockholm",
-        country: "Sweden",
-        type: "Distributor",
+        name: "Baltic Pet Nutrition",
+        initials: "BP",
+        city: "Kaunas",
+        country: "Lithuania",
+        type: "Manufacturer",
         since: "2026",
         verified: true,
-
-        description:
-            "Nordic pet product distributor offering selected available stock and seasonal inventory to professional buyers across European markets."
+        activeOffers: 11,
+        description: "Baltic Pet Nutrition is a European pet industry company offering available inventory, overstock, discontinued ranges and selected B2B lots to professional buyers through Sweety Pets."
     },
 
     "103": {
         id: "103",
-        name: "Pet Supply Europe GmbH",
-        initials: "PS",
-        city: "Hamburg",
+        name: "Happy Tail GmbH",
+        initials: "HT",
+        city: "Germany",
         country: "Germany",
-        type: "Supplier",
+        type: "Distributor",
         since: "2026",
         verified: true,
+        activeOffers: 12,
+        description: "Happy Tail GmbH is a European pet industry company offering available inventory, overstock, discontinued ranges and selected B2B lots to professional buyers through Sweety Pets."
+    },
 
-        description:
-            "European pet product supplier offering selected stock lots, discontinued ranges and available inventory to professional B2B buyers."
+    "104": {
+        id: "104",
+        name: "PawNordic",
+        initials: "PN",
+        city: "Poland",
+        country: "Poland",
+        type: "Manufacturer",
+        since: "2026",
+        verified: true,
+        activeOffers: 8,
+        description: "PawNordic is a European pet industry company offering available inventory, overstock, discontinued ranges and selected B2B lots to professional buyers through Sweety Pets."
+    },
+
+    "105": {
+        id: "105",
+        name: "PetWerk",
+        initials: "PW",
+        city: "Germany",
+        country: "Germany",
+        type: "Manufacturer",
+        since: "2026",
+        verified: true,
+        activeOffers: 14,
+        description: "PetWerk is a European pet industry company offering available inventory, overstock, discontinued ranges and selected B2B lots to professional buyers through Sweety Pets."
+    },
+
+    "106": {
+        id: "106",
+        name: "Milo Trade",
+        initials: "MT",
+        city: "France",
+        country: "France",
+        type: "Distributor",
+        since: "2026",
+        verified: true,
+        activeOffers: 7,
+        description: "Milo Trade is a European pet industry company offering available inventory, overstock, discontinued ranges and selected B2B lots to professional buyers through Sweety Pets."
+    },
+
+    "107": {
+        id: "107",
+        name: "Dog & Co",
+        initials: "DC",
+        city: "Lithuania",
+        country: "Lithuania",
+        type: "Distributor",
+        since: "2026",
+        verified: true,
+        activeOffers: 10,
+        description: "Dog & Co is a European pet industry company offering available inventory, overstock, discontinued ranges and selected B2B lots to professional buyers through Sweety Pets."
+    },
+
+    "108": {
+        id: "108",
+        name: "PetWay",
+        initials: "PW",
+        city: "Netherlands",
+        country: "Netherlands",
+        type: "Distributor",
+        since: "2026",
+        verified: true,
+        activeOffers: 9,
+        description: "PetWay is a European pet industry company offering available inventory, overstock, discontinued ranges and selected B2B lots to professional buyers through Sweety Pets."
+    },
+
+    "109": {
+        id: "109",
+        name: "CasaPet",
+        initials: "CP",
+        city: "Italy",
+        country: "Italy",
+        type: "Manufacturer",
+        since: "2026",
+        verified: true,
+        activeOffers: 13,
+        description: "CasaPet is a European pet industry company offering available inventory, overstock, discontinued ranges and selected B2B lots to professional buyers through Sweety Pets."
+    },
+
+    "110": {
+        id: "110",
+        name: "CarePet",
+        initials: "CP",
+        city: "Italy",
+        country: "Italy",
+        type: "Distributor",
+        since: "2026",
+        verified: true,
+        activeOffers: 6,
+        description: "CarePet is a European pet industry company offering available inventory, overstock, discontinued ranges and selected B2B lots to professional buyers through Sweety Pets."
+    },
+
+    "111": {
+        id: "111",
+        name: "MiaCasa",
+        initials: "MC",
+        city: "Poland",
+        country: "Poland",
+        type: "Distributor",
+        since: "2026",
+        verified: true,
+        activeOffers: 5,
+        description: "MiaCasa is a European pet industry company offering available inventory, overstock, discontinued ranges and selected B2B lots to professional buyers through Sweety Pets."
+    },
+
+    "112": {
+        id: "112",
+        name: "AviaNature",
+        initials: "AN",
+        city: "France",
+        country: "France",
+        type: "Manufacturer",
+        since: "2026",
+        verified: true,
+        activeOffers: 4,
+        description: "AviaNature is a European pet industry company offering available inventory, overstock, discontinued ranges and selected B2B lots to professional buyers through Sweety Pets."
+    },
+
+    "113": {
+        id: "113",
+        name: "GreenPet",
+        initials: "GP",
+        city: "Netherlands",
+        country: "Netherlands",
+        type: "Manufacturer",
+        since: "2026",
+        verified: true,
+        activeOffers: 6,
+        description: "GreenPet is a European pet industry company offering available inventory, overstock, discontinued ranges and selected B2B lots to professional buyers through Sweety Pets."
+    },
+
+    "114": {
+        id: "114",
+        name: "AquaFeed",
+        initials: "AF",
+        city: "Germany",
+        country: "Germany",
+        type: "Manufacturer",
+        since: "2026",
+        verified: true,
+        activeOffers: 8,
+        description: "AquaFeed is a European pet industry company offering available inventory, overstock, discontinued ranges and selected B2B lots to professional buyers through Sweety Pets."
+    },
+
+    "115": {
+        id: "115",
+        name: "EcoPet Home",
+        initials: "EH",
+        city: "France",
+        country: "France",
+        type: "Manufacturer",
+        since: "2026",
+        verified: true,
+        activeOffers: 9,
+        description: "EcoPet Home is a European pet industry company offering available inventory, overstock, discontinued ranges and selected B2B lots to professional buyers through Sweety Pets."
+    },
+
+    "116": {
+        id: "116",
+        name: "Nordic Bites",
+        initials: "NB",
+        city: "Poland",
+        country: "Poland",
+        type: "Manufacturer",
+        since: "2026",
+        verified: true,
+        activeOffers: 7,
+        description: "Nordic Bites is a European pet industry company offering available inventory, overstock, discontinued ranges and selected B2B lots to professional buyers through Sweety Pets."
+    },
+
+    "117": {
+        id: "117",
+        name: "BioPet Care",
+        initials: "BC",
+        city: "France",
+        country: "France",
+        type: "Manufacturer",
+        since: "2026",
+        verified: true,
+        activeOffers: 5,
+        description: "BioPet Care is a European pet industry company offering available inventory, overstock, discontinued ranges and selected B2B lots to professional buyers through Sweety Pets."
+    },
+
+    "118": {
+        id: "118",
+        name: "PetLiving",
+        initials: "PL",
+        city: "Netherlands",
+        country: "Netherlands",
+        type: "Distributor",
+        since: "2026",
+        verified: true,
+        activeOffers: 10,
+        description: "PetLiving is a European pet industry company offering available inventory, overstock, discontinued ranges and selected B2B lots to professional buyers through Sweety Pets."
     }
-
 };
 
-
 /* ========================================
-   TEMPORARY PRODUCT DATABASE
+   PRODUCT DATABASE — SAME 18 IDs AS product.html
 ======================================== */
 
 const products = [
-
     {
-        id: "1001",
+        id: "1",
         supplierId: "101",
-        category: "Toys",
-        name: "Premium Dog Toy Collection",
-        price: "€2.80 / pc",
-        available: "2,400 pcs",
-        moq: "300 pcs",
-        location: "Estonia"
-    },
-
-    {
-        id: "1002",
-        supplierId: "101",
-        category: "Beds & Furniture",
-        name: "Soft Pet Bed Collection",
-        price: "€8.50 / pc",
-        available: "850 pcs",
-        moq: "100 pcs",
-        location: "Estonia"
-    },
-
-    {
-        id: "1003",
-        supplierId: "101",
-        category: "Walking & Travel",
-        name: "Dog Leash & Collar Stock Lot",
-        price: "€3.40 / pc",
-        available: "1,600 pcs",
-        moq: "200 pcs",
-        location: "Estonia"
-    },
-
-    {
-        id: "2001",
-        supplierId: "102",
-        category: "Feeding",
-        name: "Stainless Steel Bowl Collection",
-        price: "€4.20 / pc",
-        available: "1,200 pcs",
-        moq: "150 pcs",
-        location: "Sweden"
-    },
-
-    {
-        id: "3001",
-        supplierId: "103",
-        category: "Grooming & Care",
-        name: "Pet Grooming Accessories Lot",
-        price: "€3.10 / pc",
-        available: "3,000 pcs",
-        moq: "500 pcs",
+        category: "Food",
+        name: "Premium Dry Dog Food — Chicken 12 kg",
+        price: "€18.90 / unit",
+        available: "620 units",
+        moq: "40 units",
         location: "Germany"
+    },
+
+    {
+        id: "2",
+        supplierId: "102",
+        category: "Food",
+        name: "Wet Cat Food Selection — 400 g",
+        price: "€0.89 / unit",
+        available: "2,400 units",
+        moq: "120 units",
+        location: "Lithuania"
+    },
+
+    {
+        id: "3",
+        supplierId: "103",
+        category: "Treats",
+        name: "Natural Dental Chews",
+        price: "€1.35 / unit",
+        available: "1,800 units",
+        moq: "100 units",
+        location: "Germany"
+    },
+
+    {
+        id: "4",
+        supplierId: "104",
+        category: "Beds & Furniture",
+        name: "Nordic Comfort Pet Beds",
+        price: "€19.90 / unit",
+        available: "380 units",
+        moq: "40 units",
+        location: "Poland"
+    },
+
+    {
+        id: "5",
+        supplierId: "105",
+        category: "Toys",
+        name: "Eco Rope Toy Collection",
+        price: "€2.40 / unit",
+        available: "1,450 units",
+        moq: "120 units",
+        location: "Germany"
+    },
+
+    {
+        id: "6",
+        supplierId: "106",
+        category: "Toys",
+        name: "Interactive Cat Motion Toys",
+        price: "€4.60 / unit",
+        available: "740 units",
+        moq: "75 units",
+        location: "France"
+    },
+
+    {
+        id: "7",
+        supplierId: "107",
+        category: "Walking & Travel",
+        name: "Urban Walk Leash Collection",
+        price: "€5.80 / unit",
+        available: "960 units",
+        moq: "80 units",
+        location: "Lithuania"
+    },
+
+    {
+        id: "8",
+        supplierId: "108",
+        category: "Walking & Travel",
+        name: "Soft Travel Carriers",
+        price: "€16.50 / unit",
+        available: "310 units",
+        moq: "35 units",
+        location: "Netherlands"
+    },
+
+    {
+        id: "9",
+        supplierId: "109",
+        category: "Feeding",
+        name: "Stainless Steel Feeding Bowls",
+        price: "€2.10 / unit",
+        available: "2,200 units",
+        moq: "150 units",
+        location: "Italy"
+    },
+
+    {
+        id: "10",
+        supplierId: "110",
+        category: "Grooming & Care",
+        name: "Grooming Brush & Comb Set",
+        price: "€3.10 / unit",
+        available: "980 units",
+        moq: "100 units",
+        location: "Italy"
+    },
+
+    {
+        id: "11",
+        supplierId: "111",
+        category: "Litter & Toilets",
+        name: "Covered Cat Litter Trays",
+        price: "€12.90 / unit",
+        available: "430 units",
+        moq: "30 units",
+        location: "Poland"
+    },
+
+    {
+        id: "12",
+        supplierId: "112",
+        category: "Food",
+        name: "Premium Bird Seed Mix 2 kg",
+        price: "€3.90 / unit",
+        available: "860 units",
+        moq: "80 units",
+        location: "France"
+    },
+
+    {
+        id: "13",
+        supplierId: "113",
+        category: "Food",
+        name: "Complete Rabbit Food 3 kg",
+        price: "€4.80 / unit",
+        available: "690 units",
+        moq: "60 units",
+        location: "Netherlands"
+    },
+
+    {
+        id: "14",
+        supplierId: "114",
+        category: "Food",
+        name: "Aquarium Fish Flakes 500 ml",
+        price: "€2.70 / unit",
+        available: "1,200 units",
+        moq: "100 units",
+        location: "Germany"
+    },
+
+    {
+        id: "15",
+        supplierId: "115",
+        category: "Beds & Furniture",
+        name: "Natural Woven Cat Baskets",
+        price: "€22.90 / unit",
+        available: "270 units",
+        moq: "30 units",
+        location: "France"
+    },
+
+    {
+        id: "16",
+        supplierId: "116",
+        category: "Treats",
+        name: "Salmon Cat Treats 80 g",
+        price: "€0.72 / unit",
+        available: "3,200 units",
+        moq: "200 units",
+        location: "Poland"
+    },
+
+    {
+        id: "17",
+        supplierId: "117",
+        category: "Grooming & Care",
+        name: "Pet Shampoo Sensitive 500 ml",
+        price: "€3.80 / unit",
+        available: "780 units",
+        moq: "90 units",
+        location: "France"
+    },
+
+    {
+        id: "18",
+        supplierId: "118",
+        category: "Feeding",
+        name: "Ceramic Bowl Collection",
+        price: "€4.90 / unit",
+        available: "540 units",
+        moq: "50 units",
+        location: "Netherlands"
     }
-
 ];
-
 
 /* READ SUPPLIER ID FROM URL */
 
 const params = new URLSearchParams(window.location.search);
-
 const supplierId = params.get("id") || "101";
-
 const supplier = suppliers[supplierId];
-
 
 /* DISPLAY SUPPLIER */
 
 if (supplier) {
-
     document.title = supplier.name + " — Sweety Pets";
 
-    document.getElementById("supplierLogo").textContent =
-        supplier.initials;
-
-    document.getElementById("supplierName").textContent =
-        supplier.name;
-
+    document.getElementById("supplierLogo").textContent = supplier.initials;
+    document.getElementById("supplierName").textContent = supplier.name;
     document.getElementById("supplierLocation").textContent =
         supplier.city + ", " + supplier.country;
-
     document.getElementById("supplierDescription").textContent =
         supplier.description;
-
     document.getElementById("supplierCountry").textContent =
         supplier.country;
-
     document.getElementById("supplierType").textContent =
         supplier.type;
-
     document.getElementById("supplierSince").textContent =
         supplier.since;
-
     document.getElementById("supplierStatus").textContent =
         supplier.verified ? "Verified" : "Not verified";
 
-
     if (!supplier.verified) {
-
-        document.getElementById(
-            "supplierVerification"
-        ).style.display = "none";
-
+        document.getElementById("supplierVerification").style.display = "none";
     }
-
-
-    /* SHOW THIS SUPPLIER'S PRODUCTS */
 
     const supplierProducts = products.filter(
         product => product.supplierId === supplierId
     );
 
-    const offers =
-        document.getElementById("supplierOffers");
-
+    const offers = document.getElementById("supplierOffers");
 
     supplierProducts.forEach(product => {
-
-        offers.insertAdjacentHTML(
-            "beforeend",
-            `
-
+        offers.insertAdjacentHTML("beforeend", `
             <div class="product-card">
-
                 <a href="product.html?id=${product.id}">
-
-                    <div class="product-image">
-                        Product image
-                    </div>
-
+                    <div class="product-image">Product image</div>
                     <div class="product-content">
-
-                        <span class="product-category">
-                            ${product.category}
-                        </span>
-
-                        <h3>
-                            ${product.name}
-                        </h3>
-
+                        <span class="product-category">${product.category}</span>
+                        <h3>${product.name}</h3>
                         <div class="product-data">
-
-                            <div>
-                                <span>Price</span>
-                                <strong>${product.price}</strong>
-                            </div>
-
-                            <div>
-                                <span>Available</span>
-                                <strong>${product.available}</strong>
-                            </div>
-
-                            <div>
-                                <span>MOQ</span>
-                                <strong>${product.moq}</strong>
-                            </div>
-
-                            <div>
-                                <span>Location</span>
-                                <strong>${product.location}</strong>
-                            </div>
-
+                            <div><span>Price</span><strong>${product.price}</strong></div>
+                            <div><span>Available</span><strong>${product.available}</strong></div>
+                            <div><span>MOQ</span><strong>${product.moq}</strong></div>
+                            <div><span>Location</span><strong>${product.location}</strong></div>
                         </div>
-
-                        <span class="view-offer">
-                            View offer →
-                        </span>
-
+                        <span class="view-offer">View offer →</span>
                     </div>
-
                 </a>
-
             </div>
-
-            `
-        );
-
+        `);
     });
 
-
-    /* ACTIVE OFFER COUNT */
-
-    const offerCount =
-        document.querySelector(".offer-count");
-
+    const offerCount = document.querySelector(".offer-count");
     if (offerCount) {
-
         offerCount.textContent =
-            supplierProducts.length +
-            " active offer" +
+            supplierProducts.length + " active offer" +
             (supplierProducts.length === 1 ? "" : "s");
-
     }
 
+    const contactButton = document.getElementById("contactSupplierButton");
+    if (contactButton) {
+        contactButton.addEventListener("click", () => {
+            window.location.href =
+                "contact.html?supplier=" + encodeURIComponent(supplierId);
+        });
+    }
+
+} else {
+    document.getElementById("supplierName").textContent = "Supplier not found";
+    document.getElementById("supplierLocation").textContent = "";
+    document.getElementById("supplierDescription").textContent =
+        "The requested supplier profile could not be found.";
+    document.getElementById("supplierVerification").style.display = "none";
+    document.getElementById("contactSupplierButton").style.display = "none";
 }
+
 
 </script>
 
