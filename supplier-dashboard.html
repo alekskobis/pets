@@ -676,7 +676,7 @@ footer{
                 id="contactSupplierButton"
                 type="button">
 
-                Contact supplier
+                Message supplier
 
             </button>
 
@@ -859,7 +859,7 @@ footer{
             <h4>For suppliers</h4>
 
             <a href="how-to-sell.html">How to sell</a>
-            <a href="register.html">List products</a>
+            <a href="list-product.html">List products</a>
             <a href="pricing.html">Pricing</a>
             <a href="delivery.html">Logistics</a>
 
@@ -1409,7 +1409,7 @@ if (supplier) {
     if (contactButton) {
         contactButton.addEventListener("click", () => {
             window.location.href =
-                "contact.html?supplier=" + encodeURIComponent(supplierId);
+                "buyer-dashboard.html?view=messages&supplier=" + encodeURIComponent(supplierId);
         });
     }
 

@@ -1604,7 +1604,7 @@ footer{
         <div>
             <h4>For suppliers</h4>
             <a href="how-to-sell.html">How to sell</a>
-            <a href="register.html">List products</a>
+            <a href="list-product.html">List products</a>
             <a href="pricing.html">Pricing</a>
             <a href="delivery.html">Logistics</a>
         </div>
@@ -2081,6 +2081,15 @@ document
     });
 
 });
+
+/* OPEN DASHBOARD VIEW FROM URL, E.G. ?view=messages&supplier=114 */
+const dashboardParams = new URLSearchParams(window.location.search);
+const requestedView = dashboardParams.get("view");
+
+if (requestedView && document.getElementById(requestedView)) {
+    openView(requestedView);
+}
+
 
 
 
