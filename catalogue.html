@@ -2628,6 +2628,26 @@ showCountriesButton.addEventListener("click",()=>{
 });
 
 
+/* =========================
+   CATEGORY FROM URL
+   Example: catalogue.html?category=food
+   ========================= */
+
+const catalogueParams = new URLSearchParams(window.location.search);
+const categoryFromUrl = catalogueParams.get("category");
+
+if (categoryFromUrl) {
+
+    const categoryInput = document.querySelector(
+        `input[name="category"][value="${CSS.escape(categoryFromUrl)}"]`
+    );
+
+    if (categoryInput) {
+        categoryInput.checked = true;
+    }
+}
+
+
 /* INITIAL LOAD */
 
 render();

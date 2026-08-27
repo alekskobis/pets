@@ -2085,9 +2085,49 @@ document
 /* OPEN DASHBOARD VIEW FROM URL, E.G. ?view=messages&supplier=114 */
 const dashboardParams = new URLSearchParams(window.location.search);
 const requestedView = dashboardParams.get("view");
+const requestedSupplierId = dashboardParams.get("supplier");
 
 if (requestedView && document.getElementById(requestedView)) {
     openView(requestedView);
+}
+
+/* Select supplier conversation passed from supplier-profile.html */
+if (requestedView === "messages" && requestedSupplierId) {
+
+    const supplierMessage = messages.find(
+        message => String(message.supplierId) === String(requestedSupplierId)
+    );
+
+    window.selectedSupplierId = requestedSupplierId;
+    window.selectedSupplierMessage = supplierMessage || null;
+
+    /*
+       If a conversation with this supplier already exists,
+       try to open its row in the current Messages interface.
+    */
+    if (supplierMessage) {
+
+        const messageRows = document.querySelectorAll(
+            "[data-message-id], [data-supplier-id]"
+        );
+
+        messageRows.forEach(row => {
+
+            const rowSupplierId =
+                row.getAttribute("data-supplier-id");
+
+            const rowMessageId =
+                row.getAttribute("data-message-id");
+
+            if (
+                String(rowSupplierId || "") === String(requestedSupplierId) ||
+                String(rowMessageId || "") === String(supplierMessage.id)
+            ) {
+                row.click();
+            }
+
+        });
+    }
 }
 
 
