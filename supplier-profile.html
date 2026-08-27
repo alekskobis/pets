@@ -1,0 +1,1158 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Supplier — Sweety Pets</title>
+
+<meta name="description"
+content="View supplier information, verification status and active B2B pet inventory offers on Sweety Pets.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --navy:#2E5B3B;
+    --teal:#4CAF50;
+    --light-green:#E8F3E6;
+    --line:#E8EEE7;
+    --muted:#687582;
+    --soft:#F6F8F5;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:"Montserrat",Arial,sans-serif;
+    color:#17212b;
+    background:#fff;
+}
+
+.container{
+    width:min(1240px,calc(100% - 36px));
+    margin:auto;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+
+/* TOP BAR */
+
+.top{
+    background:var(--navy);
+    color:#fff;
+    font-size:13px;
+}
+
+.top .container{
+    height:36px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.top a{
+    font-weight:400;
+}
+
+
+/* HEADER */
+
+header{
+    background:#fff;
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    z-index:20;
+}
+
+.head{
+    min-height:76px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:25px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+}
+
+.header-actions{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.header-actions a:first-child{
+    color:#53616c;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:13px 20px;
+    border-radius:8px;
+    border:1px solid var(--navy);
+    font-weight:600;
+}
+
+.btn.dark{
+    background:var(--navy);
+    color:#fff;
+}
+
+
+/* CATEGORY NAV */
+
+.nav{
+    background:#fff;
+    border-bottom:1px solid var(--line);
+}
+
+.nav .container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:25px;
+    overflow:auto;
+}
+
+.nav a{
+    padding:15px 0;
+    white-space:nowrap;
+    color:#4b5863;
+    font-size:16px;
+    border-bottom:2px solid transparent;
+}
+
+.nav a:hover{
+    border-bottom-color:#4CAF50;
+}
+
+
+/* BREADCRUMBS */
+
+.breadcrumbs{
+    padding:22px 0;
+    font-size:12px;
+    color:#89949c;
+}
+
+.breadcrumbs a:hover{
+    color:var(--navy);
+}
+
+
+/* SUPPLIER HEADER */
+
+.supplier{
+    padding:10px 0 60px;
+}
+
+.supplier-card{
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:38px;
+    display:grid;
+    grid-template-columns:100px 1fr auto;
+    gap:28px;
+    align-items:center;
+}
+
+.company-logo{
+    width:100px;
+    height:100px;
+    border-radius:14px;
+    background:var(--soft);
+    border:1px solid var(--line);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--navy);
+    font-size:32px;
+    font-weight:700;
+}
+
+.company-main h1{
+    color:var(--navy);
+    font-size:30px;
+    margin:0 0 9px;
+}
+
+.company-location{
+    color:var(--muted);
+    font-size:13px;
+    margin-bottom:13px;
+}
+
+.verification{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    padding:7px 11px;
+    background:var(--light-green);
+    color:var(--navy);
+    border-radius:20px;
+    font-size:11px;
+    font-weight:700;
+}
+
+.check{
+    width:16px;
+    height:16px;
+    border-radius:50%;
+    background:var(--teal);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:10px;
+}
+
+.contact-supplier{
+    background:var(--navy);
+    color:#fff;
+    border-radius:8px;
+    padding:14px 20px;
+    font-size:12px;
+    font-weight:700;
+}
+
+
+/* COMPANY INFO */
+
+.company-section{
+    padding:0 0 70px;
+}
+
+.company-grid{
+    display:grid;
+    grid-template-columns:1.4fr .6fr;
+    gap:60px;
+}
+
+.about-company h2,
+.company-details h2{
+    color:var(--navy);
+    font-size:23px;
+    margin:0 0 18px;
+}
+
+.about-company p{
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.8;
+    max-width:700px;
+    margin:0;
+}
+
+.detail{
+    border-top:1px solid var(--line);
+    padding:14px 0;
+}
+
+.detail:last-child{
+    border-bottom:1px solid var(--line);
+}
+
+.detail span{
+    display:block;
+    color:#909aa1;
+    font-size:10px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:.8px;
+    margin-bottom:5px;
+}
+
+.detail strong{
+    color:#34424d;
+    font-size:12px;
+    font-weight:600;
+}
+
+
+/* OFFERS */
+
+.offers{
+    background:var(--soft);
+    padding:70px 0 85px;
+}
+
+.section-head{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    margin-bottom:30px;
+}
+
+.section-head h2{
+    color:var(--navy);
+    font-size:28px;
+    margin:0 0 7px;
+}
+
+.section-head p{
+    color:var(--muted);
+    font-size:13px;
+    margin:0;
+}
+
+.offer-count{
+    color:var(--muted);
+    font-size:12px;
+}
+
+
+/* PRODUCT CARDS */
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.product-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+    overflow:hidden;
+    transition:.2s;
+}
+
+.product-card:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 24px rgba(34,91,55,.08);
+}
+
+.product-image{
+    height:220px;
+    background:#eef2ed;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#9aa4aa;
+    font-size:12px;
+}
+
+.product-content{
+    padding:22px;
+}
+
+.product-category{
+    color:var(--teal);
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+.product-content h3{
+    color:#26343d;
+    font-size:15px;
+    line-height:1.45;
+    margin:8px 0 16px;
+}
+
+.product-data{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    border-top:1px solid var(--line);
+    padding-top:15px;
+}
+
+.product-data span{
+    display:block;
+    color:#929ca3;
+    font-size:9px;
+    text-transform:uppercase;
+    margin-bottom:4px;
+}
+
+.product-data strong{
+    color:var(--navy);
+    font-size:12px;
+}
+
+.view-offer{
+    display:block;
+    margin-top:18px;
+    color:var(--navy);
+    font-size:12px;
+    font-weight:700;
+}
+
+
+/* VERIFIED INFO */
+
+.verified-info{
+    padding:70px 0;
+}
+
+.verified-box{
+    max-width:900px;
+    margin:auto;
+    background:#f7faf6;
+    border:1px solid var(--line);
+    border-left:4px solid var(--teal);
+    border-radius:10px;
+    padding:28px 32px;
+}
+
+.verified-box h3{
+    color:var(--navy);
+    font-size:16px;
+    margin:0 0 8px;
+}
+
+.verified-box p{
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.7;
+    margin:0;
+}
+
+
+/* FOOTER */
+
+footer{
+    background:#225B37;
+    color:white;
+    padding:60px 0 40px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr repeat(3,1fr);
+    gap:38px;
+}
+
+.footer-grid h4{
+    margin-top:0;
+}
+
+.footer-grid a{
+    display:block;
+    color:#F3F6EF;
+    font-size:14px;
+    margin:9px 0;
+}
+
+.bottom{
+    border-top:1px solid rgba(255,255,255,.13);
+    margin-top:40px;
+    padding-top:20px;
+    color:#F3F6EF;
+    font-size:12px;
+    display:flex;
+    justify-content:space-between;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .supplier-card{
+        grid-template-columns:80px 1fr;
+    }
+
+    .company-logo{
+        width:80px;
+        height:80px;
+    }
+
+    .contact-supplier{
+        grid-column:1 / -1;
+        text-align:center;
+    }
+
+    .company-grid{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .product-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media(max-width:650px){
+
+    .top .container{
+        justify-content:center;
+    }
+
+    .top a{
+        display:none;
+    }
+
+    .header-actions a:first-child{
+        display:none;
+    }
+
+    .supplier-card{
+        grid-template-columns:1fr;
+    }
+
+    .product-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section-head{
+        display:block;
+    }
+
+    .offer-count{
+        margin-top:10px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .bottom{
+        flex-direction:column;
+        gap:10px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- TOP BAR -->
+
+<div class="top">
+
+    <div class="container">
+
+        <span>
+            European B2B pet inventory
+        </span>
+
+        <a href="register.html">
+            List your stock for free
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="container head">
+
+        <a class="brand" href="index.html">
+
+            <img
+                src="SweetyPets_landscape logo_no ground.png"
+                alt="Sweety Pets"
+                style="width:180px;height:auto;display:block;">
+
+        </a>
+
+        <div class="header-actions">
+
+            <a href="catalogue.html">
+                Catalogue
+            </a>
+
+            <a class="btn dark" href="login.html">
+                Sign in
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- CATEGORY NAV -->
+
+<nav class="nav">
+
+    <div class="container">
+
+        <a href="catalogue.html">All offers</a>
+        <a href="catalogue.html#food">Food</a>
+        <a href="catalogue.html#treats">Treats</a>
+        <a href="catalogue.html#beds">Beds & Furniture</a>
+        <a href="catalogue.html#toys">Toys</a>
+        <a href="catalogue.html#walking">Walking & Travel</a>
+        <a href="catalogue.html#feeding">Feeding</a>
+        <a href="catalogue.html#grooming">Grooming & Care</a>
+        <a href="catalogue.html#litter">Litter & Toilets</a>
+
+    </div>
+
+</nav>
+
+
+<!-- BREADCRUMBS -->
+
+<div class="container breadcrumbs">
+
+    <a href="index.html">Home</a>
+    &nbsp; / &nbsp;
+    <a href="catalogue.html">Catalogue</a>
+    &nbsp; / &nbsp;
+    Supplier
+
+</div>
+
+
+<!-- SUPPLIER -->
+
+<section class="supplier">
+
+    <div class="container">
+
+        <div class="supplier-card">
+
+            <div class="company-logo" id="supplierLogo">
+                SP
+            </div>
+
+
+            <div class="company-main">
+
+                <h1 id="supplierName">
+                    Supplier
+                </h1>
+
+                <div class="company-location" id="supplierLocation">
+                    Europe
+                </div>
+
+                <div
+                    class="verification"
+                    id="supplierVerification">
+
+                    <span class="check">✓</span>
+
+                    Verified supplier
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="contact-supplier"
+                id="contactSupplierButton"
+                type="button">
+
+                Contact supplier
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- COMPANY INFORMATION -->
+
+<section class="company-section">
+
+    <div class="container company-grid">
+
+
+        <div class="about-company">
+
+            <h2>
+                About the supplier
+            </h2>
+
+            <p id="supplierDescription"></p>
+
+        </div>
+
+
+        <div class="company-details">
+
+            <h2>
+                Company details
+            </h2>
+
+
+            <div class="detail">
+
+                <span>Country</span>
+
+                <strong id="supplierCountry"></strong>
+
+            </div>
+
+
+            <div class="detail">
+
+                <span>Company type</span>
+
+                <strong id="supplierType"></strong>
+
+            </div>
+
+
+            <div class="detail">
+
+                <span>Member since</span>
+
+                <strong id="supplierSince"></strong>
+
+            </div>
+
+
+            <div class="detail">
+
+                <span>Verification</span>
+
+                <strong id="supplierStatus"></strong>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ACTIVE OFFERS -->
+
+<section class="offers">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <div>
+
+                <h2>
+                    Active offers
+                </h2>
+
+                <p>
+                    Available inventory currently listed by this supplier.
+                </p>
+
+            </div>
+
+            <div class="offer-count">
+                0 active offers
+            </div>
+
+        </div>
+
+
+        <div class="product-grid" id="supplierOffers"></div>
+
+
+    </div>
+
+</section>
+
+
+<!-- VERIFICATION EXPLANATION -->
+
+<section class="verified-info">
+
+    <div class="container">
+
+        <div class="verified-box">
+
+            <h3>
+                About supplier verification
+            </h3>
+
+            <p>
+                A verified status indicates that business information
+                provided for the supplier account has been reviewed.
+                Verification does not constitute a guarantee of a
+                particular transaction. Buyers should review the offer
+                and agreed commercial terms before completing a purchase.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container footer-grid">
+
+
+        <div>
+
+            <div class="brand">
+
+                <img
+                    src="SweetyPets_landscape logo light_no ground.png"
+                    alt="Sweety Pets"
+                    style="width:180px;height:auto;display:block;">
+
+            </div>
+
+            <p style="color:#F3F6EF">
+                European B2B pet inventory platform
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>For buyers</h4>
+
+            <a href="catalogue.html">Catalogue</a>
+            <a href="how-to-buy.html">How to buy</a>
+            <a href="delivery.html">Delivery</a>
+
+        </div>
+
+
+        <div>
+
+            <h4>For suppliers</h4>
+
+            <a href="how-to-sell.html">How to sell</a>
+            <a href="register.html">List products</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="delivery.html">Logistics</a>
+
+        </div>
+
+
+        <div>
+
+            <h4>Company</h4>
+
+            <a href="about.html">About us</a>
+            <a href="contact.html">Contacts</a>
+            <a href="faq.html">Help</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="container bottom">
+
+        <span>
+            © 2026 Sweety Pets
+        </span>
+
+        <span>
+            Privacy · Terms · Cookies
+        </span>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+/* ========================================
+   TEMPORARY SUPPLIER DATABASE
+   Later this will come from the backend.
+======================================== */
+
+const suppliers = {
+
+    "101": {
+        id: "101",
+        name: "Pet Products Europe OÜ",
+        initials: "PP",
+        city: "Tallinn",
+        country: "Estonia",
+        type: "Supplier",
+        since: "2026",
+        verified: true,
+
+        description:
+            "European supplier of pet products serving professional retailers and distributors. The company uses Sweety Pets to offer available inventory, overstock and selected product lots to B2B buyers across European markets."
+    },
+
+    "102": {
+        id: "102",
+        name: "Nordic Pet Trade AB",
+        initials: "NP",
+        city: "Stockholm",
+        country: "Sweden",
+        type: "Distributor",
+        since: "2026",
+        verified: true,
+
+        description:
+            "Nordic pet product distributor offering selected available stock and seasonal inventory to professional buyers across European markets."
+    },
+
+    "103": {
+        id: "103",
+        name: "Pet Supply Europe GmbH",
+        initials: "PS",
+        city: "Hamburg",
+        country: "Germany",
+        type: "Supplier",
+        since: "2026",
+        verified: true,
+
+        description:
+            "European pet product supplier offering selected stock lots, discontinued ranges and available inventory to professional B2B buyers."
+    }
+
+};
+
+
+/* ========================================
+   TEMPORARY PRODUCT DATABASE
+======================================== */
+
+const products = [
+
+    {
+        id: "1001",
+        supplierId: "101",
+        category: "Toys",
+        name: "Premium Dog Toy Collection",
+        price: "€2.80 / pc",
+        available: "2,400 pcs",
+        moq: "300 pcs",
+        location: "Estonia"
+    },
+
+    {
+        id: "1002",
+        supplierId: "101",
+        category: "Beds & Furniture",
+        name: "Soft Pet Bed Collection",
+        price: "€8.50 / pc",
+        available: "850 pcs",
+        moq: "100 pcs",
+        location: "Estonia"
+    },
+
+    {
+        id: "1003",
+        supplierId: "101",
+        category: "Walking & Travel",
+        name: "Dog Leash & Collar Stock Lot",
+        price: "€3.40 / pc",
+        available: "1,600 pcs",
+        moq: "200 pcs",
+        location: "Estonia"
+    },
+
+    {
+        id: "2001",
+        supplierId: "102",
+        category: "Feeding",
+        name: "Stainless Steel Bowl Collection",
+        price: "€4.20 / pc",
+        available: "1,200 pcs",
+        moq: "150 pcs",
+        location: "Sweden"
+    },
+
+    {
+        id: "3001",
+        supplierId: "103",
+        category: "Grooming & Care",
+        name: "Pet Grooming Accessories Lot",
+        price: "€3.10 / pc",
+        available: "3,000 pcs",
+        moq: "500 pcs",
+        location: "Germany"
+    }
+
+];
+
+
+/* READ SUPPLIER ID FROM URL */
+
+const params = new URLSearchParams(window.location.search);
+
+const supplierId = params.get("id") || "101";
+
+const supplier = suppliers[supplierId];
+
+
+/* DISPLAY SUPPLIER */
+
+if (supplier) {
+
+    document.title = supplier.name + " — Sweety Pets";
+
+    document.getElementById("supplierLogo").textContent =
+        supplier.initials;
+
+    document.getElementById("supplierName").textContent =
+        supplier.name;
+
+    document.getElementById("supplierLocation").textContent =
+        supplier.city + ", " + supplier.country;
+
+    document.getElementById("supplierDescription").textContent =
+        supplier.description;
+
+    document.getElementById("supplierCountry").textContent =
+        supplier.country;
+
+    document.getElementById("supplierType").textContent =
+        supplier.type;
+
+    document.getElementById("supplierSince").textContent =
+        supplier.since;
+
+    document.getElementById("supplierStatus").textContent =
+        supplier.verified ? "Verified" : "Not verified";
+
+
+    if (!supplier.verified) {
+
+        document.getElementById(
+            "supplierVerification"
+        ).style.display = "none";
+
+    }
+
+
+    /* SHOW THIS SUPPLIER'S PRODUCTS */
+
+    const supplierProducts = products.filter(
+        product => product.supplierId === supplierId
+    );
+
+    const offers =
+        document.getElementById("supplierOffers");
+
+
+    supplierProducts.forEach(product => {
+
+        offers.insertAdjacentHTML(
+            "beforeend",
+            `
+
+            <div class="product-card">
+
+                <a href="product.html?id=${product.id}">
+
+                    <div class="product-image">
+                        Product image
+                    </div>
+
+                    <div class="product-content">
+
+                        <span class="product-category">
+                            ${product.category}
+                        </span>
+
+                        <h3>
+                            ${product.name}
+                        </h3>
+
+                        <div class="product-data">
+
+                            <div>
+                                <span>Price</span>
+                                <strong>${product.price}</strong>
+                            </div>
+
+                            <div>
+                                <span>Available</span>
+                                <strong>${product.available}</strong>
+                            </div>
+
+                            <div>
+                                <span>MOQ</span>
+                                <strong>${product.moq}</strong>
+                            </div>
+
+                            <div>
+                                <span>Location</span>
+                                <strong>${product.location}</strong>
+                            </div>
+
+                        </div>
+
+                        <span class="view-offer">
+                            View offer →
+                        </span>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+            `
+        );
+
+    });
+
+
+    /* ACTIVE OFFER COUNT */
+
+    const offerCount =
+        document.querySelector(".offer-count");
+
+    if (offerCount) {
+
+        offerCount.textContent =
+            supplierProducts.length +
+            " active offer" +
+            (supplierProducts.length === 1 ? "" : "s");
+
+    }
+
+}
+
+</script>
+
+
+</body>
+</html>
