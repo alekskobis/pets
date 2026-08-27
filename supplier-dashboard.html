@@ -843,12 +843,20 @@ footer{
     </button>
 
     <button
-        class="nav-btn"
-        data-view="requests">
+    class="nav-btn"
+    data-view="requests">
 
-        Buyer requests
+    Buyer requests
 
-    </button>
+</button>
+
+<button
+    class="nav-btn"
+    data-view="messages">
+
+    Messages
+
+</button>
 
     <button
         class="nav-btn"
@@ -1268,7 +1276,44 @@ footer{
 
 </div>
 
+<!-- =========================
+     MESSAGES
+     ========================= -->
 
+<div
+    class="view"
+    id="messages">
+
+    <div class="page-heading">
+
+        <div>
+
+            <span class="eyebrow">
+                COMMUNICATION
+            </span>
+
+            <h1>
+                Messages
+            </h1>
+
+            <p>
+                Messages from buyers about your stock offers.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="panel">
+
+        <div
+            class="requests"
+            id="messagesList">
+        </div>
+
+    </div>
+
+</div>
 
 <!-- =========================
      COMPANY PROFILE
@@ -1314,9 +1359,21 @@ footer{
 
         </div>
 
-        <button class="small-btn">
-            Edit profile
-        </button>
+        <div class="actions">
+
+    <a
+        class="small-btn"
+        href="supplier-profile.html?id=101">
+
+        View public profile
+
+    </a>
+
+    <button class="small-btn">
+        Edit profile
+    </button>
+
+</div>
 
     </div>
 
@@ -1627,7 +1684,33 @@ const requests = [
 
 ];
 
+const messages = [
 
+    {
+        id:1,
+        buyer:"PetHouse OÜ",
+        country:"Estonia",
+        product:"Premium Dry Dog Food — Chicken 12 kg",
+        productId:1,
+        supplierId:"101",
+        message:"Hello, we are interested in 120 units. Could you confirm availability?",
+        createdAt:"Today",
+        read:false
+    },
+
+    {
+        id:2,
+        buyer:"ZooTrade Sp. z o.o.",
+        country:"Poland",
+        product:"Natural Dental Chews",
+        productId:2,
+        supplierId:"101",
+        message:"Could you quote delivery for 500 units to Warsaw?",
+        createdAt:"Yesterday",
+        read:true
+    }
+
+];
 
 /* =========================
    NAVIGATION
@@ -1814,7 +1897,7 @@ function offerRow(item,full=true){
 
                     <a
                         class="small-btn"
-                        href="product.html">
+                        href="product.html?id=${item.id}">
 
                         View
 
@@ -2112,7 +2195,75 @@ document
 
 });
 
+/* =========================
+   MESSAGES
+   ========================= */
 
+function messageCard(item){
+
+    return `
+
+        <div class="request">
+
+            <div>
+
+                <strong>
+                    ${item.buyer}
+                </strong>
+
+                <span>
+                    ${item.country} · ${item.product}
+                </span>
+
+            </div>
+
+            <div class="request-data">
+
+                <small>
+                    Message
+                </small>
+
+                <b>
+                    ${item.message}
+                </b>
+
+            </div>
+
+            <div class="request-data">
+
+                <small>
+                    Received
+                </small>
+
+                <b>
+                    ${item.createdAt}
+                </b>
+
+            </div>
+
+            <button
+                class="small-btn">
+
+                Open conversation
+
+            </button>
+
+        </div>
+
+    `;
+
+}
+
+
+document
+.getElementById("messagesList")
+.innerHTML =
+messages
+.filter(
+    item => item.supplierId === "101"
+)
+.map(messageCard)
+.join("");
 
 /* =========================
    INITIAL LOAD
