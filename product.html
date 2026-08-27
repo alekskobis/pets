@@ -1044,13 +1044,13 @@ footer{
 
     <span>›</span>
 
-    <a href="catalogue.html">
+    <a href="catalogue.html" id="breadcrumbCategory">
         Food
     </a>
 
     <span>›</span>
 
-    Premium Dry Dog Food
+    <span id="breadcrumbProduct">Premium Dry Dog Food</span>
 
 </div>
 
@@ -1727,121 +1727,7 @@ footer{
 
 
 
-<div class="similar-grid">
-
-
-<a class="similar-card" href="product.html">
-
-    <div
-        class="similar-image"
-        style="background:#f3e8dc">
-        🥫
-    </div>
-
-    <div class="similar-body">
-
-        <small>
-            Lithuania
-        </small>
-
-        <h3>
-            Wet Cat Food Selection — 400 g
-        </h3>
-
-        <div class="similar-price">
-            €0.89 / unit
-        </div>
-
-    </div>
-
-</a>
-
-
-
-<a class="similar-card" href="product.html">
-
-    <div
-        class="similar-image"
-        style="background:#eee7d8">
-        🦴
-    </div>
-
-    <div class="similar-body">
-
-        <small>
-            Germany
-        </small>
-
-        <h3>
-            Natural Dental Chews
-        </h3>
-
-        <div class="similar-price">
-            €1.35 / unit
-        </div>
-
-    </div>
-
-</a>
-
-
-
-<a class="similar-card" href="product.html">
-
-    <div
-        class="similar-image"
-        style="background:#e5eee0">
-        🐇
-    </div>
-
-    <div class="similar-body">
-
-        <small>
-            Netherlands
-        </small>
-
-        <h3>
-            Complete Rabbit Food 3 kg
-        </h3>
-
-        <div class="similar-price">
-            €4.80 / unit
-        </div>
-
-    </div>
-
-</a>
-
-
-
-<a class="similar-card" href="product.html">
-
-    <div
-        class="similar-image"
-        style="background:#dfeff2">
-        🐟
-    </div>
-
-    <div class="similar-body">
-
-        <small>
-            Germany
-        </small>
-
-        <h3>
-            Aquarium Fish Flakes 500 ml
-        </h3>
-
-        <div class="similar-price">
-            €2.70 / unit
-        </div>
-
-    </div>
-
-</a>
-
-
-</div>
+<div class="similar-grid" id="similarGrid"></div>
 
 </div>
 
@@ -2009,142 +1895,671 @@ footer{
 
 const products = [
 
-    {
-        id:1,
-        supplierId:"101",
-        supplier:"NordPet Foods",
-        supplierCountry:"Germany",
-        supplierType:"Manufacturer",
-        activeOffers:18,
+{
+    "id": 1,
+    "supplierId": "101",
+    "supplier": "NordPet Foods",
+    "supplierCountry": "Germany",
+    "supplierType": "Manufacturer",
+    "activeOffers": 18,
+    "title": "Premium Dry Dog Food — Chicken 12 kg",
+    "shortTitle": "Premium Dry Dog Food",
+    "subtitle": "Complete premium dry food for adult dogs. Available as a clearance B2B lot from a verified European supplier.",
+    "icon": "🥣",
+    "background": "#e9efe1",
+    "regularPrice": 42.0,
+    "price": 18.9,
+    "stock": 620,
+    "moq": 40,
+    "country": "Germany",
+    "warehouse": "Hamburg, Germany",
+    "reason": "Old packaging",
+    "brand": "NordPet",
+    "category": "Food",
+    "petType": "Dogs",
+    "sku": "NPF-DOG-CH12",
+    "ean": "4012345678901",
+    "unitSize": "12 kg",
+    "condition": "New",
+    "packaging": "Original retail packaging",
+    "bestBefore": "12+ months",
+    "description": "This offer contains new and unused products in their original packaging. The product is being offered as clearance stock because the manufacturer has introduced updated packaging. The product itself has not been changed.",
+    "deliveryArea": "European Union",
+    "incoterms": "EXW / FCA",
+    "preparation": "2–4 business days",
+    "deliveryPackaging": "Palletised",
+    "transportCost": "Calculated separately",
+    "discount": 55
+},
 
-        title:"Premium Dry Dog Food — Chicken 12 kg",
-        shortTitle:"Premium Dry Dog Food",
-        subtitle:"Complete premium dry food for adult dogs. Available as a clearance B2B lot from a verified European supplier.",
+{
+    "id": 2,
+    "supplierId": "102",
+    "supplier": "Baltic Pet Nutrition",
+    "supplierCountry": "Lithuania",
+    "supplierType": "Manufacturer",
+    "activeOffers": 11,
+    "title": "Wet Cat Food Selection — 400 g",
+    "shortTitle": "Wet Cat Food Selection",
+    "subtitle": "Wet cat food assortment available as a slow-moving wholesale lot from a European supplier.",
+    "icon": "🥫",
+    "background": "#f3e8dc",
+    "regularPrice": 1.95,
+    "price": 0.89,
+    "stock": 2400,
+    "moq": 120,
+    "country": "Lithuania",
+    "warehouse": "Kaunas, Lithuania",
+    "reason": "Slow-moving",
+    "brand": "Baltic Pet Nutrition",
+    "category": "Food",
+    "petType": "Cats",
+    "sku": "BPN-WET-400",
+    "ean": "—",
+    "unitSize": "400 g",
+    "condition": "New",
+    "packaging": "Original retail packaging",
+    "bestBefore": "9+ months",
+    "description": "New and unused wet cat food assortment offered as slow-moving wholesale inventory.",
+    "deliveryArea": "European Union",
+    "incoterms": "EXW / FCA",
+    "preparation": "2–4 business days",
+    "deliveryPackaging": "Cartons / pallet",
+    "transportCost": "Calculated separately",
+    "discount": 54
+},
 
-        icon:"🥣",
-        background:"#e9efe1",
+{
+    "id": 3,
+    "supplierId": "103",
+    "supplier": "Happy Tail GmbH",
+    "supplierCountry": "Germany",
+    "supplierType": "Distributor",
+    "activeOffers": 12,
+    "title": "Natural Dental Chews",
+    "shortTitle": "Natural Dental Chews",
+    "subtitle": "Natural dental chews offered as a discontinued B2B inventory lot.",
+    "icon": "🦴",
+    "background": "#eee7d8",
+    "regularPrice": 3.4,
+    "price": 1.35,
+    "stock": 1800,
+    "moq": 100,
+    "country": "Germany",
+    "warehouse": "Germany",
+    "reason": "Discontinued",
+    "brand": "Happy Tail",
+    "category": "Treats",
+    "petType": "Dogs",
+    "sku": "HT-DENTAL",
+    "ean": "—",
+    "unitSize": "1 unit",
+    "condition": "New",
+    "packaging": "Original packaging",
+    "bestBefore": "12+ months",
+    "description": "New and unused dental chews available as discontinued B2B stock.",
+    "deliveryArea": "European Union",
+    "incoterms": "EXW / FCA",
+    "preparation": "2–4 business days",
+    "deliveryPackaging": "Cartons / pallet",
+    "transportCost": "Calculated separately",
+    "discount": 60
+},
 
-        regularPrice:42.00,
-        price:18.90,
+{
+    "id": 4,
+    "supplierId": "104",
+    "supplier": "PawNordic",
+    "supplierCountry": "Poland",
+    "supplierType": "Manufacturer",
+    "activeOffers": 8,
+    "title": "Nordic Comfort Pet Beds",
+    "shortTitle": "Nordic Comfort Pet Beds",
+    "subtitle": "Seasonal pet bed collection available as a wholesale inventory lot.",
+    "icon": "🛏️",
+    "background": "#e1ece7",
+    "regularPrice": 49.9,
+    "price": 19.9,
+    "stock": 380,
+    "moq": 40,
+    "country": "Poland",
+    "warehouse": "Poland",
+    "reason": "Seasonal collection",
+    "brand": "PawNordic",
+    "category": "Beds & Furniture",
+    "petType": "Dogs & Cats",
+    "sku": "PN-BED-NORDIC",
+    "ean": "—",
+    "unitSize": "1 unit",
+    "condition": "New",
+    "packaging": "Original packaging",
+    "bestBefore": "Not applicable",
+    "description": "New pet beds from a seasonal collection available for B2B clearance.",
+    "deliveryArea": "European Union",
+    "incoterms": "EXW / FCA",
+    "preparation": "3–5 business days",
+    "deliveryPackaging": "Cartons / pallet",
+    "transportCost": "Calculated separately",
+    "discount": 60
+},
 
-        stock:620,
-        moq:40,
+{
+    "id": 5,
+    "supplierId": "105",
+    "supplier": "PetWerk",
+    "supplierCountry": "Germany",
+    "supplierType": "Manufacturer",
+    "activeOffers": 14,
+    "title": "Eco Rope Toy Collection",
+    "shortTitle": "Eco Rope Toy Collection",
+    "subtitle": "Eco rope toys available as old-packaging wholesale inventory.",
+    "icon": "🎾",
+    "background": "#f6ead8",
+    "regularPrice": 6.5,
+    "price": 2.4,
+    "stock": 1450,
+    "moq": 120,
+    "country": "Germany",
+    "warehouse": "Germany",
+    "reason": "Old packaging",
+    "brand": "PetWerk",
+    "category": "Toys",
+    "petType": "Dogs",
+    "sku": "PW-ROPE-ECO",
+    "ean": "—",
+    "unitSize": "1 unit",
+    "condition": "New",
+    "packaging": "Original packaging",
+    "bestBefore": "Not applicable",
+    "description": "New eco rope toys offered as clearance due to packaging update.",
+    "deliveryArea": "European Union",
+    "incoterms": "EXW / FCA",
+    "preparation": "2–4 business days",
+    "deliveryPackaging": "Cartons",
+    "transportCost": "Calculated separately",
+    "discount": 63
+},
 
-        country:"Germany",
-        warehouse:"Hamburg, Germany",
+{
+    "id": 6,
+    "supplierId": "106",
+    "supplier": "Milo Trade",
+    "supplierCountry": "France",
+    "supplierType": "Distributor",
+    "activeOffers": 7,
+    "title": "Interactive Cat Motion Toys",
+    "shortTitle": "Interactive Cat Motion Toys",
+    "subtitle": "Interactive cat toys available as discontinued wholesale stock.",
+    "icon": "🐭",
+    "background": "#e9e4f1",
+    "regularPrice": 11.0,
+    "price": 4.6,
+    "stock": 740,
+    "moq": 75,
+    "country": "France",
+    "warehouse": "France",
+    "reason": "Discontinued",
+    "brand": "Milo Trade",
+    "category": "Toys",
+    "petType": "Cats",
+    "sku": "MT-CAT-MOTION",
+    "ean": "—",
+    "unitSize": "1 unit",
+    "condition": "New",
+    "packaging": "Original packaging",
+    "bestBefore": "Not applicable",
+    "description": "New interactive cat toys available as discontinued stock.",
+    "deliveryArea": "European Union",
+    "incoterms": "EXW / FCA",
+    "preparation": "2–4 business days",
+    "deliveryPackaging": "Cartons",
+    "transportCost": "Calculated separately",
+    "discount": 58
+},
 
-        reason:"Old packaging",
+{
+    "id": 7,
+    "supplierId": "107",
+    "supplier": "Dog & Co",
+    "supplierCountry": "Lithuania",
+    "supplierType": "Distributor",
+    "activeOffers": 10,
+    "title": "Urban Walk Leash Collection",
+    "shortTitle": "Urban Walk Leash Collection",
+    "subtitle": "Urban dog leash collection available as discontinued inventory.",
+    "icon": "🦮",
+    "background": "#e2efec",
+    "regularPrice": 14.5,
+    "price": 5.8,
+    "stock": 960,
+    "moq": 80,
+    "country": "Lithuania",
+    "warehouse": "Lithuania",
+    "reason": "Discontinued",
+    "brand": "Dog & Co",
+    "category": "Walking & Travel",
+    "petType": "Dogs",
+    "sku": "DC-LEASH-URBAN",
+    "ean": "—",
+    "unitSize": "1 unit",
+    "condition": "New",
+    "packaging": "Original packaging",
+    "bestBefore": "Not applicable",
+    "description": "New urban leash collection available as discontinued B2B stock.",
+    "deliveryArea": "European Union",
+    "incoterms": "EXW / FCA",
+    "preparation": "2–4 business days",
+    "deliveryPackaging": "Cartons",
+    "transportCost": "Calculated separately",
+    "discount": 60
+},
 
-        brand:"NordPet",
-        category:"Food",
-        petType:"Dogs",
-        sku:"NPF-DOG-CH12",
-        ean:"4012345678901",
-        unitSize:"12 kg",
-        condition:"New",
-        packaging:"Original retail packaging",
-        bestBefore:"12+ months",
+{
+    "id": 8,
+    "supplierId": "108",
+    "supplier": "PetWay",
+    "supplierCountry": "Netherlands",
+    "supplierType": "Distributor",
+    "activeOffers": 9,
+    "title": "Soft Travel Carriers",
+    "shortTitle": "Soft Travel Carriers",
+    "subtitle": "Soft pet travel carriers available as a seasonal wholesale inventory lot.",
+    "icon": "🧳",
+    "background": "#e2ebf1",
+    "regularPrice": 39.9,
+    "price": 16.5,
+    "stock": 310,
+    "moq": 35,
+    "country": "Netherlands",
+    "warehouse": "Netherlands",
+    "reason": "Seasonal collection",
+    "brand": "PetWay",
+    "category": "Walking & Travel",
+    "petType": "Dogs & Cats",
+    "sku": "PW-CARRIER",
+    "ean": "—",
+    "unitSize": "1 unit",
+    "condition": "New",
+    "packaging": "Original packaging",
+    "bestBefore": "Not applicable",
+    "description": "New soft travel carriers available from seasonal wholesale inventory.",
+    "deliveryArea": "European Union",
+    "incoterms": "EXW / FCA",
+    "preparation": "2–4 business days",
+    "deliveryPackaging": "Cartons",
+    "transportCost": "Calculated separately",
+    "discount": 59
+},
 
-        description:"This offer contains new and unused products in their original packaging. The product is being offered as clearance stock because the manufacturer has introduced updated packaging. The product itself has not been changed.",
+{
+    "id": 9,
+    "supplierId": "109",
+    "supplier": "CasaPet",
+    "supplierCountry": "Italy",
+    "supplierType": "Manufacturer",
+    "activeOffers": 13,
+    "title": "Stainless Steel Feeding Bowls",
+    "shortTitle": "Stainless Steel Feeding Bowls",
+    "subtitle": "Stainless steel feeding bowls available as slow-moving wholesale stock.",
+    "icon": "🥣",
+    "background": "#e8ecec",
+    "regularPrice": 5.5,
+    "price": 2.1,
+    "stock": 2200,
+    "moq": 150,
+    "country": "Italy",
+    "warehouse": "Italy",
+    "reason": "Slow-moving",
+    "brand": "CasaPet",
+    "category": "Feeding",
+    "petType": "Dogs & Cats",
+    "sku": "CP-BOWL-SS",
+    "ean": "—",
+    "unitSize": "1 unit",
+    "condition": "New",
+    "packaging": "Original packaging",
+    "bestBefore": "Not applicable",
+    "description": "New stainless steel pet bowls available as slow-moving inventory.",
+    "deliveryArea": "European Union",
+    "incoterms": "EXW / FCA",
+    "preparation": "2–4 business days",
+    "deliveryPackaging": "Cartons / pallet",
+    "transportCost": "Calculated separately",
+    "discount": 62
+},
 
-        deliveryArea:"European Union",
-        incoterms:"EXW / FCA",
-        preparation:"2–4 business days",
-        deliveryPackaging:"Palletised",
-        transportCost:"Calculated separately"
-    },
+{
+    "id": 10,
+    "supplierId": "110",
+    "supplier": "CarePet",
+    "supplierCountry": "Italy",
+    "supplierType": "Distributor",
+    "activeOffers": 6,
+    "title": "Grooming Brush & Comb Set",
+    "shortTitle": "Grooming Brush & Comb Set",
+    "subtitle": "Pet grooming brush and comb sets available as slow-moving wholesale stock.",
+    "icon": "🧴",
+    "background": "#e2efe2",
+    "regularPrice": 7.9,
+    "price": 3.1,
+    "stock": 980,
+    "moq": 100,
+    "country": "Italy",
+    "warehouse": "Italy",
+    "reason": "Slow-moving",
+    "brand": "CarePet",
+    "category": "Grooming & Care",
+    "petType": "Dogs & Cats",
+    "sku": "CP-GROOM-SET",
+    "ean": "—",
+    "unitSize": "1 set",
+    "condition": "New",
+    "packaging": "Original packaging",
+    "bestBefore": "Not applicable",
+    "description": "New grooming brush and comb sets available from slow-moving inventory.",
+    "deliveryArea": "European Union",
+    "incoterms": "EXW / FCA",
+    "preparation": "2–4 business days",
+    "deliveryPackaging": "Cartons",
+    "transportCost": "Calculated separately",
+    "discount": 61
+},
 
+{
+    "id": 11,
+    "supplierId": "111",
+    "supplier": "MiaCasa",
+    "supplierCountry": "Poland",
+    "supplierType": "Distributor",
+    "activeOffers": 5,
+    "title": "Covered Cat Litter Trays",
+    "shortTitle": "Covered Cat Litter Trays",
+    "subtitle": "Covered cat litter trays available as old-packaging wholesale inventory.",
+    "icon": "🐈",
+    "background": "#eee8df",
+    "regularPrice": 29.9,
+    "price": 12.9,
+    "stock": 430,
+    "moq": 30,
+    "country": "Poland",
+    "warehouse": "Poland",
+    "reason": "Old packaging",
+    "brand": "MiaCasa",
+    "category": "Litter & Toilets",
+    "petType": "Cats",
+    "sku": "MC-LITTER-COVER",
+    "ean": "—",
+    "unitSize": "1 unit",
+    "condition": "New",
+    "packaging": "Original packaging",
+    "bestBefore": "Not applicable",
+    "description": "New covered litter trays offered as clearance due to packaging update.",
+    "deliveryArea": "European Union",
+    "incoterms": "EXW / FCA",
+    "preparation": "2–4 business days",
+    "deliveryPackaging": "Cartons / pallet",
+    "transportCost": "Calculated separately",
+    "discount": 57
+},
 
-    {
-        id:2,
-        supplierId:"102",
-        supplier:"Happy Tail GmbH",
-        supplierCountry:"Germany",
-        supplierType:"Distributor",
-        activeOffers:12,
+{
+    "id": 12,
+    "supplierId": "112",
+    "supplier": "AviaNature",
+    "supplierCountry": "France",
+    "supplierType": "Manufacturer",
+    "activeOffers": 4,
+    "title": "Premium Bird Seed Mix 2 kg",
+    "shortTitle": "Premium Bird Seed Mix",
+    "subtitle": "Premium bird seed mix available as slow-moving wholesale inventory.",
+    "icon": "🐦",
+    "background": "#edf0d9",
+    "regularPrice": 8.2,
+    "price": 3.9,
+    "stock": 860,
+    "moq": 80,
+    "country": "France",
+    "warehouse": "France",
+    "reason": "Slow-moving",
+    "brand": "AviaNature",
+    "category": "Food",
+    "petType": "Birds",
+    "sku": "AN-BIRD-2KG",
+    "ean": "—",
+    "unitSize": "2 kg",
+    "condition": "New",
+    "packaging": "Original retail packaging",
+    "bestBefore": "10+ months",
+    "description": "New bird seed mix available as slow-moving B2B inventory.",
+    "deliveryArea": "European Union",
+    "incoterms": "EXW / FCA",
+    "preparation": "2–4 business days",
+    "deliveryPackaging": "Cartons / pallet",
+    "transportCost": "Calculated separately",
+    "discount": 52
+},
 
-        title:"Natural Dental Chews",
-        shortTitle:"Natural Dental Chews",
-        subtitle:"Natural dental chews offered as a B2B inventory lot.",
+{
+    "id": 13,
+    "supplierId": "113",
+    "supplier": "GreenPet",
+    "supplierCountry": "Netherlands",
+    "supplierType": "Manufacturer",
+    "activeOffers": 6,
+    "title": "Complete Rabbit Food 3 kg",
+    "shortTitle": "Complete Rabbit Food",
+    "subtitle": "Complete rabbit food available as old-packaging wholesale stock.",
+    "icon": "🐇",
+    "background": "#e5eee0",
+    "regularPrice": 10.5,
+    "price": 4.8,
+    "stock": 690,
+    "moq": 60,
+    "country": "Netherlands",
+    "warehouse": "Netherlands",
+    "reason": "Old packaging",
+    "brand": "GreenPet",
+    "category": "Food",
+    "petType": "Small Pets",
+    "sku": "GP-RABBIT-3KG",
+    "ean": "—",
+    "unitSize": "3 kg",
+    "condition": "New",
+    "packaging": "Original retail packaging",
+    "bestBefore": "10+ months",
+    "description": "New rabbit food offered as clearance due to packaging update.",
+    "deliveryArea": "European Union",
+    "incoterms": "EXW / FCA",
+    "preparation": "2–4 business days",
+    "deliveryPackaging": "Cartons / pallet",
+    "transportCost": "Calculated separately",
+    "discount": 54
+},
 
-        icon:"🦴",
-        background:"#eee7d8",
+{
+    "id": 14,
+    "supplierId": "114",
+    "supplier": "AquaFeed",
+    "supplierCountry": "Germany",
+    "supplierType": "Manufacturer",
+    "activeOffers": 8,
+    "title": "Aquarium Fish Flakes 500 ml",
+    "shortTitle": "Aquarium Fish Flakes",
+    "subtitle": "Aquarium fish flakes available as discontinued wholesale inventory.",
+    "icon": "🐟",
+    "background": "#dfeff2",
+    "regularPrice": 6.9,
+    "price": 2.7,
+    "stock": 1200,
+    "moq": 100,
+    "country": "Germany",
+    "warehouse": "Germany",
+    "reason": "Discontinued",
+    "brand": "AquaFeed",
+    "category": "Food",
+    "petType": "Fish",
+    "sku": "AF-FLAKES-500",
+    "ean": "—",
+    "unitSize": "500 ml",
+    "condition": "New",
+    "packaging": "Original retail packaging",
+    "bestBefore": "12+ months",
+    "description": "New aquarium fish flakes available as discontinued B2B stock.",
+    "deliveryArea": "European Union",
+    "incoterms": "EXW / FCA",
+    "preparation": "2–4 business days",
+    "deliveryPackaging": "Cartons",
+    "transportCost": "Calculated separately",
+    "discount": 61
+},
 
-        regularPrice:2.90,
-        price:1.35,
+{
+    "id": 15,
+    "supplierId": "115",
+    "supplier": "EcoPet Home",
+    "supplierCountry": "France",
+    "supplierType": "Manufacturer",
+    "activeOffers": 5,
+    "title": "Natural Woven Cat Baskets",
+    "shortTitle": "Natural Woven Cat Baskets",
+    "subtitle": "Natural woven cat baskets available as a seasonal wholesale lot.",
+    "icon": "🧺",
+    "background": "#eee6d8",
+    "regularPrice": 54.0,
+    "price": 22.9,
+    "stock": 270,
+    "moq": 30,
+    "country": "France",
+    "warehouse": "France",
+    "reason": "Seasonal collection",
+    "brand": "EcoPet Home",
+    "category": "Beds & Furniture",
+    "petType": "Cats",
+    "sku": "EPH-CAT-BASKET",
+    "ean": "—",
+    "unitSize": "1 unit",
+    "condition": "New",
+    "packaging": "Original packaging",
+    "bestBefore": "Not applicable",
+    "description": "New woven cat baskets from a seasonal collection available for B2B clearance.",
+    "deliveryArea": "European Union",
+    "incoterms": "EXW / FCA",
+    "preparation": "3–5 business days",
+    "deliveryPackaging": "Cartons / pallet",
+    "transportCost": "Calculated separately",
+    "discount": 58
+},
 
-        stock:2400,
-        moq:500,
+{
+    "id": 16,
+    "supplierId": "116",
+    "supplier": "Nordic Bites",
+    "supplierCountry": "Poland",
+    "supplierType": "Manufacturer",
+    "activeOffers": 9,
+    "title": "Salmon Cat Treats 80 g",
+    "shortTitle": "Salmon Cat Treats",
+    "subtitle": "Salmon cat treats available as old-packaging wholesale stock.",
+    "icon": "🐟",
+    "background": "#f1e4df",
+    "regularPrice": 1.9,
+    "price": 0.72,
+    "stock": 3200,
+    "moq": 200,
+    "country": "Poland",
+    "warehouse": "Poland",
+    "reason": "Old packaging",
+    "brand": "Nordic Bites",
+    "category": "Treats",
+    "petType": "Cats",
+    "sku": "NB-SALMON-80",
+    "ean": "—",
+    "unitSize": "80 g",
+    "condition": "New",
+    "packaging": "Original retail packaging",
+    "bestBefore": "9+ months",
+    "description": "New salmon cat treats offered as clearance due to packaging update.",
+    "deliveryArea": "European Union",
+    "incoterms": "EXW / FCA",
+    "preparation": "2–4 business days",
+    "deliveryPackaging": "Cartons / pallet",
+    "transportCost": "Calculated separately",
+    "discount": 62
+},
 
-        country:"Germany",
-        warehouse:"Germany",
+{
+    "id": 17,
+    "supplierId": "117",
+    "supplier": "BioPet Care",
+    "supplierCountry": "France",
+    "supplierType": "Manufacturer",
+    "activeOffers": 7,
+    "title": "Pet Shampoo Sensitive 500 ml",
+    "shortTitle": "Pet Shampoo Sensitive",
+    "subtitle": "Sensitive pet shampoo available as discontinued wholesale stock.",
+    "icon": "🧴",
+    "background": "#e4efeb",
+    "regularPrice": 9.5,
+    "price": 3.8,
+    "stock": 780,
+    "moq": 90,
+    "country": "France",
+    "warehouse": "France",
+    "reason": "Discontinued",
+    "brand": "BioPet Care",
+    "category": "Grooming & Care",
+    "petType": "Dogs",
+    "sku": "BPC-SHAMPOO-500",
+    "ean": "—",
+    "unitSize": "500 ml",
+    "condition": "New",
+    "packaging": "Original retail packaging",
+    "bestBefore": "18+ months",
+    "description": "New sensitive pet shampoo available as discontinued B2B stock.",
+    "deliveryArea": "European Union",
+    "incoterms": "EXW / FCA",
+    "preparation": "2–4 business days",
+    "deliveryPackaging": "Cartons",
+    "transportCost": "Calculated separately",
+    "discount": 60
+},
 
-        reason:"Overstock",
-
-        brand:"Happy Tail",
-        category:"Treats",
-        petType:"Dogs",
-        sku:"HT-DENTAL",
-        ean:"—",
-        unitSize:"1 unit",
-        condition:"New",
-        packaging:"Original packaging",
-        bestBefore:"12+ months",
-
-        description:"New and unused dental chews available as surplus B2B stock.",
-
-        deliveryArea:"European Union",
-        incoterms:"EXW / FCA",
-        preparation:"2–4 business days",
-        deliveryPackaging:"Cartons / pallet",
-        transportCost:"Calculated separately"
-    },
-
-
-    {
-        id:3,
-        supplierId:"103",
-        supplier:"PetWay",
-        supplierCountry:"Netherlands",
-        supplierType:"Distributor",
-        activeOffers:9,
-
-        title:"Soft Travel Carriers",
-        shortTitle:"Soft Travel Carriers",
-        subtitle:"Soft pet travel carriers available as a wholesale inventory lot.",
-
-        icon:"🧳",
-        background:"#e2ebf1",
-
-        regularPrice:29.90,
-        price:16.50,
-
-        stock:340,
-        moq:70,
-
-        country:"Netherlands",
-        warehouse:"Netherlands",
-
-        reason:"Seasonal stock",
-
-        brand:"PetWay",
-        category:"Walking & Travel",
-        petType:"Dogs & Cats",
-        sku:"PW-CARRIER",
-        ean:"—",
-        unitSize:"1 unit",
-        condition:"New",
-        packaging:"Original packaging",
-        bestBefore:"Not applicable",
-
-        description:"New soft travel carriers available from excess wholesale inventory.",
-
-        deliveryArea:"European Union",
-        incoterms:"EXW / FCA",
-        preparation:"2–4 business days",
-        deliveryPackaging:"Cartons",
-        transportCost:"Calculated separately"
-    }
+{
+    "id": 18,
+    "supplierId": "118",
+    "supplier": "PetLiving",
+    "supplierCountry": "Netherlands",
+    "supplierType": "Distributor",
+    "activeOffers": 10,
+    "title": "Ceramic Bowl Collection",
+    "shortTitle": "Ceramic Bowl Collection",
+    "subtitle": "Ceramic pet bowls available as a seasonal wholesale inventory lot.",
+    "icon": "🥣",
+    "background": "#ece6df",
+    "regularPrice": 12.9,
+    "price": 4.9,
+    "stock": 540,
+    "moq": 50,
+    "country": "Netherlands",
+    "warehouse": "Netherlands",
+    "reason": "Seasonal collection",
+    "brand": "PetLiving",
+    "category": "Feeding",
+    "petType": "Dogs & Cats",
+    "sku": "PL-CERAMIC-BOWL",
+    "ean": "—",
+    "unitSize": "1 unit",
+    "condition": "New",
+    "packaging": "Original packaging",
+    "bestBefore": "Not applicable",
+    "description": "New ceramic pet bowls from a seasonal collection available for B2B clearance.",
+    "deliveryArea": "European Union",
+    "incoterms": "EXW / FCA",
+    "preparation": "2–4 business days",
+    "deliveryPackaging": "Cartons / pallet",
+    "transportCost": "Calculated separately",
+    "discount": 62
+}
 
 ];
 
@@ -2270,6 +2685,112 @@ mainImage.style.background =
     deliveryValues[3].textContent = currentProduct.preparation;
     deliveryValues[4].textContent = currentProduct.deliveryPackaging;
     deliveryValues[5].textContent = currentProduct.transportCost;
+
+
+    const discountBadge =
+        document.querySelector(".discount");
+
+    discountBadge.textContent =
+        "−" + currentProduct.discount + "%";
+
+
+    const breadcrumbCategory =
+        document.getElementById("breadcrumbCategory");
+
+    const breadcrumbProduct =
+        document.getElementById("breadcrumbProduct");
+
+    if(breadcrumbCategory){
+        breadcrumbCategory.textContent =
+            currentProduct.category;
+    }
+
+    if(breadcrumbProduct){
+        breadcrumbProduct.textContent =
+            currentProduct.shortTitle;
+    }
+
+
+    const firstThumb =
+        document.querySelector(".thumb.active");
+
+    if(firstThumb){
+        firstThumb.dataset.icon =
+            currentProduct.icon;
+
+        firstThumb.dataset.bg =
+            currentProduct.background;
+
+        firstThumb.textContent =
+            currentProduct.icon;
+    }
+
+
+    const similarGrid =
+        document.getElementById("similarGrid");
+
+    if(similarGrid){
+
+        let similarProducts =
+            products.filter(
+                product =>
+                    product.id !== currentProduct.id &&
+                    product.category === currentProduct.category
+            );
+
+        if(similarProducts.length < 4){
+
+            const extraProducts =
+                products.filter(
+                    product =>
+                        product.id !== currentProduct.id &&
+                        !similarProducts.some(
+                            similar =>
+                                similar.id === product.id
+                        )
+                );
+
+            similarProducts =
+                similarProducts.concat(extraProducts);
+        }
+
+        similarGrid.innerHTML =
+            similarProducts
+            .slice(0,4)
+            .map(product => `
+
+                <a
+                    class="similar-card"
+                    href="product.html?id=${product.id}">
+
+                    <div
+                        class="similar-image"
+                        style="background:${product.background}">
+                        ${product.icon}
+                    </div>
+
+                    <div class="similar-body">
+
+                        <small>
+                            ${product.supplierCountry}
+                        </small>
+
+                        <h3>
+                            ${product.title}
+                        </h3>
+
+                        <div class="similar-price">
+                            €${product.price.toFixed(2)} / unit
+                        </div>
+
+                    </div>
+
+                </a>
+
+            `)
+            .join("");
+    }
+
 
     document.querySelector("#requestModal p")
         .textContent =
