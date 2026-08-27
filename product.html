@@ -1947,7 +1947,8 @@ footer{
     </label>
 
     <input
-        type="number"
+      id="requestQuantity"    
+    type="number"
         min="40"
         value="40"
         required>
@@ -1962,6 +1963,7 @@ footer{
     </label>
 
     <input
+     id="deliveryCountry"
         type="text"
         placeholder="e.g. Estonia"
         required>
@@ -1976,7 +1978,8 @@ footer{
     </label>
 
     <textarea
-        placeholder="Add a message to the supplier"></textarea>
+    id="requestMessage"
+    placeholder="Add a message to the supplier"></textarea>
 
 </div>
 
@@ -2000,6 +2003,286 @@ footer{
 
 <script>
 
+/* =========================
+   PRODUCT DATA
+   ========================= */
+
+const products = [
+
+    {
+        id:1,
+        supplierId:"101",
+        supplier:"NordPet Foods",
+        supplierCountry:"Germany",
+        supplierType:"Manufacturer",
+        activeOffers:18,
+
+        title:"Premium Dry Dog Food — Chicken 12 kg",
+        shortTitle:"Premium Dry Dog Food",
+        subtitle:"Complete premium dry food for adult dogs. Available as a clearance B2B lot from a verified European supplier.",
+
+        icon:"🥣",
+        background:"#e9efe1",
+
+        regularPrice:42.00,
+        price:18.90,
+
+        stock:620,
+        moq:40,
+
+        country:"Germany",
+        warehouse:"Hamburg, Germany",
+
+        reason:"Old packaging",
+
+        brand:"NordPet",
+        category:"Food",
+        petType:"Dogs",
+        sku:"NPF-DOG-CH12",
+        ean:"4012345678901",
+        unitSize:"12 kg",
+        condition:"New",
+        packaging:"Original retail packaging",
+        bestBefore:"12+ months",
+
+        description:"This offer contains new and unused products in their original packaging. The product is being offered as clearance stock because the manufacturer has introduced updated packaging. The product itself has not been changed.",
+
+        deliveryArea:"European Union",
+        incoterms:"EXW / FCA",
+        preparation:"2–4 business days",
+        deliveryPackaging:"Palletised",
+        transportCost:"Calculated separately"
+    },
+
+
+    {
+        id:2,
+        supplierId:"102",
+        supplier:"Happy Tail GmbH",
+        supplierCountry:"Germany",
+        supplierType:"Distributor",
+        activeOffers:12,
+
+        title:"Natural Dental Chews",
+        shortTitle:"Natural Dental Chews",
+        subtitle:"Natural dental chews offered as a B2B inventory lot.",
+
+        icon:"🦴",
+        background:"#eee7d8",
+
+        regularPrice:2.90,
+        price:1.35,
+
+        stock:2400,
+        moq:500,
+
+        country:"Germany",
+        warehouse:"Germany",
+
+        reason:"Overstock",
+
+        brand:"Happy Tail",
+        category:"Treats",
+        petType:"Dogs",
+        sku:"HT-DENTAL",
+        ean:"—",
+        unitSize:"1 unit",
+        condition:"New",
+        packaging:"Original packaging",
+        bestBefore:"12+ months",
+
+        description:"New and unused dental chews available as surplus B2B stock.",
+
+        deliveryArea:"European Union",
+        incoterms:"EXW / FCA",
+        preparation:"2–4 business days",
+        deliveryPackaging:"Cartons / pallet",
+        transportCost:"Calculated separately"
+    },
+
+
+    {
+        id:3,
+        supplierId:"103",
+        supplier:"PetWay",
+        supplierCountry:"Netherlands",
+        supplierType:"Distributor",
+        activeOffers:9,
+
+        title:"Soft Travel Carriers",
+        shortTitle:"Soft Travel Carriers",
+        subtitle:"Soft pet travel carriers available as a wholesale inventory lot.",
+
+        icon:"🧳",
+        background:"#e2ebf1",
+
+        regularPrice:29.90,
+        price:16.50,
+
+        stock:340,
+        moq:70,
+
+        country:"Netherlands",
+        warehouse:"Netherlands",
+
+        reason:"Seasonal stock",
+
+        brand:"PetWay",
+        category:"Walking & Travel",
+        petType:"Dogs & Cats",
+        sku:"PW-CARRIER",
+        ean:"—",
+        unitSize:"1 unit",
+        condition:"New",
+        packaging:"Original packaging",
+        bestBefore:"Not applicable",
+
+        description:"New soft travel carriers available from excess wholesale inventory.",
+
+        deliveryArea:"European Union",
+        incoterms:"EXW / FCA",
+        preparation:"2–4 business days",
+        deliveryPackaging:"Cartons",
+        transportCost:"Calculated separately"
+    }
+
+];
+
+/* =========================
+   CURRENT PRODUCT
+   ========================= */
+
+const params =
+new URLSearchParams(window.location.search);
+
+const productId =
+Number(params.get("id")) || 1;
+
+const currentProduct =
+products.find(
+    product => product.id === productId
+) || products[0];
+
+function renderProduct(){
+
+    document.querySelector(".product-info h1")
+        .textContent = currentProduct.title;
+
+    document.title =
+        currentProduct.title + " — Sweety Pets";
+
+    const supplierTop =
+        document.querySelector(".product-info .supplier a");
+
+    supplierTop.textContent =
+        currentProduct.supplier +
+        " · " +
+        currentProduct.supplierCountry;
+
+    supplierTop.href =
+        "supplier-profile.html?id=" +
+        currentProduct.supplierId;
+
+    document.querySelector(".subtitle")
+        .textContent = currentProduct.subtitle;
+
+mainProduct.textContent =
+    currentProduct.icon;
+
+mainImage.style.background =
+    currentProduct.background;
+
+    document.querySelector(".old-price del")
+        .textContent =
+        "€" + currentProduct.regularPrice.toFixed(2);
+
+    document.querySelector(".current-price strong")
+        .textContent =
+        "€" + currentProduct.price.toFixed(2);
+
+    const lotValues =
+        document.querySelectorAll(".lot-data .data-box strong");
+
+    lotValues[0].textContent =
+        currentProduct.stock + " units";
+
+    lotValues[1].textContent =
+        currentProduct.moq + " units";
+
+    lotValues[2].textContent =
+        currentProduct.country;
+
+    lotValues[3].textContent =
+        "€" +
+        (currentProduct.price * currentProduct.moq).toFixed(2);
+
+    document.querySelector(".clearance strong")
+        .textContent = currentProduct.reason;
+
+    document.querySelector(".description")
+        .textContent = currentProduct.description;
+
+    const specs =
+        document.querySelectorAll(".spec-row strong");
+
+    const specValues = [
+        currentProduct.brand,
+        currentProduct.category,
+        currentProduct.petType,
+        currentProduct.sku,
+        currentProduct.ean,
+        currentProduct.unitSize,
+        currentProduct.condition,
+        currentProduct.packaging,
+        currentProduct.bestBefore
+    ];
+
+    specs.forEach((element,index)=>{
+        if(specValues[index] !== undefined){
+            element.textContent = specValues[index];
+        }
+    });
+
+    document.querySelector(".supplier-card h3")
+        .textContent = currentProduct.supplier;
+
+    document.querySelector(".supplier-country")
+        .textContent = currentProduct.supplierCountry;
+
+    const supplierStats =
+        document.querySelectorAll(".supplier-stat strong");
+
+    supplierStats[0].textContent = "✓ Verified";
+    supplierStats[1].textContent = currentProduct.supplierType;
+    supplierStats[2].textContent = currentProduct.activeOffers;
+    supplierStats[3].textContent = currentProduct.supplierCountry;
+
+    document.querySelector(".supplier-link").href =
+        "supplier-profile.html?id=" +
+        currentProduct.supplierId;
+
+    const deliveryValues =
+        document.querySelectorAll(".delivery-box strong");
+
+    deliveryValues[0].textContent = currentProduct.warehouse;
+    deliveryValues[1].textContent = currentProduct.deliveryArea;
+    deliveryValues[2].textContent = currentProduct.incoterms;
+    deliveryValues[3].textContent = currentProduct.preparation;
+    deliveryValues[4].textContent = currentProduct.deliveryPackaging;
+    deliveryValues[5].textContent = currentProduct.transportCost;
+
+    document.querySelector("#requestModal p")
+        .textContent =
+        "Send your request to " +
+        currentProduct.supplier +
+        ". The supplier can then confirm availability, delivery terms and final order conditions.";
+
+    document.getElementById("requestQuantity").min =
+        currentProduct.moq;
+
+    document.getElementById("requestQuantity").value =
+        currentProduct.moq;
+}
 
 /* PRODUCT GALLERY */
 
@@ -2011,6 +2294,8 @@ document.getElementById("mainProduct");
 
 const mainImage =
 document.getElementById("mainImage");
+
+renderProduct();
 
 
 thumbs.forEach(thumb=>{
@@ -2113,33 +2398,39 @@ document
 
     const newRequest = {
 
-        id: Date.now(),
+    id: Date.now(),
 
-        product:
-            document.querySelector("h1").textContent.trim(),
+    productId:
+        currentProduct.id,
 
-        supplier:
-            "NordPet Foods",
+    supplierId:
+        currentProduct.supplierId,
 
-        country:
-            country,
+    product:
+        currentProduct.title,
 
-        quantity:
-            Number(quantity),
+    supplier:
+        currentProduct.supplier,
 
-        status:
-            "Sent",
+    country:
+        country,
 
-        price:
-            18.90,
+    quantity:
+        Number(quantity),
 
-        message:
-            message,
+    status:
+        "Sent",
 
-        createdAt:
-            new Date().toISOString()
+    price:
+        currentProduct.price,
 
-    };
+    message:
+        message,
+
+    createdAt:
+        new Date().toISOString()
+
+};
 
 
     const savedRequests =
