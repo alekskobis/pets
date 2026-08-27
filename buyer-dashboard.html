@@ -888,12 +888,12 @@ footer{
     </button>
 
     <button
-        class="nav-btn"
-        data-view="requests">
+    class="nav-btn"
+    data-view="messages">
 
-        My requests
+    Messages
 
-    </button>
+</button>
 
     <button
         class="nav-btn"
@@ -1279,7 +1279,45 @@ footer{
 
 </div>
 
+<!-- =========================
+     MESSAGES
+     ========================= -->
 
+<div
+    class="view"
+    id="messages">
+
+    <div class="page-heading">
+
+        <div>
+
+            <span class="eyebrow">
+                COMMUNICATION
+            </span>
+
+            <h1>
+                Messages
+            </h1>
+
+            <p>
+                Conversations with suppliers about your requests and offers.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="panel">
+
+        <div
+            class="requests"
+            id="messagesList">
+        </div>
+
+    </div>
+
+</div>
 
 <!-- =========================
      SAVED OFFERS
@@ -1734,6 +1772,35 @@ const demoRequests = [
 
 ];
 
+const messages = [
+
+    {
+        id:1,
+        buyerId:"201",
+        supplierId:"101",
+        productId:1,
+        supplier:"NordPet Foods",
+        country:"Germany",
+        product:"Premium Dry Dog Food — Chicken 12 kg",
+        message:"Yes, 120 units are currently available.",
+        createdAt:"Today",
+        read:false
+    },
+
+    {
+        id:2,
+        buyerId:"201",
+        supplierId:"103",
+        productId:3,
+        supplier:"PetWay",
+        country:"Netherlands",
+        product:"Soft Travel Carriers",
+        message:"We can confirm the requested quantity.",
+        createdAt:"Yesterday",
+        read:true
+    }
+
+];
 
 /* GET REQUESTS SENT FROM PRODUCT PAGE */
 
@@ -1940,7 +2007,7 @@ function requestRow(item){
                 <div class="actions">
 
                     <a
-                        href="product.html"
+                        href="product.html?id=${item.productId}"
                         class="small-btn">
 
                         View product
@@ -2055,9 +2122,10 @@ function productCard(item){
 
     return `
 
-        <div
-            class="product-card"
-            data-id="${item.id}">
+        <a
+    href="product.html?id=${item.id}"
+    class="product-card"
+    data-id="${item.id}">
 
             <div
                 class="product-image"
@@ -2250,7 +2318,73 @@ function bindRequestButtons(){
 
 }
 
+/* =========================
+   MESSAGES
+   ========================= */
 
+function messageCard(item){
+
+    return `
+
+        <div class="request">
+
+            <div>
+
+                <strong>
+                    ${item.supplier}
+                </strong>
+
+                <span>
+                    ${item.country} · ${item.product}
+                </span>
+
+            </div>
+
+            <div class="request-data">
+
+                <small>
+                    Message
+                </small>
+
+                <b>
+                    ${item.message}
+                </b>
+
+            </div>
+
+            <div class="request-data">
+
+                <small>
+                    Received
+                </small>
+
+                <b>
+                    ${item.createdAt}
+                </b>
+
+            </div>
+
+            <a
+                class="small-btn"
+                href="product.html?id=${item.productId}">
+
+                Open conversation
+
+            </a>
+
+        </div>
+
+    `;
+
+}
+
+
+document
+.getElementById("messagesList")
+.innerHTML =
+messages
+.map(messageCard)
+.join("");
 
 /* =========================
    INITIAL LOAD
