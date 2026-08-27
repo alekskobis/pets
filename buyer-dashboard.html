@@ -1604,9 +1604,9 @@ footer{
         <div>
             <h4>For suppliers</h4>
             <a href="how-to-sell.html">How to sell</a>
-            <a href="suppliers.html">List products</a>
-            <a href="#">Pricing</a>
-            <a href="#">Logistics</a>
+            <a href="register.html">List products</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="delivery.html">Logistics</a>
         </div>
 
         <div>
@@ -1652,6 +1652,19 @@ const products = [
     {
         id:2,
         supplierId:"102",
+        title:"Wet Cat Food Selection — 400 g",
+        supplier:"Baltic Pet Nutrition · Lithuania",
+        icon:"🥫",
+        bg:"#f3e8dc",
+        price:0.89,
+        discount:54,
+        moq:120,
+        saved:true
+    },
+
+    {
+        id:3,
+        supplierId:"103",
         title:"Natural Dental Chews",
         supplier:"Happy Tail GmbH · Germany",
         icon:"🦴",
@@ -1663,29 +1676,16 @@ const products = [
     },
 
     {
-        id:3,
-        supplierId:"103",
-        title:"Soft Travel Carriers",
-        supplier:"PetWay · Netherlands",
-        icon:"🧳",
-        bg:"#e2ebf1",
-        price:16.50,
-        discount:59,
-        moq:35,
-        saved:true
-    },
-
-    {
         id:4,
         supplierId:"104",
-        title:"Ceramic Bowl Collection",
-        supplier:"PetLiving · Netherlands",
-        icon:"🥣",
-        bg:"#ece6df",
-        price:4.90,
-        discount:62,
-        moq:50,
-        saved:true
+        title:"Nordic Comfort Pet Beds",
+        supplier:"PawNordic · Poland",
+        icon:"🛏️",
+        bg:"#e1ece7",
+        price:19.90,
+        discount:60,
+        moq:40,
+        saved:false
     },
 
     {
@@ -1698,12 +1698,129 @@ const products = [
         price:2.40,
         discount:63,
         moq:120,
-        saved:false
+        saved:true
     },
 
     {
         id:6,
         supplierId:"106",
+        title:"Interactive Cat Motion Toys",
+        supplier:"Milo Trade · France",
+        icon:"🐭",
+        bg:"#e9e4f1",
+        price:4.60,
+        discount:58,
+        moq:75,
+        saved:false
+    },
+
+    {
+        id:7,
+        supplierId:"107",
+        title:"Urban Walk Leash Collection",
+        supplier:"Dog & Co · Lithuania",
+        icon:"🦮",
+        bg:"#e2efec",
+        price:5.80,
+        discount:60,
+        moq:80,
+        saved:false
+    },
+
+    {
+        id:8,
+        supplierId:"108",
+        title:"Soft Travel Carriers",
+        supplier:"PetWay · Netherlands",
+        icon:"🧳",
+        bg:"#e2ebf1",
+        price:16.50,
+        discount:59,
+        moq:35,
+        saved:false
+    },
+
+    {
+        id:9,
+        supplierId:"109",
+        title:"Stainless Steel Feeding Bowls",
+        supplier:"CasaPet · Italy",
+        icon:"🥣",
+        bg:"#e8ecec",
+        price:2.10,
+        discount:62,
+        moq:150,
+        saved:false
+    },
+
+    {
+        id:10,
+        supplierId:"110",
+        title:"Grooming Brush & Comb Set",
+        supplier:"CarePet · Italy",
+        icon:"🧴",
+        bg:"#e2efe2",
+        price:3.10,
+        discount:61,
+        moq:100,
+        saved:false
+    },
+
+    {
+        id:11,
+        supplierId:"111",
+        title:"Covered Cat Litter Trays",
+        supplier:"MiaCasa · Poland",
+        icon:"🐈",
+        bg:"#eee8df",
+        price:12.90,
+        discount:57,
+        moq:30,
+        saved:false
+    },
+
+    {
+        id:12,
+        supplierId:"112",
+        title:"Premium Bird Seed Mix 2 kg",
+        supplier:"AviaNature · France",
+        icon:"🐦",
+        bg:"#edf0d9",
+        price:3.90,
+        discount:52,
+        moq:80,
+        saved:false
+    },
+
+    {
+        id:13,
+        supplierId:"113",
+        title:"Complete Rabbit Food 3 kg",
+        supplier:"GreenPet · Netherlands",
+        icon:"🐇",
+        bg:"#e5eee0",
+        price:4.80,
+        discount:54,
+        moq:60,
+        saved:false
+    },
+
+    {
+        id:14,
+        supplierId:"114",
+        title:"Aquarium Fish Flakes 500 ml",
+        supplier:"AquaFeed · Germany",
+        icon:"🐟",
+        bg:"#dfeff2",
+        price:2.70,
+        discount:61,
+        moq:100,
+        saved:false
+    },
+
+    {
+        id:15,
+        supplierId:"115",
         title:"Natural Woven Cat Baskets",
         supplier:"EcoPet Home · France",
         icon:"🧺",
@@ -1711,6 +1828,45 @@ const products = [
         price:22.90,
         discount:58,
         moq:30,
+        saved:false
+    },
+
+    {
+        id:16,
+        supplierId:"116",
+        title:"Salmon Cat Treats 80 g",
+        supplier:"Nordic Bites · Poland",
+        icon:"🐟",
+        bg:"#f1e4df",
+        price:0.72,
+        discount:62,
+        moq:200,
+        saved:false
+    },
+
+    {
+        id:17,
+        supplierId:"117",
+        title:"Pet Shampoo Sensitive 500 ml",
+        supplier:"BioPet Care · France",
+        icon:"🧴",
+        bg:"#e4efeb",
+        price:3.80,
+        discount:60,
+        moq:90,
+        saved:false
+    },
+
+    {
+        id:18,
+        supplierId:"118",
+        title:"Ceramic Bowl Collection",
+        supplier:"PetLiving · Netherlands",
+        icon:"🥣",
+        bg:"#ece6df",
+        price:4.90,
+        discount:62,
+        moq:50,
         saved:false
     }
 
@@ -1740,8 +1896,8 @@ const demoRequests = [
 
     {
         id:2,
-        productId:3,
-        supplierId:"103",
+        productId:8,
+        supplierId:"108",
         product:"Soft Travel Carriers",
         supplier:"PetWay",
         country:"Netherlands",
@@ -1754,8 +1910,8 @@ const demoRequests = [
 
     {
         id:3,
-        productId:2,
-        supplierId:"102",
+        productId:3,
+        supplierId:"103",
         product:"Natural Dental Chews",
         supplier:"Happy Tail GmbH",
         country:"Germany",
@@ -1768,8 +1924,8 @@ const demoRequests = [
 
     {
         id:4,
-        productId:4,
-        supplierId:"104",
+        productId:18,
+        supplierId:"118",
         product:"Ceramic Bowl Collection",
         supplier:"PetLiving",
         country:"Netherlands",
@@ -1814,8 +1970,8 @@ const messages = [
     {
         id:2,
         buyerId:"201",
-        supplierId:"103",
-        productId:3,
+        supplierId:"108",
+        productId:8,
         supplier:"PetWay",
         country:"Netherlands",
         product:"Soft Travel Carriers",
